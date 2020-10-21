@@ -1,0 +1,1234 @@
+@charset "utf-8";
+@import url(./reset.css);
+$mainCol: #f6f6f6;
+$subCol: #0645ad;
+$fontCol: #333;
+@keyframes quote {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 4px;
+		transform: rotate(30deg);
+	}
+	40% {
+		left: -4px;
+		transform: rotate(-30deg);
+	}
+	60% {
+		left: 4px;
+		transform: rotate(30deg);
+	}
+	80% {
+		left: -4px;
+		transform: rotate(-30deg);
+	}
+	100% {
+		left: 0px;
+		transform: rotate(0deg);
+	}
+}
+
+@mixin flexSet($dir:row,$wrap:nowrap) {
+	display: flex;
+	flex-flow: $dir;
+	flex-wrap: $wrap;
+}
+@mixin irSet {
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+@mixin btnReset {
+	background: none;
+	border: none;
+	outline: none;
+}
+
+@mixin txtOver {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+body {
+	color: $fontCol;
+	font-family: 'roboto';
+}
+#first {
+	> #wrap {
+		width: 1280px;
+		margin: 0 auto;
+		> header {
+			height: 80px;
+			background-color: $mainCol;
+			@include flexSet(column,nowrap );
+			justify-content: space-evenly;
+			> .logo {
+				font-weight: 900;
+				font-family: serif;
+				text-align: center;
+				letter-spacing: 2px;
+				> span {
+					font-size: 36px;
+				}
+			} //end of .logo
+			> h2 {
+				font-weight: 500;
+				font-size: 16px;
+				text-align: center;
+			}
+		} //end of header
+		> section {
+			position: relative;
+			width: 100%;
+			height: 600px;
+			background-image: url(../images/first_bg_globe3.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			border: 2px solid $mainCol;
+			box-sizing: border-box;
+			> .search {
+				position: absolute;
+				left: 50%;
+				top: 200px;
+				margin-left: -350px;
+				width: 660px;
+				background-color: $subCol;
+				padding: 6px;
+				> input {
+					@include btnReset();
+					width: 600px;
+					height: 40px;
+					color: $fontCol;
+					font-weight: 700;
+					font-size: 16px;
+					text-indent: 12px;
+					background-color: #fff;
+				}
+				> button {
+					@include btnReset();
+					width: 40px;
+					height: 40px;
+					margin-left: 10px;
+					@include irSet();
+					background-image: url(../images/first_search_icon.png);
+					background-size: 80% 80%;
+				}
+			} //end of .search
+			> .lang {
+				position: absolute;
+				left: 0;
+				top: 300px;
+				width: 100%;
+				> div {
+					@include flexSet(row,nowrap );
+					justify-content: space-between;
+					margin: 0 auto;
+					&:nth-child(2) {
+						width: 1080px;
+					}
+					&:nth-child(3) {
+						width: 860px;
+					}
+					> button {
+						@include btnReset();
+						width: 160px;
+						height: 60px;
+						color: $subCol;
+						font-weight: 700;
+						font-size: 16px;
+						&:last-child {
+							margin: none;
+						}
+						&:hover {
+							text-shadow: 1px 1px 2px #aaa;
+						}
+						> span {
+							display: block;
+							color: $fontCol;
+							font-weight: 500;
+							font-size: 12px;
+						}
+					}
+				}
+				> select {
+					display: block;
+					@include btnReset();
+					width: 250px;
+					height: 40px;
+					margin: 40px auto 0;
+					color: $subCol;
+					font-weight: 600;
+					text-indent: 8px;
+					cursor: pointer;
+					border: 2px solid #777;
+				}
+			} //end of .lang
+		} //end of section
+		> footer {
+			position: relative;
+			width: 100%;
+			height: 100px;
+			color: $fontCol;
+			background-color: $mainCol;
+			// outline: 1px solid pink;
+			> div {
+				position: absolute;
+				left: 16px;
+				top: 27px;
+				width: 350px;
+				> .foundation {
+					> img {
+						display: block;
+						width: 45px;
+						margin-right: 16px;
+						float: left;
+					}
+					> p {
+						height: 45px;
+						line-height: 1.4;
+						> a {
+							display: block;
+							font-weight: 800;
+							color: $subCol;
+						}
+					}
+				} //end of .foundation
+			}
+			> .sister {
+				overflow: hidden;
+				position: absolute;
+				left: calc(1280px - 840px);
+				top: 10px;
+				width: 840px;
+				height: 50px;
+				> .sister_cont {
+					position: absolute;
+					left: 0px;
+					top: 0;
+					width: 1920px;
+					> li {
+						float: left;
+						width: 160px;
+						> a {
+							position: relative;
+							display: block;
+							height: 50px;
+							> .img {
+								position: absolute;
+								left: 2px;
+								top: 7px;
+								display: block;
+								width: 35px;
+								height: 35px;
+								@include irSet();
+							}
+							> .title {
+								position: absolute;
+								top: 11px;
+								display: block;
+								width: 109px;
+								height: 16px;
+								color: $subCol;
+								font-weight: 700;
+								font-size: 12px;
+							}
+							> span {
+								position: absolute;
+								left: 50px;
+								top: 27px;
+								color: $fontCol;
+								font-size: 10px;
+							}
+						} //end of a
+						&.bnr1 > a > .img {
+							height: 47px;
+							top: 1.5px;
+							background-image: url(../images/footer_sister_1.png);
+						}
+						&.bnr2 > a > .img {
+							background-image: url(../images/footer_sister_2.png);
+						}
+						&.bnr3 > a > .img {
+							background-image: url(../images/footer_sister_3.png);
+						}
+						&.bnr4 > a > .img {
+							background-image: url(../images/footer_sister_4.png);
+						}
+						&.bnr5 > a > .img {
+							left: 0;
+							width: 40px;
+							background-image: url(../images/footer_sister_5.png);
+						}
+						&.bnr6 > a > .img {
+							left: 0;
+							width: 40px;
+							background-image: url(../images/footer_sister_6.png);
+						}
+						&.bnr7 > a > .img {
+							background-image: url(../images/footer_sister_7.png);
+						}
+						&.bnr8 > a > .img {
+							height: 38px;
+							top: 6px;
+							background-image: url(../images/footer_sister_8.png);
+						}
+						&.bnr9 > a > .img {
+							background-image: url(../images/footer_sister_9.png);
+						}
+						&.bnr10 > a > .img {
+							background-image: url(../images/footer_sister_10.png);
+						}
+						&.bnr11 > a > .img {
+							height: 38px;
+							top: 6px;
+							background-image: url(../images/footer_sister_11.png);
+						}
+						&.bnr12 > a > .img {
+							background-image: url(../images/footer_sister_12.png);
+						}
+					} //end of li
+				} //end of .sister_cont
+			}
+			> address {
+				padding-top: 70px;
+				text-align: center;
+				> a {
+					display: inline-block;
+					margin: 0 4px;
+					color: $subCol;
+				}
+			}
+		} //end of footer
+	} //end of #wrap
+} //end of #first
+
+.main {
+	> #wrapMain {
+		position: relative;
+		width: 1280px;
+		height: 800px;
+		margin: 0 auto;
+		> header {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 800px;
+			background-color: $mainCol;
+			> .logo {
+				@include irSet();
+				width: 200px;
+				height: 183px;
+				background-image: url(../images/first_globe.png);
+				background-size: 80% 80%;
+			}
+			> nav {
+				> .gnb {
+					> li {
+						width: 100%;
+						> a {
+							display: block;
+							height: 32px;
+							font-weight: 700;
+							font-size: 16px;
+							line-height: 32px;
+							text-indent: 32px;
+						}
+						&:hover > a {
+							color: #fff;
+							background-color: $fontCol;
+						}
+						> .lnb {
+							display: none;
+							> li {
+								background-color: $fontCol;
+								> a {
+									display: block;
+									height: 32px;
+									color: #fff;
+									font-weight: 600;
+									line-height: 32px;
+									text-indent: 48px;
+								}
+								&:hover {
+									background-color: #777;
+								}
+							}
+						}
+					}
+				}
+			}
+			> .cont {
+				position: absolute;
+				left: 0;
+				top: 450px;
+				> .user {
+					padding: 0 16px;
+					> .status {
+						> a {
+							display: inline-block;
+							width: 32px;
+							height: 32px;
+							@include irSet();
+							background-image: url(../images/main_user_status.png);
+						}
+					}
+					> span {
+						display: inline-block;
+						height: 32px;
+						padding: 0 4px;
+						> a {
+							font-weight: 600;
+							font-size: 15px;
+							line-height: 32px;
+						}
+					}
+				} //end of .user
+				> .search {
+					margin: 8px 0;
+					> input {
+						@include btnReset();
+						width: 75%;
+						height: 32px;
+						margin-left: 1.5%;
+						font-size: 15px;
+						line-height: 32px;
+						border: 5px solid $subCol;
+						box-sizing: border-box;
+					}
+					> button {
+						@include btnReset();
+						width: 20%;
+						height: 32px;
+						color: #fff;
+						font-size: 15px;
+						line-height: 32px;
+						background-color: $subCol;
+					}
+				} //end of .search
+				> .lang {
+					> select {
+						width: 192px;
+						height: 32px;
+						color: $fontCol;
+						margin: 0 4px;
+					}
+				} //end of .lang
+				> .foundation {
+					margin-top: 40px;
+					> img {
+						display: block;
+						width: 60px;
+						float: left;
+						margin-right: 4px;
+					}
+					> p {
+						width: 132px;
+						margin-left: 64px;
+					}
+					> button {
+						display: inline-block;
+						margin-left: 4px;
+						@include btnReset();
+						height: 32px;
+						color: $subCol;
+						font-weight: 800;
+						line-height: 32px;
+					}
+				} //end of .foundation
+			}
+		} //end of header
+		> section {
+			@include flexSet(row,wrap );
+			position: absolute;
+			justify-content: space-between;
+			align-content: space-between;
+			left: -20px;
+			top: 0;
+			width: 1080px;
+			height: 720px;
+			margin-left: 220px;
+			> .intro {
+				width: 100%;
+				height: 150px;
+				background-image: url(../images/main_update_intro1.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				> h2 {
+					margin: 16px auto 8px;
+					font-size: 32px;
+					font-weight: 900;
+					text-align: center;
+					text-shadow: 0 0 10px #fff;
+				}
+				> h3 {
+					font-size: 24px;
+					text-align: center;
+					margin: 8px 0;
+				}
+				> p {
+					font-size: 14px;
+					font-weight: 600;
+					text-align: center;
+				}
+			}
+			> .left {
+				width: 540px;
+				height: 550px;
+				padding-left: 20px;
+				> article {
+					border: 1px solid #999;
+					box-sizing: border-box;
+				}
+				> .hot {
+					height: 420px;
+					margin-bottom: 20px;
+					> h2 {
+						width: 200px;
+						height: 32px;
+						margin: 8px 0;
+						line-height: 32px;
+						color: #fff;
+						text-indent: 16px;
+						background-color: #555;
+						border-top-right-radius: 16px;
+						border-bottom-right-radius: 16px;
+					}
+					> ul {
+						width: 90%;
+						margin: 0 auto;
+						font-size: 14px;
+						> li {
+							margin: 16px 0;
+							> a {
+								display: block;
+								line-height: 1.6;
+								&:hover {
+									color: $subCol;
+								}
+							}
+						}
+					}
+				}
+				> .contribute {
+					> h2 {
+						width: 200px;
+						height: 32px;
+						margin: 8px 0 16px;
+						line-height: 32px;
+						color: #fff;
+						text-indent: 16px;
+						background-color: #555;
+						border-top-right-radius: 16px;
+						border-bottom-right-radius: 16px;
+					}
+					width: 540px;
+					height: 110px;
+					> ul {
+						> li {
+							float: left;
+							width: 120px;
+							margin-left: 12px;
+							&:hover {
+								outline: 3px solid $subCol;
+								outline-offset: 3px;
+							}
+							> a {
+								display: block;
+								background-repeat: no-repeat;
+								height: 40px;
+								> span {
+									display: inline-block;
+									margin-left: 48px;
+									font-weight: 700;
+									font-size: 16px;
+								}
+							}
+							&:nth-child(1) > a {
+								background-image: url(../images/main_user_welcome.png);
+							}
+							&:nth-child(2) > a {
+								background-image: url(../images/main_user_newGuide.png);
+							}
+							&:nth-child(3) > a {
+								background-image: url(../images/main_user_editGuide.png);
+							}
+							&:nth-child(4) > a {
+								background-image: url(../images/main_user_policy.png);
+							}
+						}
+					}
+				}
+			} //end of .left
+			> .right {
+				width: 500px;
+				> article {
+					border: 1px solid #999;
+					box-sizing: border-box;
+				}
+				> .history {
+					position: relative;
+					height: 200px;
+					> h2 {
+						width: 200px;
+						height: 32px;
+						margin: 8px 0;
+						line-height: 32px;
+						color: #fff;
+						text-indent: 16px;
+						background-color: #555;
+						border-top-right-radius: 16px;
+						border-bottom-right-radius: 16px;
+					}
+					> .date {
+						display: block;
+						position: absolute;
+						right: 8px;
+						top: 8px;
+						height: 32px;
+						font-size: 18px;
+						font-weight: 700;
+						line-height: 32px;
+					}
+					> ul {
+						width: 90%;
+						margin: 0 auto;
+						margin-left: 20px;
+						font-size: 14px;
+						> li {
+							margin-bottom: 8px;
+							overflow: hidden;
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+							> a {
+								display: block;
+								height: 22px;
+								line-height: 22px;
+								@include txtOver();
+								transition: transform 5s;
+								&:hover {
+									transform: translateX(-250px);
+									color: $subCol;
+									overflow: initial;
+									text-overflow: initial;
+								}
+							}
+						}
+					}
+				}
+				> .new {
+					@extend .history;
+
+					height: 200px;
+					margin: 20px 0;
+					> h2 {
+						width: 200px;
+						height: 32px;
+						margin: 8px 0;
+						line-height: 32px;
+						color: #fff;
+						text-indent: 16px;
+						background-color: #555;
+						border-top-right-radius: 16px;
+						border-bottom-right-radius: 16px;
+					}
+					> ul > li:nth-child(4) > a:hover {
+						transform: translateX(0);
+					}
+				}
+				> .userGather {
+					height: 110px;
+					> h2 {
+						width: 200px;
+						height: 32px;
+						margin: 8px 0 16px;
+						line-height: 32px;
+						color: #fff;
+						text-indent: 16px;
+						background-color: #555;
+						border-top-right-radius: 16px;
+						border-bottom-right-radius: 16px;
+					}
+					> ul {
+						> li {
+							float: left;
+							width: 120px;
+							margin-left: 35px;
+							background-repeat: no-repeat;
+							&:hover {
+								outline: 3px solid $subCol;
+								outline-offset: 3px;
+							}
+							> a {
+								display: block;
+								background-repeat: no-repeat;
+								height: 40px;
+								font-size: 16px;
+								font-weight: 700;
+								text-indent: 48px;
+								line-height: 40px;
+							}
+							&:nth-child(1) {
+								background-image: url(../images/main_user_discuss.png);
+							}
+							&:nth-child(2) {
+								background-image: url(../images/main_user_qna.png);
+							}
+							&:nth-child(3) {
+								background-image: url(../images/main_user_gather.png);
+							}
+						}
+					}
+				}
+			} //end of .right
+		}
+		> footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 1280px;
+			overflow: hidden;
+			height: 80px;
+			background-color: $mainCol;
+			> .sister {
+				overflow: hidden;
+				position: relative;
+				width: 1240px;
+				margin: 0 20px;
+				height: 50px;
+				> .sister_cont {
+					position: absolute;
+					left: 0px;
+					top: 0;
+					width: 1920px;
+					> li {
+						float: left;
+						width: 160px;
+						> a {
+							position: relative;
+							display: block;
+							height: 50px;
+							> .img {
+								position: absolute;
+								left: 2px;
+								top: 7px;
+								display: block;
+								width: 35px;
+								height: 35px;
+								@include irSet();
+							}
+							> .title {
+								position: absolute;
+								top: 11px;
+								display: block;
+								width: 109px;
+								height: 16px;
+								color: $subCol;
+								font-weight: 700;
+								font-size: 12px;
+							}
+							> span {
+								position: absolute;
+								left: 50px;
+								top: 27px;
+								color: $fontCol;
+								font-size: 10px;
+							}
+						} //end of a
+						&.bnr1 > a > .img {
+							height: 47px;
+							top: 1.5px;
+							background-image: url(../images/footer_sister_1.png);
+						}
+						&.bnr2 > a > .img {
+							background-image: url(../images/footer_sister_2.png);
+						}
+						&.bnr3 > a > .img {
+							background-image: url(../images/footer_sister_3.png);
+						}
+						&.bnr4 > a > .img {
+							background-image: url(../images/footer_sister_4.png);
+						}
+						&.bnr5 > a > .img {
+							left: 0;
+							width: 40px;
+							background-image: url(../images/footer_sister_5.png);
+						}
+						&.bnr6 > a > .img {
+							left: 0;
+							width: 40px;
+							background-image: url(../images/footer_sister_6.png);
+						}
+						&.bnr7 > a > .img {
+							background-image: url(../images/footer_sister_7.png);
+						}
+						&.bnr8 > a > .img {
+							height: 38px;
+							top: 6px;
+							background-image: url(../images/footer_sister_8.png);
+						}
+						&.bnr9 > a > .img {
+							background-image: url(../images/footer_sister_9.png);
+						}
+						&.bnr10 > a > .img {
+							background-image: url(../images/footer_sister_10.png);
+						}
+						&.bnr11 > a > .img {
+							height: 38px;
+							top: 6px;
+							background-image: url(../images/footer_sister_11.png);
+						}
+						&.bnr12 > a > .img {
+							background-image: url(../images/footer_sister_12.png);
+						}
+					} //end of li
+				} //end of .sister_cont
+			}
+			> address {
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				color: $fontCol;
+				text-align: center;
+				> a {
+					display: inline-block;
+					margin: 0 4px;
+					color: $subCol;
+				}
+			}
+		}
+	} //end of #wrapMain
+} //end of #main
+
+#cont {
+	> #wrapCont {
+		position: relative;
+		width: 1280px;
+		height: 800px;
+		margin: 0 auto;
+		> header {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 800px;
+			margin-right: 20px;
+			background-color: $mainCol;
+			> .logo {
+				@include irSet();
+				width: 200px;
+				height: 183px;
+				background-image: url(../images/first_globe.png);
+				background-size: 80% 80%;
+			}
+			> nav {
+				> .gnb {
+					> li {
+						width: 100%;
+						> a {
+							display: block;
+							height: 32px;
+							font-weight: 700;
+							font-size: 16px;
+							line-height: 32px;
+							text-indent: 32px;
+						}
+						&:hover > a {
+							color: #fff;
+							background-color: $fontCol;
+						}
+						> .lnb {
+							display: none;
+							> li {
+								background-color: $fontCol;
+								> a {
+									display: block;
+									height: 32px;
+									color: #fff;
+									font-weight: 600;
+									line-height: 32px;
+									text-indent: 48px;
+								}
+								&:hover {
+									background-color: #777;
+								}
+							}
+						}
+					}
+				}
+			}
+			> .cont {
+				position: absolute;
+				left: 0;
+				top: 450px;
+				> .user {
+					padding: 0 16px;
+					> .status {
+						> a {
+							display: inline-block;
+							width: 32px;
+							height: 32px;
+							@include irSet();
+							background-image: url(../images/main_user_status.png);
+						}
+					}
+					> span {
+						display: inline-block;
+						height: 32px;
+						padding: 0 4px;
+						> a {
+							font-weight: 600;
+							font-size: 15px;
+							line-height: 32px;
+						}
+					}
+				} //end of .user
+				> .search {
+					margin: 8px 0;
+					> input {
+						@include btnReset();
+						width: 75%;
+						height: 32px;
+						margin-left: 1.5%;
+						font-size: 15px;
+						line-height: 32px;
+						border: 5px solid $subCol;
+						box-sizing: border-box;
+					}
+					> button {
+						@include btnReset();
+						width: 20%;
+						height: 32px;
+						color: #fff;
+						font-size: 15px;
+						line-height: 32px;
+						background-color: $subCol;
+					}
+				} //end of .search
+				> .lang {
+					> select {
+						width: 192px;
+						height: 32px;
+						color: $fontCol;
+						margin: 0 4px;
+					}
+				} //end of .lang
+				> .foundation {
+					margin-top: 40px;
+					> img {
+						display: block;
+						width: 60px;
+						float: left;
+						margin-right: 4px;
+					}
+					> p {
+						width: 132px;
+						margin-left: 64px;
+					}
+					> button {
+						display: inline-block;
+						margin-left: 4px;
+						@include btnReset();
+						height: 32px;
+						color: $subCol;
+						font-weight: 800;
+						line-height: 32px;
+					}
+				} //end of .foundation
+			}
+		} //end of header
+		> section {
+			position: relative;
+			width: 1080px;
+			margin-left: 200px;
+			height: 720px;
+			> h2 {
+				width: 400px;
+				height: 56px;
+				color: #fff;
+				font-size: 32px;
+				line-height: 56px;
+				text-indent: 16px;
+				border-top-right-radius: 24px;
+				background-color: $fontCol;
+			}
+			> nav {
+				position: absolute;
+				right: 0;
+				top: 28px;
+				> .sub {
+					> li {
+						float: left;
+						background-color: #999;
+						border-top-left-radius: 14px;
+						border-top-right-radius: 14px;
+						// border-radius: 14px;
+						&:hover > a {
+							color: #fff;
+						}
+						> a {
+							height: 28px;
+							display: block;
+							padding: 0 12px;
+							font-size: 14px;
+							font-weight: 500;
+							line-height: 28px;
+						}
+					}
+				}
+			}
+			> .table {
+				width: 100%;
+				@include flexSet(row, nowrap);
+				justify-content: space-between;
+				background-color: #555;
+				> li {
+					&:hover,
+					&.on {
+						background-color: #fff;
+						> a {
+							color: $fontCol;
+							font-weight: 800;
+						}
+					}
+					> a {
+						display: block;
+						height: 30px;
+						padding: 0 13px;
+						color: #fff;
+						font-weight: 600;
+						line-height: 30px;
+						font-size: 14px;
+						text-align: center;
+						display: block;
+					}
+				}
+			}
+			> .body {
+				overflow: auto;
+				position: relative;
+				width: 100%;
+				height: 633px;
+				> article {
+					display: none;
+					overflow: auto;
+					position: absolute;
+					width: 100%;
+					height: 633px;
+					left: 0;
+					top: 0;
+					padding: 16px;
+					box-sizing: border-box;
+					background-color: #fff;
+					background-image: url(../images/main_update_intro2.png);
+					background-repeat: no-repeat;
+					background-position: center bottom;
+					> h2 {
+						display: inline-block;
+						width: 1000px;
+						margin-bottom: 16px;
+						font-size: 24px;
+						text-indent: 8px;
+					}
+					> img {
+						display: block;
+						width: 25%;
+						margin-left: 8px;
+						float: right;
+					}
+					> h3 {
+						width: 200px;
+						height: 30px;
+						margin: 8px 0;
+						color: #fff;
+						font-size: 18px;
+						text-indent: 8px;
+						line-height: 30px;
+						background-color: #555;
+					}
+					> h4 {
+						margin: 4px 0;
+						font-size: 16px;
+						font-weight: 800;
+						text-indent: 8px;
+					}
+					> p {
+						font-size: 16px;
+						line-height: 1.8;
+					}
+					> ul {
+						> li {
+							font-size: 16px;
+							list-style: square;
+							margin-left: 20px;
+							> a {
+								line-height: 1.8;
+								display: block;
+							}
+						}
+					}
+					> ol {
+						> li {
+							font-size: 14px;
+							list-style: decimal;
+							margin-left: 20px;
+							> a {
+								line-height: 1.6;
+								display: block;
+							}
+						}
+					}
+					> button {
+						display: inline-block;
+						position: sticky;
+						right: 4px;
+						top: 4px;
+						@include btnReset();
+						@include irSet();
+						width: 20px;
+						height: 20px;
+						background-image: url(../images/cont_clswhite.png);
+					}
+					a.on,
+					a:hover {
+						color: $subCol;
+						font-weight: 600;
+					}
+					&.table_0 {
+						display: block;
+					}
+					.quote {
+						position: relative;
+						font-size: 10px;
+						vertical-align: super;
+						&.on {
+							color: $subCol;
+							font-weight: 900;
+							animation-name: quote;
+							animation-duration: 5s;
+						}
+					}
+				}
+			}
+		} //end of section
+		> footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 1280px;
+			overflow: hidden;
+			height: 80px;
+			background-color: $mainCol;
+			> .sister {
+				overflow: hidden;
+				position: relative;
+				width: 1240px;
+				margin: 0 20px;
+				height: 50px;
+				> .sister_cont {
+					position: absolute;
+					left: 0px;
+					top: 0;
+					width: 1920px;
+					> li {
+						float: left;
+						width: 160px;
+						> a {
+							position: relative;
+							display: block;
+							height: 50px;
+							> .img {
+								position: absolute;
+								left: 2px;
+								top: 7px;
+								display: block;
+								width: 35px;
+								height: 35px;
+								@include irSet();
+							}
+							> .title {
+								position: absolute;
+								top: 11px;
+								display: block;
+								width: 109px;
+								height: 16px;
+								color: $subCol;
+								font-weight: 700;
+								font-size: 12px;
+							}
+							> span {
+								position: absolute;
+								left: 50px;
+								top: 27px;
+								color: $fontCol;
+								font-size: 10px;
+							}
+						} //end of a
+						&.bnr1 > a > .img {
+							height: 47px;
+							top: 1.5px;
+							background-image: url(../images/footer_sister_1.png);
+						}
+						&.bnr2 > a > .img {
+							background-image: url(../images/footer_sister_2.png);
+						}
+						&.bnr3 > a > .img {
+							background-image: url(../images/footer_sister_3.png);
+						}
+						&.bnr4 > a > .img {
+							background-image: url(../images/footer_sister_4.png);
+						}
+						&.bnr5 > a > .img {
+							left: 0;
+							width: 40px;
+							background-image: url(../images/footer_sister_5.png);
+						}
+						&.bnr6 > a > .img {
+							left: 0;
+							width: 40px;
+							background-image: url(../images/footer_sister_6.png);
+						}
+						&.bnr7 > a > .img {
+							background-image: url(../images/footer_sister_7.png);
+						}
+						&.bnr8 > a > .img {
+							height: 38px;
+							top: 6px;
+							background-image: url(../images/footer_sister_8.png);
+						}
+						&.bnr9 > a > .img {
+							background-image: url(../images/footer_sister_9.png);
+						}
+						&.bnr10 > a > .img {
+							background-image: url(../images/footer_sister_10.png);
+						}
+						&.bnr11 > a > .img {
+							height: 38px;
+							top: 6px;
+							background-image: url(../images/footer_sister_11.png);
+						}
+						&.bnr12 > a > .img {
+							background-image: url(../images/footer_sister_12.png);
+						}
+					} //end of li
+				} //end of .sister_cont
+			}
+			> address {
+				width: 100%;
+				height: 30px;
+				color: $fontCol;
+				text-align: center;
+				> a {
+					display: inline-block;
+					margin: 0 4px;
+					line-height: 30px;
+					color: $subCol;
+				}
+			}
+		} //end of footer
+	}
+} //end of #cont

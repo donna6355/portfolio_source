@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beardex Game</title>
+    <link rel="stylesheet" href="./css/beardex.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/beardex.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <h1 class="logo">Beardex Game</h1>
+        </header>
+        <section>
+            <h2 class="sr-only">Beardex Game Player</h2>
+            <ul class="mapChar">
+                <li><a href="#">Panda</a></li>
+                <li><a href="#">IceBear</a></li>
+                <li><a href="#">GrizzlyBear</a></li>
+                <li class="anony"><a href="#">Grizz</a></li>
+                <li class="anony"><a href="#">Police</a></li>
+                <li><a href="#">Charlie</a></li>
+                <li class="anony"><a href="#">Wildlife</a></li>
+            </ul>
+            <div id="bg"></div>
+            <article id="scn1">
+                <h2 class="sr-only">Intro & How to play</h2>
+                <img src="./img/beardex_intro_chloe.png" alt="chloe">
+                <div class="txt">
+                    <p>Hm....My shipping was supposed to arrive... a couple of days before...</p>
+                    <p>What is happening to my shipping?</p>
+                    <p>I gotta talk to Beardex!</p>
+                </div>
+                <div class="btn">
+                    <button class="reset">Refresh</button>
+                    <button class="next">Start</button>
+                </div>
+            </article>
+            <article id="scn2">
+                <h2 class="sr-only">Panda from Beardex</h2>
+                <img src="./img/beardex_dialog_chloe.png" alt="chloe">
+                <div class="txt">
+                    <p>...Panda?</p>
+                    <p>Are you working for Beardex delivery?</p>
+                    <p>Where is my shipping?</p>
+                </div>
+                <div class="txt">
+                    <p>Oh, hi Chloe...</p>
+                    <p>I.. I..am just an intern...checking directions of this town. </p>
+                    <p>You gotta find the supervisor with blue cap.</p>
+                </div>
+                <img src="./img/beardex_dialog_panda2.png" alt="Panda">
+                <div class="btn">
+                    <button class="reset">Reset</button>
+                    <button class="next">Find Supervisor</button>
+                </div>
+            </article>
+            <article id="scn3">
+                <h2 class="sr-only">Ice Bear from Beardex</h2>
+                <img src="./img/beardex_dialog_chloe.png" alt="chloe">
+                <div class="txt">
+                    <p>Hey, Ice Bear!</p>
+                    <p>You are the supervisor from Beardex?</p>
+                    <p>Have you seen my shipping?</p>
+                </div>
+                <div class="txt">
+                    <p>Ice Bear is just temporary support today.</p>
+                    <p>Grizzly is the supervisor in charge of this town.</p>
+                    <p>Grizzly keeps your shipping.</p>
+                </div>
+                <img src="./img/beardex_dialog_ice.png" alt="Ice Bear">
+                <div class="btn">
+                    <button class="reset">Reset</button>
+                    <button class="next">Find Grizzly</button>
+                </div>
+            </article>
+            <article id="scn4">
+                <h2 class="sr-only">Grizzly Bear????</h2>
+                <img src="./img/beardex_dialog_burglar.png" alt="GrizzlyBurglar">
+                <div class="txt">
+                    <p>Oops!</p>
+                    <p>I....I didn't steal anything.........</p>
+                    <p>I'm...just looking around...</p>
+                </div>
+                <div class="txt">
+                    <p>FInally, I got you!!!</p>
+                    <p>Thank you, Chloe.</p>
+                    <p>You helped me chatch the burglar.</p>
+                </div>
+                <img src="./img/beardex_dialog_police.png" alt="police">
+                <div class="btn">
+                    <button class="reset">Reset</button>
+                    <button class="next">Find Grizzly</button>
+                </div>
+            </article>
+            <article id="scn5">
+                <h2 class="sr-only">Grizzly Bear from Beardex eventually!</h2>
+                <img src="./img/beardex_dialog_chloe.png" alt="chloe">
+                <div class="txt">
+                    <p>Grizz!</p>
+                    <p>I've been looking for you all day long!</p>
+                    <p>Where is my SHIPPING!!!!</p>
+                </div>
+                <div class="txt">
+                    <p>Hey, Chloe!!</p>
+                    <p>Look at me! I am a hot delivery man!</p>
+                    <p>Right, your shipping! Hey, bros. Let's open Chloe's shipping!</p>
+                </div>
+                <img src="./img/beardex_dialog_grizz.png" alt="Grizz">
+            </article>
+            <article id="finale">
+                <h2 class="sr-only">Fan of Nom Nom?</h2>
+                <img src="./img/beardex_dialog_endingfin.png" alt="speechlessWithNonomFancy">
+                <p class="txt">..Are...you....a fan of Nom Nom ?..........(silence)</p>
+            </article>
+            <article id="end">
+                <h2 class="sr-only">The end</h2>
+                <img src="./img/beardex_dialog_endfin.png" alt="end script">
+                <div class="btn">
+                    <button class="reset">Reset</button>
+                    <button class="next">Explore more</button>
+                </div>
+            </article>
+            <article id="gotu">
+                <h2 class="sr-only">Trying to burgle?</h2>
+                <img src="./img/beardex_dialog_igotu.png" alt="dark police">
+                <p class="txt">Got you, burglar</p>
+                <div class="btn">
+                    <button class="reset">Reset</button>
+                    <button class="next">No, I'm innocent</button>
+                </div>
+            </article>
+            <article id="watchout">
+                <h2 class="sr-only">Hungry Wild bear???</h2>
+                <img src="./img/beardex_dialog_whatchout.png" alt="wildver">
+                <p class="txt">Grrrr</p>
+                <div class="btn">
+                    <button class="reset">Reset</button>
+                    <button class="next">Run away</button>
+                </div>
+            </article>
+            <article id="Charlie">
+                <h2 class="sr-only">Talkative Charlie???</h2>
+                <img src="./img/beardex_dialog_charlie.png" alt="charlie">
+                <div class="txt">
+                    <p>Hey! You must be Chloe! I am Charlie, it's a pleasure, it really is...Sometimes I feel insecure
+                        because I feel like the fur on my left side is longer than the fur on my right side. I have a
+                        recurring dream that I'm a telephone pole. Is that weird? Also, my head's a little too big for
+                        most hats. Hahaha!</p>
+                </div>
+                <div class="btn">
+                    <button class="reset">Reset</button>
+                    <button class="next">Run away</button>
+                </div>
+            </article>
+            <aside class="clueChar">
+                <div class="left">
+                    <h2>Clue</h2>
+                    <ul>
+                        <li>Beardex</li>
+                        <li>Blue Cap</li>
+                        <li>Grizzly Bear</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h2>Character</h2>
+                    <ul>
+                        <li>Chloe</li>
+                        <li>Panda - Intern</li>
+                        <li>Ice Bear - Temp Support</li>
+                        <li>Grizzly - Burglar</li>
+                        <li>Police</li>
+                        <li>Charlie</li>
+                        <li>Grizzly Bear - Supervisor</li>
+                        <li class="on">???</li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+        <footer>
+            <address>Designed by Donna:)</address>
+            <address>All images related to 'We bare bears' are sourced from <a
+                    href="https://webarebears.fandom.com/wiki/We_Bare_Bears_Wiki">We
+                    Bare Bears Wiki</a></address>
+        </footer>
+
+    </div>
+</body>
+
+</html>

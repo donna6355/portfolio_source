@@ -1,0 +1,182 @@
+@keyframes scroll { from { opacity: 0.3; top: 700px; }
+  to { opacity: 1; top: 680px; } }
+#wrap { margin: 0 auto; max-width: 1600px; overflow: hidden; }
+#wrap * { font-family: 'roboto'; }
+#wrap > header { display: flex; flex-direction: row; flex-wrap: nowrap; overflow: hidden; position: fixed; left: 0; top: 0; z-index: 100; width: 100%; height: 100px; background-color: #fff; }
+#wrap > header > .logo { position: absolute; left: 64px; top: 28px; width: 200px; }
+@media screen and (max-width: 800px) { #wrap > header > .logo { left: 4px; } }
+#wrap > header > .logo > a { display: block; height: 44px; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; background-image: url(../img/spigen_h1_logo.png); }
+#wrap > header > nav { width: 100%; height: 100px; border-bottom: 1px solid #ccc; }
+#wrap > header > nav > .gnb { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; position: absolute; left: 50%; top: 0; margin-left: -354px; }
+@media screen and (max-width: 1200px) { #wrap > header > nav > .gnb { display: none; } }
+#wrap > header > nav > .gnb > li > a { display: block; height: 100px; padding: 0 64px; color: #202020; font-size: 21px; text-align: center; line-height: 100px; }
+#wrap > header > nav > .gnb > li > .bar { display: block; width: 0%; height: 2px; background-color: #ff5a00; }
+#wrap > header > nav > .gnb > li > .lnb { display: none; margin-top: 20px; }
+#wrap > header > nav > .gnb > li > .lnb > li { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center; height: 40px; }
+#wrap > header > nav > .gnb > li > .lnb > li > a { font-size: 16px; color: #646464; transition: all .2s; }
+#wrap > header > nav > .gnb > li > .lnb > li > a:hover { color: #ff5a00; border-bottom: 1px solid #ff5a00; }
+#wrap > header > nav > .lang { display: flex; flex-direction: row; flex-wrap: nowrap; position: absolute; right: 10%; }
+@media screen and (max-width: 1200px) { #wrap > header > nav > .lang { right: 12%; } }
+#wrap > header > nav > .lang > a { height: 100px; font-weight: 600; font-size: 18px; color: #ccc; line-height: 100px; }
+#wrap > header > nav > .lang > a.on { color: #ff5a00; }
+#wrap > header > nav > .lang > .dot { display: block; height: 100px; padding: 0 8px; color: #ccc; font-weight: 600; font-size: 18px; line-height: 100px; }
+#wrap > .toggle > h2 { position: fixed; right: 3%; top: 36px; z-index: 100; width: 36px; height: 28px; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; background-image: url(../img/spigen_lnb_menu.jpg); cursor: pointer; }
+#wrap > .toggle > .fgnb { display: none; position: fixed; z-index: 100; left: 0; right: 0; top: 0; bottom: 0; width: 100%; background-color: rgba(255, 80, 0, 0.9); }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb { width: 100%; right: initial; bottom: initial; } }
+#wrap > .toggle > .fgnb > .cls { position: absolute; left: 50%; top: 200px; margin-left: -27px; width: 45px; height: 45px; background: none; border: none; outline: none; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; background-image: url(../img/spigen_lnb_close.png); }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > .cls { width: 30px; height: 30px; left: initial; right: 16px; top: 8px; margin-left: 0; margin-top: 8px; z-index: 100; } }
+#wrap > .toggle > .fgnb > ul { display: flex; flex-direction: row; flex-wrap: nowrap; position: absolute; left: 50%; top: 330px; margin-left: -600px; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul { display: initial; width: 100%; left: 0; top: 0; margin-left: 0; background-color: rgba(255, 80, 0, 0.9); } }
+#wrap > .toggle > .fgnb > ul > li { width: 300px; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul > li { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.2); box-sizing: border-box; } }
+#wrap > .toggle > .fgnb > ul > li:first-child { display: none; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul > li:first-child { display: block; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; background-image: url(../img/spigen_fgnb_whlogo.png); border-top: none; } }
+#wrap > .toggle > .fgnb > ul > li > a { display: block; color: #fff; font-weight: 700; font-size: 30px; text-align: center; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul > li > a { height: 80px; line-height: 80px; } }
+#wrap > .toggle > .fgnb > ul > li > .flnb { margin-top: 48px; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul > li > .flnb { display: none; margin-top: 0; margin-bottom: 16px; } }
+#wrap > .toggle > .fgnb > ul > li > .flnb li { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center; height: 44px; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul > li > .flnb li { height: 32px; } }
+#wrap > .toggle > .fgnb > ul > li > .flnb li > a { color: #dedede; font-size: 22px; transition: all 0.2s; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul > li > .flnb li > a { color: #fff; } }
+#wrap > .toggle > .fgnb > ul > li > .flnb li > a:hover { font-weight: 900; border-bottom: 1px solid #dedede; }
+@media screen and (max-width: 1200px) { #wrap > .toggle > .fgnb > ul > li > .flnb li > a:hover { font-weight: normal; border: none; } }
+#wrap > section { margin-top: 100px; }
+#wrap > section > .bnr { position: relative; left: 0; top: 0; height: 810px; }
+@media screen and (max-width: 1200px) { #wrap > section > .bnr { height: 500px; } }
+#wrap > section > .bnr > .slide { display: none; position: absolute; overflow: hidden; width: 100%; height: 810px; background-repeat: no-repeat; background-size: cover; }
+@media screen and (max-width: 1200px) { #wrap > section > .bnr > .slide { height: 500px; } }
+#wrap > section > .bnr > .slide:nth-child(1) { background-image: url(../img/spigen_slid_1.jpg); }
+#wrap > section > .bnr > .slide:nth-child(2) { background-image: url(../img/spigen_slid_2.jpg); }
+#wrap > section > .bnr > .slide:nth-child(3) { background-image: url(../img/spigen_slid_3.jpg); }
+#wrap > section > .bnr > .slide > h2 { color: #ff5a00; font-weight: 600; font-size: 28px; margin: 367px 0 0 10%; opacity: 0; }
+@media screen and (max-width: 1200px) { #wrap > section > .bnr > .slide > h2 { margin-top: 100px; } }
+#wrap > section > .bnr > .slide > .bar { height: 1px; width: 10%; margin: 20px 10% 0; background-color: rgba(255, 255, 255, 0.6); opacity: 0; }
+#wrap > section > .bnr > .slide > h3 { color: #fff; font-size: 45px; font-weight: 800; margin: 50px 10% 20px; opacity: 0; }
+#wrap > section > .bnr > .slide > p { color: #fff; font-weight: 600; font-size: 15px; margin-left: 10%; margin-top: 40px; opacity: 0; }
+@media screen and (max-width: 1200px) { #wrap > section > .bnr > .slide > p { width: 80%; word-break: keep-all; } }
+#wrap > section > .bnr > .slide > button { margin: 59px 0 0 10%; width: 180px; height: 45px; background: none; outline: none; color: #fff; font-size: 18px; text-align: center; border: 1px solid #fff; border-radius: 28px; transition: all .5s; opacity: 0; }
+#wrap > section > .bnr > .slide > button:hover { background-color: #ff5a00; border: 1px solid #ff5a00; }
+#wrap > section > .bnr > .page { position: absolute; left: 0; top: 395px; }
+@media screen and (max-width: 1200px) { #wrap > section > .bnr > .page { display: none; } }
+#wrap > section > .bnr > .page > li { width: 0px; height: 2px; margin-bottom: 22px; background-color: #ccc; text-indent: -9999px; opacity: 0; }
+#wrap > section > .bnr > .page > li.on { opacity: 0; background-color: #ff5a00; }
+#wrap > section > .bnr > .btn { position: absolute; right: 10%; top: 391px; }
+@media screen and (max-width: 1200px) { #wrap > section > .bnr > .btn { top: 120px; } }
+#wrap > section > .bnr > .btn > button { display: block; width: 29px; height: 16px; background: none; outline: none; border: none; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; }
+#wrap > section > .bnr > .btn > button.prev { margin-bottom: 64px; background-image: url(../img/spigen_slide_prev.png); }
+#wrap > section > .bnr > .btn > button.next { background-image: url(../img/spigen_slide_next.png); }
+#wrap > section > .scrol { position: fixed; width: 200px; height: 110px; left: 44%; background: none; outline: none; border: none; color: #fff; font-size: 16px; text-align: center; text-transform: uppercase; background-image: url(../img/spigen_slide_mouse.png); background-position: center top; background-repeat: no-repeat; opacity: 0.3; animation-name: scroll; animation-duration: 0.7s; animation-iteration-count: infinite; animation-direction: alternate; animation-timing-function: linear; }
+@media screen and (max-width: 1200px) { #wrap > section > .scrol { display: none; } }
+#wrap > section > .medBlog { height: 480px; display: flex; flex-direction: row; flex-wrap: nowrap; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog { display: initial; } }
+#wrap > section > .medBlog > .left { width: 35%; padding: 100px 40px 0 150px; box-sizing: border-box; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .left { width: 100%; padding: 40px; } }
+#wrap > section > .medBlog > .left > .bar { width: 40px; height: 1px; background-color: #777; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .left > .bar { margin: 0 auto; } }
+#wrap > section > .medBlog > .left > h2 { margin: 40px 0; font-size: 40px; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .left > h2 { text-align: center; } }
+#wrap > section > .medBlog > .left > p { color: #777; font-size: 18px; word-break: keep-all; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .left > p { text-align: center; } }
+#wrap > section > .medBlog > .right { position: relative; width: 65%; padding: 100px 20px 40px 50px; box-sizing: border-box; background-color: #f1f1f1; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .right { width: 100%; padding: 40px 3%; height: 520px; } }
+@media screen and (max-width: 1000px) { #wrap > section > .medBlog > .right { height: 430px; } }
+#wrap > section > .medBlog > .right > .label { display: flex; flex-direction: row; flex-wrap: nowrap; }
+#wrap > section > .medBlog > .right > .label > li { width: 160px; margin: 0 12px 30px 0; }
+#wrap > section > .medBlog > .right > .label > li > a { display: block; height: 50px; color: #a6a6a6; font-weight: 500; font-size: 16px; line-height: 50px; text-align: center; border: 1px solid #a6a6a6; }
+#wrap > section > .medBlog > .right > .label > li.on > a { color: #fff; background-color: #ff5a00; border: 1px solid #ff5a00; }
+#wrap > section > .medBlog > .right > .media, #wrap > section > .medBlog > .right > .blog { position: absolute; width: 94%; left: 50px; top: 180px; display: none; cursor: pointer; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .right > .media, #wrap > section > .medBlog > .right > .blog { top: 130px; left: 3%; } }
+#wrap > section > .medBlog > .right > .media.on, #wrap > section > .medBlog > .right > .on.blog { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; }
+#wrap > section > .medBlog > .right > .media > .frame, #wrap > section > .medBlog > .right > .blog > .frame { float: left; width: 32%; background-size: cover; background-repeat: no-repeat; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .right > .media > .frame, #wrap > section > .medBlog > .right > .blog > .frame { width: 48%; } }
+#wrap > section > .medBlog > .right > .media > .frame:nth-child(1), #wrap > section > .medBlog > .right > .blog > .frame:nth-child(1) { background-image: url(../img/spigen_media_1.jpg); }
+#wrap > section > .medBlog > .right > .media > .frame:nth-child(2), #wrap > section > .medBlog > .right > .blog > .frame:nth-child(2) { background-image: url(../img/spigen_media_2.jpg); }
+#wrap > section > .medBlog > .right > .media > .frame:nth-child(3), #wrap > section > .medBlog > .right > .blog > .frame:nth-child(3) { margin-right: 0; background-image: url(../img/spigen_media_3.jpg); }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .right > .media > .frame:nth-child(3), #wrap > section > .medBlog > .right > .blog > .frame:nth-child(3) { display: none; } }
+#wrap > section > .medBlog > .right > .media > .frame > .shadow, #wrap > section > .medBlog > .right > .blog > .frame > .shadow { width: 100%; height: 210px; background-color: rgba(0, 0, 0, 0.5); transition: all 0.4s; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .right > .media > .frame > .shadow, #wrap > section > .medBlog > .right > .blog > .frame > .shadow { height: 350px; } }
+@media screen and (max-width: 1000px) { #wrap > section > .medBlog > .right > .media > .frame > .shadow, #wrap > section > .medBlog > .right > .blog > .frame > .shadow { height: 270px; } }
+#wrap > section > .medBlog > .right > .media > .frame > .shadow:hover, #wrap > section > .medBlog > .right > .blog > .frame > .shadow:hover { background-color: rgba(0, 0, 0, 0.2); }
+#wrap > section > .medBlog > .right > .media > .frame > .shadow > h3, #wrap > section > .medBlog > .right > .blog > .frame > .shadow > h3 { overflow: hidden; margin: 0 20px; white-space: nowrap; text-overflow: ellipsis; color: #fff; font-size: 18px; font-weight: 600; }
+#wrap > section > .medBlog > .right > .media > .frame > .shadow > h3:before, #wrap > section > .medBlog > .right > .blog > .frame > .shadow > h3:before { display: block; margin: 30px 0 70px 0; content: "MEDIA"; }
+@media screen and (max-width: 1200px) { #wrap > section > .medBlog > .right > .media > .frame > .shadow > h3:before, #wrap > section > .medBlog > .right > .blog > .frame > .shadow > h3:before { margin: 30px 0 220px 0; } }
+@media screen and (max-width: 1000px) { #wrap > section > .medBlog > .right > .media > .frame > .shadow > h3:before, #wrap > section > .medBlog > .right > .blog > .frame > .shadow > h3:before { margin: 30px 0 140px 0; } }
+#wrap > section > .medBlog > .right > .media > .frame > .shadow > p, #wrap > section > .medBlog > .right > .blog > .frame > .shadow > p { margin: 20px; color: #ccc; font-size: 16px; }
+#wrap > section > .medBlog > .right > .blog { z-index: 0; }
+#wrap > section > .medBlog > .right > .blog > .frame:nth-child(1) { background-image: url(../img/spigen_blog_1.jpg); }
+#wrap > section > .medBlog > .right > .blog > .frame:nth-child(2) { background-image: url(../img/spigen_blog_2.jpg); }
+#wrap > section > .medBlog > .right > .blog > .frame:nth-child(3) { background-image: url(../img/spigen_blog_3.jpg); }
+#wrap > section > .medBlog > .right > .blog > .frame > .shadow > h3:before { content: "BLOG"; }
+#wrap > section > .aboutCar { height: 400px; display: flex; flex-direction: row; flex-wrap: nowrap; }
+@media screen and (max-width: 800px) { #wrap > section > .aboutCar { flex-wrap: wrap; } }
+#wrap > section > .aboutCar > article { width: 50%; background-repeat: no-repeat; background-size: 100% 100%; }
+@media screen and (max-width: 800px) { #wrap > section > .aboutCar > article { width: 100%; } }
+#wrap > section > .aboutCar > article:nth-child(1) { background-image: url(../img/spigen_mid_about.jpg); }
+#wrap > section > .aboutCar > article:nth-child(2) { background-image: url(../img/spigen_mid_careers.jpg); }
+#wrap > section > .aboutCar > article > h2 { margin-top: 100px; color: #ff5a00; font-size: 24px; text-align: center; }
+@media screen and (max-width: 800px) { #wrap > section > .aboutCar > article > h2 { margin-top: 20px; } }
+#wrap > section > .aboutCar > article > p { margin: 20px 0; color: #fff; font-size: 17px; line-height: 1.6; text-align: center; }
+#wrap > section > .aboutCar > article > button { width: 180px; height: 45px; background: none; outline: none; color: #fff; font-size: 18px; text-align: center; border: 1px solid #fff; border-radius: 28px; transition: all .5s; margin-left: calc(50% - 90px); }
+#wrap > section > .aboutCar > article > button:hover { background-color: #ff5a00; border: 1px solid #ff5a00; }
+@media screen and (max-width: 800px) { #wrap > section > .aboutCar > article > button { margin-bottom: 20px; } }
+#wrap > section > .ir { padding: 80px 0 60px; background-image: url(../img/spigen_ir_bg.jpg); background-size: cover; background-repeat: no-repeat; }
+@media screen and (max-width: 1200px) { #wrap > section > .ir { padding: 80px 0 40px; } }
+#wrap > section > .ir > h2 { color: #fff; font-size: 40px; text-align: center; }
+#wrap > section > .ir > p { margin-top: 20px; color: #fff; font-size: 17px; text-align: center; }
+#wrap > section > .ir > .case { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly; margin-top: 60px; }
+@media screen and (max-width: 800px) { #wrap > section > .ir > .case { flex-wrap: wrap; } }
+#wrap > section > .ir > .case > article { position: relative; overflow: hidden; width: 30%; height: 40%; background-repeat: no-repeat; background-position: center center; background-size: cover; cursor: pointer; }
+@media screen and (max-width: 1000px) { #wrap > section > .ir > .case > article { height: 255px; } }
+@media screen and (max-width: 800px) { #wrap > section > .ir > .case > article { width: 51%; height: 330px; margin-bottom: 40px; } }
+#wrap > section > .ir > .case > article:nth-child(1) { background-image: url(../img/spigen_ir_1.jpg); }
+#wrap > section > .ir > .case > article:nth-child(2) { background-image: url(../img/spigen_ir_2.jpg); }
+#wrap > section > .ir > .case > article:nth-child(3) { background-image: url(../img/spigen_ir_3.jpg); }
+#wrap > section > .ir > .case > article > h3 { height: 70px; margin-top: 350px; color: #fff; font-weight: 600; font-size: 20px; line-height: 70px; text-align: center; background-color: rgba(0, 0, 0, 0.5); }
+@media screen and (max-width: 1200px) { #wrap > section > .ir > .case > article > h3 { margin-top: 230px; } }
+@media screen and (max-width: 1000px) { #wrap > section > .ir > .case > article > h3 { height: 40px; font-size: 18px; line-height: 40px; margin-top: 215px; } }
+@media screen and (max-width: 800px) { #wrap > section > .ir > .case > article > h3 { height: 70px; margin-top: 260px; font-size: 20px; line-height: 70px; } }
+#wrap > section > .ir > .case > article > .txt { display: none; position: absolute; left: 0; top: 350px; width: 100%; height: 340px; padding-top: 80px; background-color: rgba(0, 0, 0, 0.7); }
+@media screen and (max-width: 1200px) { #wrap > section > .ir > .case > article > .txt { padding-top: 40px; } }
+@media screen and (max-width: 1000px) { #wrap > section > .ir > .case > article > .txt { padding-top: 80px; } }
+#wrap > section > .ir > .case > article > .txt > h4 { height: 70px; color: #ff5a00; font-weight: 600; font-size: 24px; line-height: 70px; text-align: center; }
+@media screen and (max-width: 1000px) { #wrap > section > .ir > .case > article > .txt > h4 { font-size: 18px; } }
+@media screen and (max-width: 1000px) { #wrap > section > .ir > .case > article > .txt > h4 { font-size: 24px; } }
+#wrap > section > .ir > .case > article > .txt > p { padding: 60px 20px; color: #fff; font-size: 18px; font-weight: 600; line-height: 1.8; text-align: center; word-break: keep-all; }
+@media screen and (max-width: 1200px) { #wrap > section > .ir > .case > article > .txt > p { padding: 20px 20px; } }
+@media screen and (max-width: 1000px) { #wrap > section > .ir > .case > article > .txt > p { font-size: 15px; } }
+#wrap > section > .contact { padding-top: 135px; background-image: url(../img/spigen_contact_bg.jpg); background-position: -160px 0; background-repeat: no-repeat; background-size: cover; }
+#wrap > section > .contact > h2 { margin-bottom: 40px; color: #ccc; font-size: 41px; text-align: center; }
+#wrap > section > .contact > button { margin-left: calc(50% - 110px); width: 180px; height: 45px; background: none; outline: none; color: #fff; font-size: 18px; text-align: center; border: 1px solid #fff; border-radius: 28px; transition: all .5s; width: 220px; height: 60px; font-size: 22px; border-radius: 30px; }
+#wrap > section > .contact > button:hover { background-color: #ff5a00; border: 1px solid #ff5a00; }
+#wrap > section > .contact > ol { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; margin: 0 10%; }
+@media screen and (max-width: 1200px) { #wrap > section > .contact > ol { flex-wrap: wrap; } }
+#wrap > section > .contact > ol > li { width: 20%; margin-top: 40px; transition: all .2s; }
+@media screen and (max-width: 1200px) { #wrap > section > .contact > ol > li { width: 50%; } }
+#wrap > section > .contact > ol > li:hover { margin-top: 20px; }
+#wrap > section > .contact > ol > li:nth-child(1) > a { background-image: url(../img/spigen_contact_rfp.png); }
+#wrap > section > .contact > ol > li:nth-child(2) > a { background-image: url(../img/spigen_contact_mkt.png); }
+#wrap > section > .contact > ol > li:nth-child(3) > a { background-image: url(../img/spigen_contact_cs.png); }
+#wrap > section > .contact > ol > li:nth-child(4) > a { background-image: url(../img/spigen_contact_opening.png); }
+#wrap > section > .contact > ol > li > a { display: block; padding-top: 170px; height: 130px; color: #fff; font-weight: 700; font-size: 24px; text-align: center; background-position: center 40px; background-repeat: no-repeat; }
+#wrap > section > .contact > ol > li > a > span { display: block; margin-top: 20px; color: #777; font-weight: normal; font-size: 18px; color: #ccc; opacity: 0.7; }
+#wrap > footer { position: relative; padding-bottom: 40px; background-color: #202020; }
+#wrap > footer > button { position: absolute; right: 30px; top: -35px; z-index: 2; width: 70px; height: 70px; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; background-image: url(../img/spigen_footer_gotop.jpg); border: none; outline: none; }
+#wrap > footer > .fam { position: absolute; overflow: hidden; right: 30px; top: -250px; width: 250px; height: 367px; }
+@media screen and (max-width: 1000px) { #wrap > footer > .fam { right: 50%; margin-right: -125px; } }
+#wrap > footer > .fam > li { position: relative; left: 0; top: 305px; width: 250px; height: 62px; }
+#wrap > footer > .fam > li > a { position: relative; left: 0; bottom: 0; z-index: 90; display: block; border: 1px solid #555; height: 60px; color: #777; font-size: 16px; line-height: 60px; text-align: center; background-color: #202020; }
+#wrap > footer > .fam > li > a > span { display: inline-block; width: 12px; height: 60px; margin-left: 80px; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; background-image: url(../img/spigen_fam_arr.png); background-position: center center; background-size: 100%; }
+#wrap > footer > .fam > li > ol { position: absolute; left: 0; top: 0; z-index: 10; }
+#wrap > footer > .fam > li > ol > li { width: 250px; }
+#wrap > footer > .fam > li > ol > li > a { display: block; height: 60px; color: #777; font-size: 16px; line-height: 60px; text-indent: 35px; border: 1px solid #555; border-bottom: none; background-color: #202020; }
+#wrap > footer > h2.logo { width: 200px; margin-left: 60px; padding: 60px 0; }
+@media screen and (max-width: 1000px) { #wrap > footer > h2.logo { padding: 140px 0 20px; margin: 0 auto; } }
+#wrap > footer > h2.logo > a { display: block; height: 44px; text-indent: -9999px; background-position: center center; background-repeat: no-repeat; background-image: url(../img/spigen_footer_logo.png); }
+#wrap > footer > address { margin-left: 60px; color: #777; font-size: 15px; }
+@media screen and (max-width: 1000px) { #wrap > footer > address { margin: 0 auto; text-align: center; } }
+#wrap > footer > address > a { color: #fff; font-weight: 500; line-height: 2; }
+#wrap > footer > address > a + span { display: inline-block; padding: 0 16px; color: #fff; }
+#wrap > footer > address > pre > a { color: #777; font-size: 15px; }
+
+/*# sourceMappingURL=index.css.map */

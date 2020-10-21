@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도도리사이클</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/dodomenu.css">
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/dodo.js"></script>
+</head>
+
+<body id="menu">
+  <div id="wrap">
+    <header>
+      <h1 class="logo"><a href="#">도도리사이클</a></h1>
+      <button class="myPage">기타 메뉴</button>
+      <button class="srch">검색</button>
+    </header>
+    <section>
+      <h2 class="sr-only">메뉴 상세보기</h2>
+      <ul class="lnb clear">
+        <li><a href="#">OX 퀴즈</a></li>
+        <li><a href="#">다회용기<br />사용</a></li>
+        <li><a href="#">리사이클<br />챌린지</a></li>
+      </ul>
+      <ul class="lnb clear">
+        <li class="on"><a href="#">분리배출<br />요령</a></li>
+        <li><a href="#">업사이클링</a></li>
+        <li><a href="#">브랜드<br />캠페인</a></li>
+      </ul>
+      <ul class="lnb clear on">
+        <li class="on"><a href="#">나누어요</a></li>
+        <li><a href="#">필요해요</a></li>
+        <li><a href="#">나의 활동</a></li>
+      </ul>
+      <article class="plaPt">
+        <h2>플라스틱 포인트란?</h2>
+        <p>
+          일상생활에서 편리하고 쉽게 쓰이는 플라스틱과 일회용품<br />
+          우리의 생명을 위협하러 다시 되돌아 옵니다.<br />
+          <br />
+          플라스틱과 일회용품 사용을 줄이고 포인트를 쌓아 <br />
+          꼬부기를 구해주세요!
+        </p>
+      </article>
+      <article class="oxQuiz">
+        <h2 class="sr-only">OX 퀴즈</h2>
+        <p>플라스틱은 원래 나무를 보호하려고 사용하기 시작했다?</p>
+        <div class="btn">
+          <button class="yes">O 그렇다</button>
+          <button class="no">X 아니다</button>
+        </div>
+        <p>10 초</p>
+      </article>
+      <article class="oxAnswer">
+        <h2 class="sr-only">OX 정답</h2>
+        <p>처음 플라스틱을 발견한 과학자는 종이의 원료인 나무가 모두 사라질 것을 걱정하여 플라스틱을 사용하기 시작했어.<br />
+          하지만 미국 슈퍼마켓들이 종이백을 모두 플라스틱으로 대체하면서 쓰레기 문제가 심각해지기 시작했지..</p>
+        <div class="next">
+          <p>10 적립 | <a href="#">다음 문제</a></p>
+        </div>
+      </article>
+      <article class="reuse">
+        <h2 class="sr-only">다회용기 인증 쿠폰</h2>
+        <div class="stamp">
+          <ul class="clear">
+            <li>다회용기 인증<span>인증 완료</span></li>
+            <li>다회용기 인증<span>인증 완료</span></li>
+            <li>다회용기 인증<span>인증 완료</span></li>
+            <li>다회용기 인증<span>인증 완료</span></li>
+            <li>다회용기 인증<span>인증 완료</span></li>
+            <li>다회용기 인증</li>
+            <li>다회용기 인증</li>
+            <li>다회용기 인증</li>
+            <li>다회용기 인증</li>
+            <li>다회용기 인증</li>
+          </ul>
+        </div>
+        <div class="book">
+          <p>
+            <button>이전</button>
+            <span class="curP">3</span>/<span class="total">10</span>
+            <button>다음</button>
+          </p>
+        </div>
+      </article>
+      <article class="chl">
+        <h2>장바구니 챌린지</h2>
+        <div class="month">
+          <p>
+            <button>이전</button>
+            <span class="curP">7월</span>
+            <button>다음</button>
+          </p>
+        </div>
+        <div class="bar">
+          <span>전체글</span>
+          <button>앨범형</button>
+          <button>게시글형</button>
+          <button>리스트형</button>
+        </div>
+        <div class="best">
+          <a href="#">
+            <img src="./images/dodo_chl_best.png" alt="이달의 베스트">
+          </a>
+          <p><span class="sr-only">좋아요 갯수 </span><span class="count">1,024</span></p>
+        </div>
+        <div class="album">
+          <ul>
+            <li><a href="#">아이와 장바구니<span>좋아요</span></a></li>
+            <li><a href="#">백화점 장바구니<span>좋아요</span></a></li>
+            <li><a href="#">여러 장바구니<span>좋아요</span></a></li>
+            <li><a href="#">장보기 장바구니<span>좋아요</span></a></li>
+            <li><a href="#">노랑 장바구니<span>좋아요</span></a></li>
+            <li><a href="#">야채가득 장바구니<span>좋아요</span></a></li>
+          </ul>
+        </div>
+        <button class="write">도전하기</button>
+      </article>
+      <article class="chlCont">
+        <h2>장바구니 챌린지</h2>
+        <div class="bar">
+          <p><span class="sr-only">좋아요 갯수 </span><span class="count">1,024</span></p>
+          <button>공유하기</button>
+          <button class="cls">닫기</button>
+        </div>
+        <div class="contents">
+          <img src="./images/dodo_chlcont_pht.png" alt="맘카페 회원과 장">
+          <div class="txt">
+            <span class="userpf">한겨울</span>
+            <h2>맘카페 회원들과 함께 장 봤어요!</h2>
+            <p>2019년 7월 3일 금요일은 정말정말 뜻깊었던 날!!
+              바로바로 우리 시흥 장현지구 맘카페 첫 정모가 있었던 날이
+              었어요. <br />
+              모두 서로 처음 만나는 사이이기에 어색함이 한가득! 하지
+              만 아줌마 특유의 임담이라고나 할까요?!!!<br />
+              만난 지 딱 3분만에 신상정보 모두 접수하고 아이 이야기로
+              폭풍수다를 떨고 장도 함께 봤어요. <br />
+              미리 이야기 하지 않았는데도 다들 장바구니를 가지고 나오
+              셨더라구요! 다 함께 장바구니 챌리지 한컷 했습니다!</p>
+          </div>
+        </div>
+      </article>
+      <article class="Tip gbg">
+        <h2 class="sr-only">분리배출 요령</h2>
+        <ul>
+          <li><a href="#"><span>음식물 쓰레기</span></a></li>
+          <li><a href="#"><span>종이</span></a></li>
+          <li><a href="#"><span>플라스틱</span></a></li>
+          <li><a href="#"><span>캔/고철</span></a></li>
+          <li><a href="#"><span>유리</span></a></li>
+          <li><a href="#"><span>가전제품</span></a></li>
+        </ul>
+      </article>
+      <article class="Tip upcycle">
+        <h2 class="sr-only">업사이클링 요령</h2>
+        <ul>
+          <li><a href="#"><span>코르크마개 화분</span></a></li>
+          <li><a href="#"><span>스패너 옷걸이</span></a></li>
+          <li><a href="#"><span>방수포 에코백</span></a></li>
+          <li><a href="#"><span>헌옷 뜨개질</span></a></li>
+          <li><a href="#"><span>공병 조명</span></a></li>
+          <li><a href="#"><span>페트병 필통</span></a></li>
+        </ul>
+      </article>
+      <article class="Tip brCamp">
+        <h2 class="sr-only">브랜드 캠페인</h2>
+        <ul>
+          <li><a href="#"><span>이니스프리<br />공병수거 캠페인</span></a></li>
+          <li><a href="#"><span>K2<br />리사이클 유어 다운</span></a></li>
+          <li><a href="#"><span>에이치엔엠<br />의류 수거 프로젝트</span></a></li>
+          <li><a href="#"><span>빙그레 바나나맛우유<br />분바스틱 캠페인</span></a></li>
+          <li><a href="#"><span>현대백화점<br />리사이클 캠페인</span></a></li>
+          <li><a href="#"><span>그레고리<br />리사이클링 캠페인</span></a></li>
+        </ul>
+      </article>
+      <article class="gbgCont cont">
+        <h2 class="sr-only">팁 상세 보기</h2>
+        <div class="user">
+          <button class="save">즐겨찾기 저장하기</button>
+          <button class="share">공유하기</button>
+          <button class="cls">닫기</button>
+        </div>
+        <div class="list clear">
+          <h2 class="sr-only">분리배출 항목별 메뉴</h2>
+          <select name="sort" id="sort">
+            <option value="음식물 쓰레기">음식물 쓰레기</option>
+            <option value="종이">종이</option>
+            <option value="플라스틱" selected>플라스틱</option>
+            <option value="캔/고철">캔/고철</option>
+            <option value="유리">유리</option>
+            <option value="가전제품">가전제품</option>
+          </select>
+          <select name="plastic" id="plastic">
+            <option value="플라스틱류" selected>플라스틱류</option>
+            <option value="비닐류">비닐류</option>
+          </select>
+        </div>
+        <div class="txt">
+          <img src="./images/dodo_gbg_cont1.png" alt="페트병 플라스틱 용기 배출">
+          <p>
+            페트병과 플라스틱 용기에 든 내용물은 깨끗이 비우고, 부착 상표와 뚜껑 등 다른 재질로 된 부분은 제거합니다.
+          </p>
+          <img src="./images/dodo_gbg_cont2.png" alt="분리배출 불가시 종량제">
+          <p>알약 포장재와 카세트테이프 등 여러 재질이 섞이고 분리가 어려운 제품은 종량제 봉투에 담아 버립니다.</p>
+        </div>
+      </article>
+      <article class="upcycleCont cont">
+        <h2 class="sr-only">팁 상세 보기</h2>
+        <div class="user">
+          <button class="save">즐겨찾기 저장하기</button>
+          <button class="share">공유하기</button>
+          <button class="cls">닫기</button>
+        </div>
+        <div class="txt">
+          <h2>공병조명</h2>
+          <img src="./images/dodo_up_cont1.png" alt="공병조명">
+          <h3>준비물 : 공병, 와이어 전구, 건전지</h3>
+          <img src="./images/dodo_up_cont2.png" alt="공병조명 준비물">
+          <p>
+            어떤 병이든 가능합니다. 공병을 깨끗하게 씻은 후 완전히 말려서 준비합니다.<br />
+            마음에 드는 색깔의 와이어 전구와 건전지만 있으면 모든 준비가 끝났습니다.
+          </p>
+        </div>
+      </article>
+      <article class="brCampCont cont">
+        <h2 class="sr-only">팁 상세 보기</h2>
+        <div class="user">
+          <button class="save">즐겨찾기 저장하기</button>
+          <button class="share">공유하기</button>
+          <button class="cls">닫기</button>
+        </div>
+        <div class="txt">
+          <h2>이니스프리 공병수거 캠페인</h2>
+          <img src="./images/dodo_brand_cont1.png" alt="이니스프리 공병수거 ">
+          <h3>캠페인 참여방법</h3>
+          <table>
+            <tr>
+              <th>STEP 01</th>
+              <td>화장품을 다 사용한 공병을 지참하여 매장에 방문합니다.</td>
+            </tr>
+            <tr>
+              <th>STEP 02</th>
+              <td>뷰티포인트 통합회원으로 가입하세요.</td>
+            </tr>
+            <tr>
+              <th>STEP 03</th>
+              <td>공병 한 개당 300원씩 월 10개까지 최대 3,000원의 뷰티포인트 적립이 가능합니다. </td>
+            </tr>
+          </table>
+        </div>
+      </article>
+      <article style="display:block;" class="shareM">
+        <h2>나에게는 필요없지만 아직 더 쓸 수 있는 물건을 나누어 사용해요.</h2>
+        <div class="bar">
+          <input type="text" class="srch" placeholder="지역 / 물품 검색" />
+          <select name="sorting" id="sorting">
+            <option value="날짜">날짜순</option>
+            <option value="조회">조회순</option>
+          </select>
+        </div>
+        <ul class="list">
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_shareM_list1.png" alt="나눔물품1">
+              <h3>서울 영등포구 | 유아동<span class="saved">찜하기</span></h3>
+              <p class="comment">우리 아이 장난감 나눔해요:)</p>
+              <p class="date">장*나 | 2020.07.22</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_shareM_list2.png" alt="나눔물품2">
+              <h3>부산 중구 | 유아동<span class="saved">찜하기</span></h3>
+              <p class="comment">작아서 못 입는 3세 여아 옷</p>
+              <p class="date">조*진 | 2020.07.22</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_shareM_list3.png" alt="나눔물품3">
+              <h3>서울 노원구 | 가전/가구<span class="unsaved">찜하기</span></h3>
+              <p class="comment">이사하면서 가구 정리해요</p>
+              <p class="date">박*혁 | 2020.07.21</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_shareM_list4.png" alt="나눔물품4">
+              <h3>인천 서구 | 취미/운동<span class="unsaved">찜하기</span></h3>
+              <p class="comment">텃밭 야채와 꽃 씨앗</p>
+              <p class="date">권*숙 | 2020.07.21</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_shareM_list5.png" alt="나눔물품5">
+              <h3>경기도 양평군 | 도서<span class="unsaved">찜하기</span></h3>
+              <p class="comment">안 읽는 책</p>
+              <p class="date">김*수 | 2020.07.21</p>
+            </a>
+          </li>
+
+        </ul>
+        <button class="write">나누기</button>
+      </article>
+      <article class="shareCont">
+        <h2>나에게는 필요없지만 아직 더 쓸 수 있는 물건을 나누어 사용해요.</h2>
+        <div class="bar">
+          <button>찜하기</button>
+          <button>공유하기</button>
+          <button class="cls">닫기</button>
+        </div>
+        <div class="contents">
+          <img src="./images/dodo_shareM_pht.png" alt="디자인 책 팔기">
+          <div class="txt">
+            <span class="userpf">한겨울</span>
+            <h2>디자인 관련 책 필요하신 분~</h2>
+            <h3>한*울 | 서울 강서구</h3>
+            <p>자격증 준비하면서 봤던 디자인 책 나눔합니다. <br />
+              사진 보시는 대로 인디자인과 포토샵 책들이구요. 안에 간단한 메모들이 되어 있긴하지만 대부분 작년에 구입한거라 보시는데 크게 문제는 없을거에요!</p>
+          </div>
+        </div>
+        <button class="write"><span>contact</span>연락하기</button>
+      </article>
+      <article class="needM">
+        <h2>이 물건이 더이상 필요하지 않다면 저에게 나누어주세요.</h2>
+        <div class="bar">
+          <input type="text" class="srch" placeholder="지역 / 물품 검색" />
+          <select name="sorting2" id="sorting2">
+            <option value="날짜">날짜순</option>
+            <option value="조회">조회순</option>
+          </select>
+        </div>
+        <ul class="list">
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_needM_icon1.png" alt="필요물품1" />
+              <h3>서울 영등포 | 자전거 보호대</h3>
+              <p class="date">문*경<span>contact</span> | 2020.07.22</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_needM_icon2.png" alt="필요물품2" />
+              <h3>제주 서귀포 | 거실용 소파</h3>
+              <p class="date">고*원<span>contact</span>| 2020.07.22</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_needM_icon3.png" alt="필요물품3" />
+              <h3>경남 밀양시 | 초등생 위인전</h3>
+              <p class="date">이*순<span>contact</span>| 2020.07.22</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_needM_icon4.png" alt="필요물품4" />
+              <h3>이*순 | 2020.07.22</h3>
+              <p class="date">강*숙<span>contact</span>| 2020.07.21</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_needM_icon3.png" alt="필요물품5" />
+              <h3>서울 노원 | 토익 시험문제집</h3>
+              <p class="date">이*연<span>contact</span>| 2020.07.21</p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="each clear">
+              <img src="./images/dodo_needM_icon4.png" alt="필요물품6" />
+              <h3>서울 은평 | 아기 장난감 동화</h3>
+              <p class="date">하*진<span>contact</span>| 2020.07.21</p>
+            </a>
+          </li>
+        </ul>
+        <button class="write">요청하기</button>
+
+      </article>
+      <article class="myM">
+        <h2 class="sr-only">전체 게시글 모아보기</h2>
+        <h2>게시글</h2>
+        <div class="myCont">
+          <table>
+            <colgroup>
+              <col style="width:20%;">
+              <col style="width:55%;">
+              <col style="width:25%;">
+            </colgroup>
+            <tr>
+              <th scope="col">게시판</th>
+              <th>제목</th>
+              <th>날짜순 ▼ </th>
+            </tr>
+            <tr>
+              <td>나누어요</td>
+              <td>디자인 관련 책 필요하신 분~</td>
+              <td>2020.07.22</td>
+            </tr>
+          </table>
+          <button class="more"> 더보기 ▶</button>
+        </div>
+        <h2>북마크</h2>
+        <div class="bookmark">
+          <table>
+            <colgroup>
+              <col style="width:20%;">
+              <col style="width:55%;">
+              <col style="width:25%;">
+            </colgroup>
+            <tr>
+              <th>게시판</th>
+              <th>제목</th>
+              <th>날짜순 ▼ </th>
+            </tr>
+            <tr>
+              <td>나누어요</td>
+              <td>우리 아이 장난감 나눔해요:)</td>
+              <td>2020.07.22</td>
+            </tr>
+            <tr>
+              <td>나누어요</td>
+              <td>작아서 못 입는 3세 여아 옷</td>
+              <td>2020.07.22</td>
+            </tr>
+          </table>
+          <button class="more"> 더보기 ▶</button>
+        </div>
+        <h2>메시지</h2>
+        <div class="msg">
+          <table>
+            <colgroup>
+              <col style="width:15%;">
+              <col style="width:60%;">
+              <col style="width:25%;">
+            </colgroup>
+            <tr>
+              <td>조*진</td>
+              <td>저희 아기는 키가 좀 작은 편인데 이 옷 입었을 때 기장이 많이 길진 않았어요</td>
+              <td>2020.07.22</td>
+            </tr>
+            <tr>
+              <td>이*현</td>
+              <td>맛있는 인디자인 CS6가 필요합니다. 아직 나눔 중이신가요?</td>
+              <td>2020.07.22</td>
+            </tr>
+          </table>
+          <button class="more"> 더보기 ▶</button>
+        </div>
+      </article>
+    </section>
+    <nav>
+      <ul class="gnb">
+        <li><a href="#"><span class="icon"></span><span>플라스틱<br />포인트</span></a></li>
+        <li><a href="#"><span class="icon"></span><span>생활<br />꿀팁</span></a></li>
+        <li class="on"><a href="#"><span class="icon"></span><span>나눔<br />마켓</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+
+</html>

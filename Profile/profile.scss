@@ -1,0 +1,613 @@
+@charset 'UTF-8';
+@import url(../css/reset.css);
+@import './fragment/var';
+
+// hide scrollbar
+::-webkit-scrollbar {
+	width: 0;
+}
+#wrap {
+	position: relative;
+	min-width: 1280px;
+	min-height: 800px;
+	max-height: 800px;
+	margin: 0 auto;
+	font-family: 'roboto';
+	color: $fontCol;
+	> header {
+		@include pos(fixed,calc((100% - 1280px) /2),0,1000);
+		width: 240px;
+		height: 800px;
+		background-color: rgba(255, 255, 255, 0.8);
+		> h1.logo {
+			width: 144px;
+			margin: 0 auto;
+			@include irSet();
+			background-image: url(../img/profile_h1_logo2.png);
+			background-size: contain;
+			> a {
+				display: block;
+				height: 96px;
+			}
+		}
+		> nav {
+			width: 160px;
+			margin: 0 auto;
+			font-weight: 700;
+			font-size: 20px;
+			> .gnb {
+				> li {
+					width: 27px;
+					overflow: hidden;
+					transition: all .5s;
+					&:first-child {
+						width: 20px;
+					}
+					> a {
+						height: 48px;
+						display: block;
+						font-size: 30px;
+						line-height: 48px;
+						transition: all .5s;
+						> .small {
+							font-size: 18px;
+						}
+					}
+
+					&.on,
+					&:hover {
+						width: 100%;
+						> a {
+							color: $mainCol;
+						}
+					}
+				}
+			}
+		} //end of nav
+		> .blueB {
+			@include pos(absolute,0,55%,900);
+			width: 240px;
+			height: 240px;
+			background-repeat: no-repeat;
+			background-image: url(../img/profile_main_bb1.png);
+		}
+		> address {
+			margin-left: 24px;
+			font-weight: 500;
+			@include pos(absolute,0,85%,900);
+			line-height: 1.6;
+		}
+	} //end of header
+	> section {
+		height: 9800px; //800*11article + 1000
+		> article {
+			display: none;
+			height: 800px;
+		}
+		> .home {
+			display: block;
+			@include articleSet();
+			background-image: url(../img/profile_main_bgTrans50.png);
+			> .txtBox {
+				display: none;
+				width: 500px;
+				height: 500px;
+				margin: 10% calc((100% - 250px) /2);
+				outline: 10px solid #fff;
+				> p {
+					display: none;
+					height: 60px;
+					margin: 16px auto;
+					color: #fff;
+					font-size: 56px;
+					font-family: 'Secular One', sans-serif;
+					font-weight: 900;
+					text-align: center;
+					line-height: 60px;
+					&:first-child {
+						padding-top: 160px;
+					}
+				}
+			}
+		} //end of .home
+		> .who {
+			@include articleSet();
+			background-image: url(../img/profile_who_bgTrans40.png);
+			> .who_cont {
+				@include flexSet(row,wrap);
+				justify-content: space-between;
+				align-content: space-between;
+				width: 850px;
+				height: 600px;
+				margin: 32px 0 0 335px;
+				font-size: 16px;
+				font-weight: 600;
+				> div {
+					@include bgcOut();
+					@include pad24();
+					> h3 {
+						font-size: 20px;
+						font-weight: 800;
+						margin: 16px 0;
+						text-shadow: 0 0 16px #fff;
+					}
+				}
+				> .left {
+					width: 580px;
+					height: 400px;
+					animation-name: spin1;
+					animation-duration: 1.5s;
+					animation-fill-mode: forwards;
+					opacity: 0;
+					> p {
+						margin-left: 32px;
+						> .uiuxClass {
+							display: inline-block;
+							@include irSet();
+							width: 24px;
+							height: 24px;
+							margin: -8px 0 0 4px;
+							background-image: url(../img/profile_who_newtab.png);
+						}
+					}
+				}
+				> .right {
+					width: 220px;
+					height: 400px;
+					text-align: center;
+					animation-name: spin2;
+					animation-duration: 1.5s;
+					animation-delay: 1s;
+					animation-fill-mode: forwards;
+					opacity: 0;
+					> p {
+						word-break: keep-all;
+						padding: 12px 0;
+					}
+				}
+				> .bottom {
+					width: 850px;
+					height: 150px;
+					@include flexSet(row,nowrap);
+					justify-content: space-between;
+					animation-name: spin3;
+					animation-duration: 2.5s;
+					animation-delay: 1s;
+					animation-fill-mode: forwards;
+					opacity: 0;
+					> div {
+						> h3 {
+							margin: 8px 0;
+						}
+						> ul {
+							@include flexSet(row,nowrap);
+
+							> li {
+								> img {
+									display: block;
+									padding: 0 8px;
+								}
+							}
+						}
+					}
+				}
+			} //end of .who_cont;
+		} //  end of .who
+		> .whatdo {
+			background-image: url(../img/profile_whatdo_bgTrans50.png);
+			@include articleSet();
+			> .thumbNav {
+				@include flexSet();
+				justify-content: space-around;
+				width: 920px;
+				height: 60px;
+				margin-left: 300px;
+				background-image: url(../img/profile_whatdone_navBar.png);
+				background-size: 100% 100%;
+				> li {
+					padding: 0 16px;
+					> a {
+						display: block;
+						font-size: 20px;
+						font-weight: 800;
+						line-height: 60px;
+						color: rgba($color: #313131, $alpha: 0.2);
+					}
+					&.on > a,
+					&:hover > a {
+						color: $mainCol;
+					}
+				}
+			} //end of .thumbNav
+			> .contCon {
+				overflow: hidden;
+				width: 1280px;
+				height: 560px;
+				> .contents {
+					width: calc(1280px * 7);
+					> li {
+						float: left;
+						@include flexSet(row,wrap);
+						justify-content: space-between;
+						width: 850px;
+						margin: 32px 95px 0 335px;
+						> .frame {
+							width: 580px;
+							@include pad24();
+							@include bgcOut();
+							> img {
+								display: block;
+								width: 532px;
+								height: auto;
+							}
+						} //end of .frame
+						> .txt {
+							width: 220px;
+							@include pad24();
+							@include bgcOut();
+							> h2 {
+								height: 40px;
+								margin-bottom: 24px;
+								@include irSet();
+							}
+							> ol.txt {
+								> li {
+									height: 24px;
+									font-size: 14px;
+									font-weight: 700;
+									line-height: 24px;
+								}
+							}
+							> h3 {
+								margin: 24px 0;
+								font-weight: 800;
+								font-size: 18px;
+								text-align: center;
+							}
+						} //end of .txt
+						> .btn {
+							width: 100%;
+							margin-top: 50px;
+							> a {
+								@include bgcOut();
+								display: inline-block;
+								width: 160px;
+								height: 40px;
+								font-size: 18px;
+								font-weight: 700;
+								line-height: 40px;
+								text-align: center;
+								&:hover {
+									color: $mainCol;
+								}
+								&:first-child {
+									margin: 0 50px 0 240px;
+								}
+							}
+						}
+						&:nth-child(1) h2.logo {
+							background-image: url(../img/profile_whatdo_thumb1.png);
+						}
+						&:nth-child(2) h2.logo {
+							background-image: url(../img/profile_whatdo_thumb2.png);
+						}
+						&:nth-child(3) h2.logo {
+							background-image: url(../img/profile_whatdo_thumb3.png);
+						}
+						&:nth-child(4) h2.logo {
+							background-image: url(../img/profile_whatdo_thumb4.png);
+						}
+						&:nth-child(5) h2.logo {
+							background-image: url(../img/profile_whatdo_thumb5.png);
+						}
+						&:nth-child(6) h2.logo {
+							background-image: url(../img/profile_whatdo_thumb6.png);
+						}
+						&:nth-child(7) h2.logo {
+							background-image: url(../img/profile_whatdo_thumb7.png);
+						}
+					}
+				}
+			}
+			> .shadow {
+				display: none;
+				@include pos(absolute,325px,160px,100);
+				@include pad24();
+				width: 870px;
+				height: 550px;
+				overflow-y: auto;
+				background-color: rgba(0, 0, 0, 0.9);
+				> img {
+					display: block;
+					width: 100%;
+					height: auto;
+					margin-top: -20px;
+					@include pos(relative,0,0,initial);
+				}
+				> button {
+					display: block;
+					width: 16px;
+					height: 16px;
+					@include pos(sticky,100%,0,110);
+					@include btnReset();
+					@include irSet();
+					background-image: url(../img/profile_whatdo_cls.png);
+				}
+			}
+		} //end of .whatdo
+		> .whatdone {
+			background-image: url(../img/profile_whatdo_bg2Trans50.png);
+			@include articleSet();
+			> .thumbNav {
+				@include flexSet();
+				justify-content: space-around;
+				width: 700px;
+				height: 60px;
+				margin-left: 410px;
+				background-image: url(../img/profile_whatdone_navBar.png);
+				background-size: 100% 100%;
+				> li {
+					padding: 0 16px;
+					> a {
+						display: block;
+						font-size: 20px;
+						font-weight: 800;
+						line-height: 60px;
+						color: rgba($color: #313131, $alpha: 0.2);
+					}
+					&.on > a,
+					&:hover > a {
+						color: $mainCol;
+					}
+				}
+			} //end of .thumbNav
+			> .ulFrame {
+				overflow: hidden;
+				width: 600px;
+				margin: 16px 0 0 460px;
+				@include bgcOut();
+				> .ulCont {
+					width: 1800px;
+					> ul {
+						float: left;
+					}
+					> ul.travel {
+						width: 600px;
+						height: 600px;
+						background-color: rgba(255, 255, 255, 0.6);
+						@include pad24();
+						@include flexSet(row,wrap);
+						justify-content: space-between;
+						align-content: space-between;
+						position: relative;
+						> li {
+							width: 120px;
+							background-repeat: no-repeat;
+							background-position: center center;
+							background-size: cover;
+							> a {
+								display: block;
+								height: 76px;
+								padding-top: 44px;
+								color: $mainCol;
+								font-size: 16px;
+								font-weight: 700;
+								text-align: center;
+								opacity: 0;
+							}
+							> img {
+								display: none;
+								position: absolute;
+								left: 24px;
+								top: 24px;
+							}
+							&.on > img {
+								display: block;
+							}
+							&:nth-child(1) {
+								background-image: url(../img/profile_whatdone_trav1.jpg);
+							}
+							&:nth-child(2) {
+								background-image: url(../img/profile_whatdone_trav2.jpg);
+							}
+							&:nth-child(3) {
+								background-image: url(../img/profile_whatdone_trav3.jpg);
+							}
+							&:nth-child(4) {
+								background-image: url(../img/profile_whatdone_trav4.jpg);
+							}
+							&:nth-child(5) {
+								background-image: url(../img/profile_whatdone_trav5.jpg);
+							}
+							&:nth-child(6) {
+								background-image: url(../img/profile_whatdone_trav6.jpg);
+							}
+							&:nth-child(7) {
+								background-image: url(../img/profile_whatdone_trav7.jpg);
+							}
+							&:nth-child(8) {
+								background-image: url(../img/profile_whatdone_trav8.jpg);
+							}
+							&:nth-child(9) {
+								background-image: url(../img/profile_whatdone_trav9.jpg);
+							}
+							&:nth-child(10) {
+								background-image: url(../img/profile_whatdone_trav10.jpg);
+							}
+							&:nth-child(11) {
+								background-image: url(../img/profile_whatdone_trav11.jpg);
+							}
+							&:nth-child(12) {
+								background-image: url(../img/profile_whatdone_trav12.jpg);
+							}
+							&:nth-child(13) {
+								background-image: url(../img/profile_whatdone_trav13.jpg);
+							}
+							&:nth-child(14) {
+								background-image: url(../img/profile_whatdone_trav14.jpg);
+							}
+							&:nth-child(15) {
+								background-image: url(../img/profile_whatdone_trav15.jpg);
+							}
+							&:nth-child(16) {
+								background-image: url(../img/profile_whatdone_trav16.jpg);
+							}
+							&:hover {
+								background-image: none;
+								> a {
+									opacity: 1;
+								}
+							}
+						} //end of li
+					} //end of ul.travel
+					> ul.planner {
+						@extend .travel;
+						> li {
+							transition: none;
+							text-indent: -9999px;
+							&:nth-child(1) {
+								background-image: url(../img/profile_whatdone_visa1.png);
+							}
+							&:nth-child(2) {
+								background-image: url(../img/profile_whatdone_visa2.png);
+							}
+							&:nth-child(3) {
+								background-image: url(../img/profile_whatdone_visa3.png);
+							}
+							&:nth-child(4) {
+								background-image: url(../img/profile_whatdone_visaLogo.png);
+							}
+							&:nth-child(5) {
+								background-image: url(../img/profile_whatdone_rotarylogo.png);
+							}
+							&:nth-child(6) {
+								background-image: url(../img/profile_whatdone_rotary1.png);
+							}
+							&:nth-child(7) {
+								background-image: url(../img/profile_whatdone_rotary2.png);
+							}
+							&:nth-child(8) {
+								background-image: url(../img/profile_whatdone_rotary3.png);
+							}
+							&:nth-child(9) {
+								background-image: url(../img/profile_whatdone_aero1.jpg);
+							}
+							&:nth-child(10) {
+								background-image: url(../img/profile_whatdone_aero2.jpg);
+							}
+							&:nth-child(11) {
+								background-image: url(../img/profile_whatdone_aeroLogo.png);
+							}
+							&:nth-child(12) {
+								background-image: url(../img/profile_whatdone_monash5.png);
+							}
+							&:nth-child(13) {
+								background-image: url(../img/profile_whatdone_monash1.png);
+							}
+							&:nth-child(14) {
+								background-image: url(../img/profile_whatdone_monashLogo.png);
+							}
+							&:nth-child(15) {
+								background-image: url(../img/profile_whatdone_monash2.png);
+							}
+							&:nth-child(16) {
+								background-image: url(../img/profile_whatdone_monash3.png);
+							}
+							> img {
+								width: 600px;
+								height: 600px;
+								left: 0;
+								top: 0;
+							}
+							&.click {
+								text-indent: initial;
+								transition: all 0.6s;
+								&:hover {
+									background: none;
+								}
+							}
+							&:last-child {
+								display: none;
+								width: 20px;
+								height: 20px;
+								background-image: url(../img/profile_whatdone_cls.png);
+								@include pos(absolute,initial,8px,10);
+								right: 8px;
+							}
+						}
+					} //end of .planner
+					> ul.eng {
+						> .video {
+							margin: 24px 24px 32px 24px;
+						}
+						> li {
+							margin-left: 24px;
+							font-weight: 700;
+							font-size: 16px;
+							line-height: 24px;
+							> a {
+								display: block;
+								&:hover {
+									color: $mainCol;
+								}
+							}
+							&.thumb {
+								float: left;
+								width: 120px;
+								margin-top: 32px;
+								&:nth-child(4) > a {
+									background-image: url(../img/profile_whatdone_engdub1.png);
+								}
+								&:nth-child(5) > a {
+									background-image: url(../img/profile_whatdone_engdub2.png);
+								}
+								&:nth-child(6) > a {
+									background-image: url(../img/profile_whatdone_engdub3.png);
+								}
+								&:nth-child(7) > a {
+									background-image: url(../img/profile_whatdone_engdub4.png);
+								}
+								> a {
+									display: block;
+									@include irSet();
+									background-size: cover;
+									height: 68px;
+									&:hover {
+										outline: 2px solid $mainCol;
+									}
+								}
+							} //end of .thumb
+						}
+					} //end of .eng
+				}
+			} //end of .ulFrame
+		} //end of .whatdone
+	} //end of section
+	> .scroll {
+		display: none;
+		> .scr {
+			display: block;
+			@include pos(fixed,50%,700px,1000);
+			width: 100px;
+			color: $mainCol;
+			margin-left: -570px;
+			font-weight: 600;
+			text-shadow: 0 0 5px $mainCol;
+			text-align: center;
+			animation-name: scroll;
+			animation-duration: .5s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			&:before {
+				display: block;
+				width: 100px;
+				height: 56px;
+				margin-bottom: 8px;
+				content: "";
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-image: url(../img/profile_main_scroll1.png);
+			}
+		}
+	} //end of .scroll
+} //end of #wrap

@@ -1,0 +1,143 @@
+@import url(../css/reset.css);
+@keyframes scroll { from { top: 300px; }
+  to { top: 308px; } }
+@keyframes spin1 { from { opacity: 0; transform: rotateY(-180deg); }
+  to { opacity: 1; transform: rotateY(0deg); } }
+@keyframes spin2 { from { opacity: 0; transform: rotateY(-180deg); }
+  to { opacity: 1; transform: rotateY(0deg); } }
+@keyframes spin3 { from { opacity: 0; transform: rotateX(-180deg); }
+  to { opacity: 1; transform: rotateX(0deg); } }
+::-webkit-scrollbar { width: 0; }
+
+#wrap { position: relative; min-width: 1280px; min-height: 800px; max-height: 800px; margin: 0 auto; font-family: 'roboto'; color: #313131; }
+#wrap > header { position: fixed; left: calc((100% - 1280px) /2); top: 0; z-index: 1000; width: 240px; height: 800px; background-color: rgba(255, 255, 255, 0.8); }
+#wrap > header > h1.logo { width: 144px; margin: 0 auto; text-indent: -9999px; background-repeat: no-repeat; background-image: url(../img/profile_h1_logo2.png); background-size: contain; }
+#wrap > header > h1.logo > a { display: block; height: 96px; }
+#wrap > header > nav { width: 160px; margin: 0 auto; font-weight: 700; font-size: 20px; }
+#wrap > header > nav > .gnb > li { width: 27px; overflow: hidden; transition: all .5s; }
+#wrap > header > nav > .gnb > li:first-child { width: 20px; }
+#wrap > header > nav > .gnb > li > a { height: 48px; display: block; font-size: 30px; line-height: 48px; transition: all .5s; }
+#wrap > header > nav > .gnb > li > a > .small { font-size: 18px; }
+#wrap > header > nav > .gnb > li.on, #wrap > header > nav > .gnb > li:hover { width: 100%; }
+#wrap > header > nav > .gnb > li.on > a, #wrap > header > nav > .gnb > li:hover > a { color: #244893; }
+#wrap > header > .blueB { position: absolute; left: 0; top: 55%; z-index: 900; width: 240px; height: 240px; background-repeat: no-repeat; background-image: url(../img/profile_main_bb1.png); }
+#wrap > header > address { margin-left: 24px; font-weight: 500; position: absolute; left: 0; top: 85%; z-index: 900; line-height: 1.6; }
+#wrap > section { height: 9800px; }
+#wrap > section > article { display: none; height: 800px; }
+#wrap > section > .home { display: block; width: 1280px; position: fixed; left: calc((100% - 1280px) /2); top: 0; z-index: 100; right: 0; bottom: 0; min-width: 1280px; min-height: 800px; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(../img/profile_main_bgTrans50.png); }
+#wrap > section > .home > h2 { width: 850px; margin: 32px 0 0 335px; font-size: 36px; color: #fff; text-shadow: 0 0 16px #313131; }
+#wrap > section > .home > .txtBox { display: none; width: 500px; height: 500px; margin: 10% calc((100% - 250px) /2); outline: 10px solid #fff; }
+#wrap > section > .home > .txtBox > p { display: none; height: 60px; margin: 16px auto; color: #fff; font-size: 56px; font-family: 'Secular One', sans-serif; font-weight: 900; text-align: center; line-height: 60px; }
+#wrap > section > .home > .txtBox > p:first-child { padding-top: 160px; }
+#wrap > section > .who { width: 1280px; position: fixed; left: calc((100% - 1280px) /2); top: 0; z-index: 100; right: 0; bottom: 0; min-width: 1280px; min-height: 800px; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(../img/profile_who_bgTrans40.png); }
+#wrap > section > .who > h2 { width: 850px; margin: 32px 0 0 335px; font-size: 36px; color: #fff; text-shadow: 0 0 16px #313131; }
+#wrap > section > .who > .who_cont { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-content: space-between; width: 850px; height: 600px; margin: 32px 0 0 335px; font-size: 16px; font-weight: 600; }
+#wrap > section > .who > .who_cont > div { background-color: rgba(255, 255, 255, 0.6); outline: 10px solid #fff; padding: 24px; box-sizing: border-box; }
+#wrap > section > .who > .who_cont > div > h3 { font-size: 20px; font-weight: 800; margin: 16px 0; text-shadow: 0 0 16px #fff; }
+#wrap > section > .who > .who_cont > .left { width: 580px; height: 400px; animation-name: spin1; animation-duration: 1.5s; animation-fill-mode: forwards; opacity: 0; }
+#wrap > section > .who > .who_cont > .left > p { margin-left: 32px; }
+#wrap > section > .who > .who_cont > .left > p > .uiuxClass { display: inline-block; text-indent: -9999px; background-repeat: no-repeat; width: 24px; height: 24px; margin: -8px 0 0 4px; background-image: url(../img/profile_who_newtab.png); }
+#wrap > section > .who > .who_cont > .right { width: 220px; height: 400px; text-align: center; animation-name: spin2; animation-duration: 1.5s; animation-delay: 1s; animation-fill-mode: forwards; opacity: 0; }
+#wrap > section > .who > .who_cont > .right > p { word-break: keep-all; padding: 12px 0; }
+#wrap > section > .who > .who_cont > .bottom { width: 850px; height: 150px; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; animation-name: spin3; animation-duration: 2.5s; animation-delay: 1s; animation-fill-mode: forwards; opacity: 0; }
+#wrap > section > .who > .who_cont > .bottom > div > h3 { margin: 8px 0; }
+#wrap > section > .who > .who_cont > .bottom > div > ul { display: flex; flex-direction: row; flex-wrap: nowrap; }
+#wrap > section > .who > .who_cont > .bottom > div > ul > li > img { display: block; padding: 0 8px; }
+#wrap > section > .whatdo { background-image: url(../img/profile_whatdo_bgTrans50.png); width: 1280px; position: fixed; left: calc((100% - 1280px) /2); top: 0; z-index: 100; right: 0; bottom: 0; min-width: 1280px; min-height: 800px; background-size: cover; background-repeat: no-repeat; background-position: center center; }
+#wrap > section > .whatdo > h2 { width: 850px; margin: 32px 0 0 335px; font-size: 36px; color: #fff; text-shadow: 0 0 16px #313131; }
+#wrap > section > .whatdo > .thumbNav { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; width: 920px; height: 60px; margin-left: 300px; background-image: url(../img/profile_whatdone_navBar.png); background-size: 100% 100%; }
+#wrap > section > .whatdo > .thumbNav > li { padding: 0 16px; }
+#wrap > section > .whatdo > .thumbNav > li > a { display: block; font-size: 20px; font-weight: 800; line-height: 60px; color: rgba(49, 49, 49, 0.2); }
+#wrap > section > .whatdo > .thumbNav > li.on > a, #wrap > section > .whatdo > .thumbNav > li:hover > a { color: #244893; }
+#wrap > section > .whatdo > .contCon { overflow: hidden; width: 1280px; height: 560px; }
+#wrap > section > .whatdo > .contCon > .contents { width: calc(1280px * 7); }
+#wrap > section > .whatdo > .contCon > .contents > li { float: left; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; width: 850px; margin: 32px 95px 0 335px; }
+#wrap > section > .whatdo > .contCon > .contents > li > .frame { width: 580px; padding: 24px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.6); outline: 10px solid #fff; }
+#wrap > section > .whatdo > .contCon > .contents > li > .frame > img { display: block; width: 532px; height: auto; }
+#wrap > section > .whatdo > .contCon > .contents > li > .txt { width: 220px; padding: 24px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.6); outline: 10px solid #fff; }
+#wrap > section > .whatdo > .contCon > .contents > li > .txt > h2 { height: 40px; margin-bottom: 24px; text-indent: -9999px; background-repeat: no-repeat; }
+#wrap > section > .whatdo > .contCon > .contents > li > .txt > ol.txt > li { height: 24px; font-size: 14px; font-weight: 700; line-height: 24px; }
+#wrap > section > .whatdo > .contCon > .contents > li > .txt > h3 { margin: 24px 0; font-weight: 800; font-size: 18px; text-align: center; }
+#wrap > section > .whatdo > .contCon > .contents > li > .btn { width: 100%; margin-top: 50px; }
+#wrap > section > .whatdo > .contCon > .contents > li > .btn > a { background-color: rgba(255, 255, 255, 0.6); outline: 10px solid #fff; display: inline-block; width: 160px; height: 40px; font-size: 18px; font-weight: 700; line-height: 40px; text-align: center; }
+#wrap > section > .whatdo > .contCon > .contents > li > .btn > a:hover { color: #244893; }
+#wrap > section > .whatdo > .contCon > .contents > li > .btn > a:first-child { margin: 0 50px 0 240px; }
+#wrap > section > .whatdo > .contCon > .contents > li:nth-child(1) h2.logo { background-image: url(../img/profile_whatdo_thumb1.png); }
+#wrap > section > .whatdo > .contCon > .contents > li:nth-child(2) h2.logo { background-image: url(../img/profile_whatdo_thumb2.png); }
+#wrap > section > .whatdo > .contCon > .contents > li:nth-child(3) h2.logo { background-image: url(../img/profile_whatdo_thumb3.png); }
+#wrap > section > .whatdo > .contCon > .contents > li:nth-child(4) h2.logo { background-image: url(../img/profile_whatdo_thumb4.png); }
+#wrap > section > .whatdo > .contCon > .contents > li:nth-child(5) h2.logo { background-image: url(../img/profile_whatdo_thumb5.png); }
+#wrap > section > .whatdo > .contCon > .contents > li:nth-child(6) h2.logo { background-image: url(../img/profile_whatdo_thumb6.png); }
+#wrap > section > .whatdo > .contCon > .contents > li:nth-child(7) h2.logo { background-image: url(../img/profile_whatdo_thumb7.png); }
+#wrap > section > .whatdo > .shadow { display: none; position: absolute; left: 325px; top: 160px; z-index: 100; padding: 24px; box-sizing: border-box; width: 870px; height: 550px; overflow-y: auto; background-color: rgba(0, 0, 0, 0.9); }
+#wrap > section > .whatdo > .shadow > img { display: block; width: 100%; height: auto; margin-top: -20px; position: relative; left: 0; top: 0; z-index: initial; }
+#wrap > section > .whatdo > .shadow > button { display: block; width: 16px; height: 16px; position: sticky; left: 100%; top: 0; z-index: 110; border: none; outline: none; background: none; text-indent: -9999px; background-repeat: no-repeat; background-image: url(../img/profile_whatdo_cls.png); }
+#wrap > section > .whatdone { background-image: url(../img/profile_whatdo_bg2Trans50.png); width: 1280px; position: fixed; left: calc((100% - 1280px) /2); top: 0; z-index: 100; right: 0; bottom: 0; min-width: 1280px; min-height: 800px; background-size: cover; background-repeat: no-repeat; background-position: center center; }
+#wrap > section > .whatdone > h2 { width: 850px; margin: 32px 0 0 335px; font-size: 36px; color: #fff; text-shadow: 0 0 16px #313131; }
+#wrap > section > .whatdone > .thumbNav { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; width: 700px; height: 60px; margin-left: 410px; background-image: url(../img/profile_whatdone_navBar.png); background-size: 100% 100%; }
+#wrap > section > .whatdone > .thumbNav > li { padding: 0 16px; }
+#wrap > section > .whatdone > .thumbNav > li > a { display: block; font-size: 20px; font-weight: 800; line-height: 60px; color: rgba(49, 49, 49, 0.2); }
+#wrap > section > .whatdone > .thumbNav > li.on > a, #wrap > section > .whatdone > .thumbNav > li:hover > a { color: #244893; }
+#wrap > section > .whatdone > .ulFrame { overflow: hidden; width: 600px; margin: 16px 0 0 460px; background-color: rgba(255, 255, 255, 0.6); outline: 10px solid #fff; }
+#wrap > section > .whatdone > .ulFrame > .ulCont { width: 1800px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul { float: left; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel, #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner { width: 600px; height: 600px; background-color: rgba(255, 255, 255, 0.6); padding: 24px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-content: space-between; position: relative; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li, #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li { width: 120px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li > a, #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li > a { display: block; height: 76px; padding-top: 44px; color: #244893; font-size: 16px; font-weight: 700; text-align: center; opacity: 0; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li > img, #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li > img { display: none; position: absolute; left: 24px; top: 24px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li.on > img, #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li.on > img { display: block; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(1), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(1) { background-image: url(../img/profile_whatdone_trav1.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(2), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(2) { background-image: url(../img/profile_whatdone_trav2.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(3), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(3) { background-image: url(../img/profile_whatdone_trav3.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(4), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(4) { background-image: url(../img/profile_whatdone_trav4.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(5), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(5) { background-image: url(../img/profile_whatdone_trav5.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(6), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(6) { background-image: url(../img/profile_whatdone_trav6.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(7), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(7) { background-image: url(../img/profile_whatdone_trav7.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(8), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(8) { background-image: url(../img/profile_whatdone_trav8.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(9), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(9) { background-image: url(../img/profile_whatdone_trav9.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(10), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(10) { background-image: url(../img/profile_whatdone_trav10.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(11), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(11) { background-image: url(../img/profile_whatdone_trav11.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(12), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(12) { background-image: url(../img/profile_whatdone_trav12.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(13), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(13) { background-image: url(../img/profile_whatdone_trav13.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(14), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(14) { background-image: url(../img/profile_whatdone_trav14.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(15), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(15) { background-image: url(../img/profile_whatdone_trav15.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:nth-child(16), #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(16) { background-image: url(../img/profile_whatdone_trav16.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:hover, #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:hover { background-image: none; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.travel > li:hover > a, #wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:hover > a { opacity: 1; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li { transition: none; text-indent: -9999px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(1) { background-image: url(../img/profile_whatdone_visa1.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(2) { background-image: url(../img/profile_whatdone_visa2.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(3) { background-image: url(../img/profile_whatdone_visa3.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(4) { background-image: url(../img/profile_whatdone_visaLogo.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(5) { background-image: url(../img/profile_whatdone_rotarylogo.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(6) { background-image: url(../img/profile_whatdone_rotary1.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(7) { background-image: url(../img/profile_whatdone_rotary2.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(8) { background-image: url(../img/profile_whatdone_rotary3.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(9) { background-image: url(../img/profile_whatdone_aero1.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(10) { background-image: url(../img/profile_whatdone_aero2.jpg); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(11) { background-image: url(../img/profile_whatdone_aeroLogo.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(12) { background-image: url(../img/profile_whatdone_monash5.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(13) { background-image: url(../img/profile_whatdone_monash1.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(14) { background-image: url(../img/profile_whatdone_monashLogo.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(15) { background-image: url(../img/profile_whatdone_monash2.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:nth-child(16) { background-image: url(../img/profile_whatdone_monash3.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li > img { width: 600px; height: 600px; left: 0; top: 0; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li.click { text-indent: initial; transition: all 0.6s; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li.click:hover { background: none; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.planner > li:last-child { display: none; width: 20px; height: 20px; background-image: url(../img/profile_whatdone_cls.png); position: absolute; left: initial; top: 8px; z-index: 10; right: 8px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > .video { margin: 24px 24px 32px 24px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li { margin-left: 24px; font-weight: 700; font-size: 16px; line-height: 24px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li > a { display: block; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li > a:hover { color: #244893; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li.thumb { float: left; width: 120px; margin-top: 32px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li.thumb:nth-child(4) > a { background-image: url(../img/profile_whatdone_engdub1.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li.thumb:nth-child(5) > a { background-image: url(../img/profile_whatdone_engdub2.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li.thumb:nth-child(6) > a { background-image: url(../img/profile_whatdone_engdub3.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li.thumb:nth-child(7) > a { background-image: url(../img/profile_whatdone_engdub4.png); }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li.thumb > a { display: block; text-indent: -9999px; background-repeat: no-repeat; background-size: cover; height: 68px; }
+#wrap > section > .whatdone > .ulFrame > .ulCont > ul.eng > li.thumb > a:hover { outline: 2px solid #244893; }
+#wrap > .scroll { display: none; }
+#wrap > .scroll > .scr { display: block; position: fixed; left: 50%; top: 700px; z-index: 1000; width: 100px; color: #244893; margin-left: -570px; font-weight: 600; text-shadow: 0 0 5px #244893; text-align: center; animation-name: scroll; animation-duration: .5s; animation-iteration-count: infinite; animation-direction: alternate; }
+#wrap > .scroll > .scr:before { display: block; width: 100px; height: 56px; margin-bottom: 8px; content: ""; background-position: center center; background-repeat: no-repeat; background-image: url(../img/profile_main_scroll1.png); }
+
+/*# sourceMappingURL=profile.css.map */

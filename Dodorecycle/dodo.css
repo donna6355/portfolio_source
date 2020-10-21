@@ -1,0 +1,345 @@
+@charset "UTF-8";
+html {
+	overflow: auto;
+	width: 375px;
+	/* min-width: 375px;
+	max-width: 375px; */
+	height: 812px;
+	margin: 0 auto;
+}
+body {
+	overflow: hidden;
+	width: 375px;
+	min-width: 375px;
+	max-width: 375px;
+	height: 812px;
+	margin: 0 auto;
+	font-family: nanumbarungothic, roboto;
+	background-image: url(../images/dodo_dkbg.png);
+	background-size: contain;
+	background-repeat: repeat-x;
+}
+#wrap {
+	position: relative;
+}
+header {
+	position: relative;
+	height: 80px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+header > .logo {
+	position: absolute;
+	left: 95px;
+	top: 32px;
+	width: 186px;
+	height: 41px;
+	text-indent: -9999px;
+	background-image: url(../images/dodo_mnu_logo.png);
+}
+header > .logo > a {
+	display: block;
+	height: 41px;
+}
+header > button {
+	position: absolute;
+	display: block;
+	background: none;
+	outline: none;
+	border: none;
+	text-indent: -9999px;
+	background-image: url(../images/dodo_mnu_icon.png);
+}
+header > .myPage {
+	left: 32px;
+	top: 42px;
+	width: 27px;
+	height: 20px;
+	background-position: -24px 0;
+}
+header > .srch {
+	left: 319px;
+	top: 42px;
+	width: 24px;
+	height: 24px;
+	background-image: url(../images/dodo_mnu_srch.png);
+}
+
+section {
+	position: relative;
+	width: 100%;
+	height: 652px;
+}
+section.on {
+	background-image: url(../images/dodo_bg.png);
+	background-size: contain;
+	background-repeat: repeat-x;
+}
+section > p > a {
+	position: absolute;
+	left: 30px;
+	top: 214px;
+	display: block;
+	width: 322px;
+	height: 224px;
+	text-indent: -9999px;
+	background-image: url(../images/dodo_bg_crying.png);
+	background-repeat: no-repeat;
+}
+section.on > p > a {
+	height: 320px;
+	left: 30px;
+	top: 137px;
+
+	background-image: url(../images/dodo_bg_happy.png);
+}
+section > p > span {
+	display: block;
+	position: absolute;
+	z-index: -1;
+	background-repeat: no-repeat;
+}
+section > p > .garbageBtm {
+	left: -20px;
+	top: 363px;
+	width: 412px;
+	height: 254px;
+	background-image: url(../images/dodo_bg_garbage.png);
+}
+section > p > .garbageL {
+	left: 18px;
+	top: 23px;
+	width: 52px;
+	height: 152px;
+	transform: rotate(-35deg);
+	background-image: url(../images/dodo_bg_garbage1.png);
+}
+section > p > .garbageR {
+	left: 268px;
+	top: 84px;
+	width: 70px;
+	height: 100px;
+	transform: rotate(24deg);
+	background-image: url(../images/dodo_bg_garbage2.png);
+}
+section > p > .reef {
+	display: none;
+	left: -37px;
+	top: 453px;
+	width: 391px;
+	height: 173px;
+	background-image: url(../images/dodo_bg_reef.png);
+}
+section.on > p > span {
+	display: none;
+}
+section.on > p > span.reef {
+	display: block;
+	z-index: 0;
+}
+
+nav {
+	height: 80px;
+	background-color: #002d56;
+}
+nav > .gnb {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 24px 0;
+}
+nav > .gnb > li {
+	width: 103px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 13px;
+}
+
+nav > .gnb > li > a {
+	position: relative;
+	display: block;
+	height: 46px;
+}
+nav > .gnb > li > a > span {
+	display: inline-block;
+	width: 73px;
+	color: #ccc;
+	font-weight: 800;
+	font-size: 14px;
+	text-align: center;
+}
+nav > .gnb > li > a > span:nth-child(2) {
+	position: absolute;
+	right: -4px;
+	top: 6px;
+}
+nav > .gnb > li > a > span.icon {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 8px;
+	background-image: url(../images/dodo_gnb_Icon.png);
+	background-repeat: no-repeat;
+	content: "";
+}
+nav > .gnb > li:nth-child(2) > a > span.icon {
+	background-position: 0 -30px;
+}
+nav > .gnb > li:nth-child(3) > a > span.icon {
+	margin-top: 10px;
+	background-position: 0 -60px;
+}
+article.status {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 80px;
+	width: 375px;
+	height: 652px;
+	background-color: rgba(256, 256, 256, 0.3);
+}
+.status > .top {
+	display: flex;
+	flex-flow: row wrap;
+	width: 327px;
+	height: 244px;
+	margin: 23px auto 0;
+}
+.status > .top > .cont {
+	margin-left: 8px;
+}
+.status > .top  .label {
+	width: 192px;
+	height: 34px;
+	background-color: #fff;
+	border-radius: 23px;
+	background-repeat: no-repeat;
+	background-position: 163px center;
+}
+.status > .top  .label:first-of-type {
+	background-image: url(../images/dodo_status_edit.png);
+	background-position: 163px center;
+	margin: 24px 0 4px 0;
+}
+.status > .top  .label:last-of-type {
+	background-image: url(../images/dodo_status_point.png);
+	background-position: 160px center;
+}
+
+.status > .top  .label > span {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+}
+.status > .top  .label > span:first-child {
+	width: 64px;
+	height: 30px;
+	margin: 2px 4px;
+	line-height: 30px;
+	background-color: pink;
+	border-radius: 23px;
+}
+.status > .top  .label:first-of-type > span:first-child {
+	background-color: skyblue;
+}
+.status > .top  .label > span:last-child {
+	line-height: 34px;
+}
+.status > .item {
+	width: 324px;
+	height: 340px;
+	margin: 0 auto;
+}
+.status > .item > li {
+	width: 100%;
+	background-repeat: no-repeat;
+	border-radius: 54px;
+}
+.status > .item > li:nth-child(1) {
+	background-image: url(../images/dodo_item_1.png);
+	margin-top: 8px;
+}
+.status > .item > li:nth-child(2) {
+	background-image: url(../images/dodo_item_2.png);
+	margin: 8px 0;
+}
+.status > .item > li:nth-child(3) {
+	background-image: url(../images/dodo_item_3.png);
+}
+
+.status > .item > li > a {
+	display: block;
+	height: 108px;
+	text-indent: -9999px;
+}
+.status > .cls {
+	position: absolute;
+	left: 338px;
+	top: 8px;
+	width: 29px;
+	height: 29px;
+	text-indent: -9999px;
+	border: none;
+	outline: none;
+	background: none;
+	background-image: url(../images/dodo_status_cls.png);
+}
+
+.splash {
+	display: none;
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.splash > h2.logo {
+	width: 256px;
+	height: 235px;
+	margin: 288px 0 0 59px;
+	text-indent: -9999px;
+	opacity: 0.1;
+	background-image: url(../images/dodo_splash_logo.png);
+	background-repeat: no-repeat;
+}
+.splash > .bubble1 {
+	position: absolute;
+	left: 0;
+	top: -288px;
+	display: block;
+	width: 227px;
+	height: 213px;
+	transform: scale(2, 2);
+	background-image: url(../images/dodo_splash_bubble.png);
+}
+.splash > span {
+	opacity: 0.1;
+}
+.splash > .bubble2 {
+	position: absolute;
+	left: -50px;
+	top: 320px;
+	display: block;
+	width: 195px;
+	height: 199px;
+	transform: scale(1.8, 1.8);
+	background-image: url(../images/dodo_splash_bubble2.png);
+}
+.splash > .bubble3 {
+	position: absolute;
+	right: -60px;
+	top: -300px;
+	display: block;
+	width: 195px;
+	height: 199px;
+	background-image: url(../images/dodo_splash_bubble2.png);
+}
+.splash > .bubble4 {
+	position: absolute;
+	right: 0;
+	top: 288px;
+	display: block;
+	width: 227px;
+	height: 213px;
+	transform: scale(1.5, 1.5);
+	background-image: url(../images/dodo_splash_bubble.png);
+}

@@ -1,0 +1,1083 @@
+@charset "utf-8";
+$menu: #474747;
+$sub: #555;
+
+$minWdth: 'screen and (max-width:1000px)';
+
+@keyframes skewL {
+	to {
+		top: 11px;
+		transform: skewY(-45deg);
+	}
+}
+@keyframes skewLB {
+	from {
+		top: 11px;
+		transform: skewY(-45deg);
+	}
+	to {
+		top: 0;
+		transform: skewY(0deg);
+	}
+}
+
+@keyframes skewF {
+	to {
+		top: 11px;
+		transform: skewY(45deg);
+	}
+}
+@keyframes skewFB {
+	from {
+		top: 11px;
+		transform: skewY(45deg);
+	}
+	to {
+		top: 16px;
+		transform: skewY(0deg);
+	}
+}
+
+@mixin irSet {
+	text-indent: -9999px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+@mixin flexSet($dir:row,$wrp:nowrap) {
+	display: flex;
+	flex-direction: $dir;
+	flex-wrap: $wrp;
+}
+@mixin subMnu {
+	position: absolute;
+	left: 0;
+	top: 41px;
+	z-index: 100;
+	width: 100%;
+	height: 430px;
+	background-color: #fff;
+}
+@mixin subMnuD {
+	top: 81px;
+}
+@mixin wdthMrg {
+	width: 1200px;
+	margin: 0 auto;
+}
+@mixin scaleTrs {
+	transition: all 1s;
+	&:hover {
+		transform: scale(1.08, 1.08);
+	}
+}
+
+#wrap {
+	min-width: 1200px;
+	max-width: 1920px;
+	margin: 0 auto;
+	* {
+		font-family: 'nanumgothic';
+	}
+	> header {
+		// height: 200px;
+		border-bottom: 1px solid #eee;
+		> .top {
+			height: 40px;
+			border-bottom: 1px solid #ccc;
+			> .snb {
+				position: relative;
+				width: 90%;
+				margin: 0 5%;
+				> h2 {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100px;
+					height: 50px;
+					color: #fff;
+					font-family: 'nanumgothic bold';
+					font-weight: 900;
+					font-size: 15px;
+					line-height: 50px;
+					text-align: center;
+					background-color: #000;
+				}
+				> ul.family {
+					@include flexSet;
+					position: absolute;
+					left: 100px;
+					top: 0;
+					> li {
+						padding: 10px 0;
+						&:nth-child(2) > a {
+							border-left: 1px solid #eee;
+							border-right: 1px solid #eee;
+						}
+						> a {
+							display: block;
+							height: 20px;
+							padding: 0 16px;
+							color: $menu;
+							font-weight: 700;
+							font-size: 13px;
+							line-height: 20px;
+							text-align: center;
+						}
+					}
+				} //end of ul
+				> .sign {
+					position: absolute;
+					right: 120px;
+					top: 0;
+					> ul {
+						@include flexSet;
+						> li {
+							padding: 0 8px;
+							> a {
+								display: block;
+								height: 20px;
+								padding: 10px 0;
+								color: $sub;
+								font-size: 11px;
+								line-height: 20px;
+							}
+							&:nth-child(4) {
+								background-color: #fff;
+								> a {
+									> span {
+										display: inline-block;
+										width: 10px;
+										height: 10px;
+										margin-left: 4px;
+										line-height: 10px;
+										@include irSet;
+										background-image: url(../img/s_arrow.png);
+										transition: all 0.4s;
+									}
+								}
+								&:hover > a > span {
+									transform: rotate(180deg);
+								}
+								> .sub {
+									display: none;
+									position: absolute;
+									right: 0;
+									z-index: 10;
+									bottom: -103px; //-73px
+									background-color: #fff;
+									border: 1px solid $menu;
+									> li {
+										width: 80px;
+										> a {
+											display: block;
+											height: 24px;
+											color: $sub;
+											font-size: 11px;
+											text-align: center;
+											line-height: 24px;
+										}
+									}
+								}
+							}
+						}
+					}
+				} //end of .sign
+				> .lang {
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 100px;
+					background-image: url(../img/kor_icon.png);
+					background-position: left 13px;
+					background-repeat: no-repeat;
+					> input {
+						width: 90px;
+						height: 40px;
+						background: none;
+						border: none;
+						outline: none;
+						color: $sub;
+						font-size: 11px;
+						line-height: 40px;
+						text-align: center;
+						text-indent: 12px;
+						cursor: pointer;
+					}
+					> span {
+						display: block;
+						position: absolute;
+						right: 8px;
+						top: 15px;
+						width: 10px;
+						height: 10px;
+						text-indent: -9999px;
+						background-image: url(../img/s_arrow.png);
+						background-repeat: no-repeat;
+						transition: all 0.4s;
+					}
+					&:hover > span {
+						transform: rotate(180deg);
+					}
+					> ol {
+						display: none;
+						position: absolute;
+						right: 0;
+						z-index: 10;
+						bottom: -103px; //-63px
+						background-color: #fff;
+						border: 1px solid #000;
+						> li {
+							width: 90px;
+							margin: 4px 0;
+
+							> a {
+								display: block;
+								height: 24px;
+								color: $sub;
+								font-size: 11px;
+								text-align: center;
+								text-indent: 8px;
+								line-height: 24px;
+								background-image: url(../img/ico_kr.png);
+								background-position: 8px center;
+								background-repeat: no-repeat;
+							}
+							&:last-child > a {
+								background-image: url(../img/ico_us.png);
+							}
+						}
+					}
+				}
+				// position: absolute;
+			} //end of .family;
+		} //end of .top
+		> .bg {
+			background-color: #fff;
+			height: 117px;
+		} //end of .bg
+		> .btm {
+			position: relative;
+			height: 40px;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #eee;
+			> .toggle {
+				position: absolute;
+				left: 5%;
+				top: 50%;
+				margin-top: -85px;
+				width: 25px;
+				height: 16px;
+				cursor: pointer;
+				> li {
+					position: absolute;
+					width: 25px;
+					height: 2px;
+					background-color: $menu;
+					z-index: 10;
+					animation-duration: 0.6s;
+					animation-fill-mode: forwards;
+					&:nth-child(1) {
+						top: 0;
+					}
+					&:nth-child(2) {
+						top: 8px;
+					}
+					&:nth-child(3) {
+						top: 16px;
+					}
+				}
+			} //end of .toggle
+			> h1 {
+				position: absolute;
+				left: 50%;
+				top: -95px;
+				width: 292px;
+				margin-left: -146px;
+				> a {
+					@include irSet;
+					display: block;
+					height: 70px;
+					background-image: url(../img/mmca_h1logo_ver1.png);
+				}
+			} //end of h1
+			> .misc {
+				position: absolute;
+				right: 5%;
+				top: 50%;
+				margin-top: -90px;
+				> ul {
+					@include flexSet(row, nowrap);
+					width: 120px;
+					> li {
+						width: 20px;
+						margin-right: 20px;
+						background-repeat: no-repeat;
+						background-size: contain;
+						> a {
+							display: block;
+							height: 20px;
+							text-indent: -9999px;
+						}
+						&:nth-child(1) {
+							background-image: url(../img/mmca_misc_srch.png);
+						}
+						&:nth-child(2) {
+							background-image: url(../img/mmca_misc_sign.png);
+						}
+						&:nth-child(3) {
+							margin-right: 0;
+							background-image: url(../img/mmca_misc_cart.png);
+							&:after {
+								position: absolute;
+								right: 0;
+								top: 1px;
+								display: block;
+								width: 20px;
+								height: 20px;
+								color: #fff;
+								line-height: 20px;
+								text-align: center;
+								background-color: #000;
+								border-radius: 50%;
+
+								content: "0";
+							}
+						}
+					}
+				}
+			} //end of .misc
+			> .search {
+				display: none; //js
+				@include subMnu();
+				border-bottom: 1px solid $menu;
+				> .srch_cont {
+					width: 55%;
+					margin: 80px auto;
+
+					> input {
+						display: block;
+						width: 100%;
+						height: 50px;
+						color: $sub;
+						font-size: 14px;
+						text-indent: 16px;
+						background-image: url(../img/mmca_misc_srch.png);
+						background-position: 97% center;
+						background-repeat: no-repeat;
+					}
+					> h3 {
+						margin: 24px 0;
+						color: $menu;
+						font-size: 20px;
+						font-weight: 500;
+					}
+					> p {
+						font-size: 11px;
+						color: $sub;
+					}
+					> button {
+						position: absolute;
+						right: 140px;
+						top: 40px;
+						display: block;
+						width: 18px;
+						height: 18px;
+						border: none;
+						outline: none;
+						background: none;
+						@include irSet();
+						background-image: url(../img/sch_box_close.png);
+					}
+				}
+			} //end of ,search
+
+			> nav {
+				> .gnb {
+					width: 70%;
+					margin: 0 auto;
+					@include flexSet(row,nowrap );
+					justify-content: space-between;
+					> li {
+						> a {
+							display: block;
+							height: 40px;
+							color: #000;
+							font-weight: 600;
+							font-size: 17px;
+							line-height: 40px;
+						}
+						&:hover > a {
+							font-weight: 700;
+						}
+						> article {
+							display: none; //js
+							@include subMnu();
+							*zoom: 1;
+							&:after {
+								display: block;
+								clear: both;
+								content: "";
+							}
+							> div {
+								float: left;
+							}
+							> .left {
+								width: 20%;
+								height: 330px;
+								margin: 50px 0;
+								box-sizing: border-box;
+								> h3 {
+									margin-left: 25%;
+									margin-right: 5px;
+									color: #000;
+									font-size: 24px;
+									font-weight: 500;
+								}
+								> p {
+									margin: 16px 5px 0 25%;
+									color: $menu;
+									font-weight: 400;
+									font-size: 15px;
+									line-height: 1.6;
+								}
+							}
+							> .mid {
+								width: 30%;
+								height: 330px;
+								margin: 50px 0;
+								border: 1px solid #eee;
+								border-top: none;
+								border-bottom: none;
+								box-sizing: border-box;
+								> ul {
+									margin-left: 50px;
+									> li {
+										width: 100%;
+										> a {
+											display: block;
+											height: 24px;
+											color: $sub;
+											font-size: 14px;
+											line-height: 24px;
+										}
+									}
+								}
+							}
+							> .right {
+								width: 50%; //min 650px
+								height: 330px;
+								margin: 50px 0;
+								> ul {
+									@include flexSet(row, nowrap);
+									> li {
+										width: 30%; //min 195px;
+										> a {
+											display: block;
+											overflow: hidden;
+											position: relative;
+											width: 90%; //min 175.5px;
+											margin-left: 10%;
+											background-color: #eee;
+											> img {
+												width: 100%;
+											}
+											> .text {
+												display: none; //js
+												position: absolute;
+												left: 0;
+												top: 100%;
+												width: 100%;
+												height: 60%;
+												background-color: rgba(256, 256, 256, 0.9);
+												color: $menu;
+												> h4 {
+													width: 80%;
+													margin: 16px auto;
+													font-weight: 600;
+													font-size: 15px;
+													text-align: center;
+												}
+												> p {
+													overflow: hidden;
+													white-space: nowrap;
+													text-overflow: ellipsis;
+													color: #777;
+													font-size: 13px;
+
+													> .price {
+														display: block;
+														margin: 8px 0;
+														font-weight: 600;
+														font-size: 13px;
+														text-align: center;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						} //end of article
+						&:first-child > article > .right > a {
+							display: block;
+							width: 140px;
+							height: 40px;
+							margin-top: 40px;
+							margin-left: 35%;
+							font-size: 14px;
+							font-weight: 800;
+							line-height: 40px;
+							text-align: center;
+							border: 1px solid #000;
+							transition: all 0.8s;
+							&:hover {
+								color: #fff;
+								background-color: #000;
+							}
+						}
+						&:nth-child(3) > article > .right > ul > li > a > .text > h4 {
+							width: 97%;
+						}
+						&:nth-child(5) > article > .right > ul > li:first-child {
+							margin-left: 20%;
+						}
+					} //end of li
+				}
+			} //end of nav
+			> #fullGnb {
+				display: none; //js
+				@include subMnu();
+				height: 580px;
+				background-color: rgba(265, 265, 265, 0.95);
+				> ol {
+					@include flexSet(row,nowrap );
+					justify-content: space-around;
+					width: 1100px;
+					margin-left: 12%;
+					height: 580px;
+					> li {
+						width: 160px;
+
+						&:nth-child(2) {
+							width: 200px;
+							.sub {
+								width: 200px;
+								margin-left: 10px;
+								> li {
+									> a {
+										display: block;
+										height: 24px;
+										color: #aaa;
+										font-weight: 600;
+										line-height: 24px;
+										font-size: 13px;
+										&:hover {
+											text-decoration: underline;
+										}
+									}
+								}
+							}
+						}
+						> a {
+							display: block;
+
+							height: 20px;
+							padding-top: 20px;
+							color: $menu;
+							font-weight: 600;
+							font-size: 16px;
+							line-height: 20px;
+							border-bottom: 1px solid #ccc;
+						}
+						> ul {
+							> li {
+								> a {
+									display: block;
+									height: 24px;
+									color: $menu;
+									font-weight: 600;
+									line-height: 24px;
+									font-size: 13px;
+									white-space: nowrap;
+								}
+							}
+						} //end of ul
+					}
+				}
+			} //end of .fullGnb
+			&.down {
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 10;
+				width: 100%;
+				min-width: 1200px;
+				height: 80px;
+				background-color: #fff;
+				> .toggle {
+					@media #{$minWdth} {
+						left: 4px;
+					}
+				}
+				> h1 {
+					left: 19%;
+					@media #{$minWdth} {
+						left: 14%;
+					}
+					top: 50%;
+					width: 150px;
+					margin-top: -9px;
+					> a {
+						height: 18px;
+						background-image: url(../img/mmca_h1logo_ver2.png);
+						background-size: contain;
+					}
+				}
+
+				> nav > .gnb {
+					width: 60%;
+					margin-top: 20px;
+					@media #{$minWdth} {
+						width: 58%;
+						margin-left: 170px;
+					}
+					> li > article {
+						@include subMnuD;
+						@media #{$minWdth} {
+							width: 75%;
+						}
+						.left {
+							> h3,
+							p {
+								@media #{$minWdth} {
+									margin-left: 4px;
+								}
+							}
+						}
+					}
+				}
+				> .search {
+					@include subMnuD;
+					@media #{$minWdth} {
+						width: 75%;
+					}
+
+					> .srch_cont {
+						@media #{$minWdth} {
+							margin-left: 20%;
+							> button {
+								left: 90%;
+							}
+						}
+					}
+				}
+				> #fullGnb {
+					@include subMnuD;
+					@media #{$minWdth} {
+						width: 75%;
+					}
+					> ol {
+						@media #{$minWdth} {
+							width: 70%;
+							margin-left: 0;
+							> li {
+								width: 100px;
+
+								&:nth-child(2) {
+									width: 200px;
+								}
+							}
+						}
+					}
+				}
+			} //end of .down
+		} //end of .btm
+	} //end of header
+	#scrolTop {
+		display: none; //js
+		position: fixed;
+		bottom: 40px;
+		right: 8%;
+		z-index: 100;
+		> a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 4px; //40px
+			height: 4px; //40px
+			font-size: 2px; //16px
+			color: #fff;
+			transform: rotate(90deg);
+			border: 1px solid #fff;
+			border-radius: 50%;
+			background-color: #1d1f22;
+		}
+	}
+	> section {
+		min-width: 1200px;
+		> .bnr {
+			position: relative;
+			width: 100%;
+			height: 650px;
+			> .slide {
+				> li {
+					display: none;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 650px;
+					@include irSet();
+					&.on {
+						display: block;
+					}
+					&:nth-child(1) {
+						background-image: url(../img/mmca_bnr_sld1.jpg);
+					}
+					&:nth-child(2) {
+						background-image: url(../img/mmca_bnr_sld2.jpg);
+					}
+					&:nth-child(3) {
+						background-image: url(../img/mmca_bnr_sld3.jpg);
+					}
+					&:nth-child(4) {
+						background-image: url(../img/mmca_bnr_sld4.jpg);
+					}
+					&:nth-child(5) {
+						background-image: url(../img/mmca_bnr_sld5.jpg);
+					}
+				}
+			} //end of .slide
+			> .pg {
+				position: absolute;
+				left: 50%;
+				bottom: 12px;
+				z-index: 10;
+				margin-left: -46px;
+				> li {
+					float: left;
+					width: 12px;
+					margin-right: 8px;
+					> a {
+						display: block;
+						height: 12px;
+						text-indent: -9999px;
+						border-radius: 50%;
+						background-color: rgba($color: #fff, $alpha: 0.5);
+					}
+					&.on > a {
+						background-color: #fff;
+					}
+				}
+			} //end of .pg
+			> .arrBtn {
+				@include flexSet(row, nowrap);
+				justify-content: space-between;
+				position: absolute;
+				top: 50%;
+				left: 5%;
+				width: 90%;
+				margin-top: -21px;
+				> a {
+					display: block;
+					width: 43px;
+					height: 43px;
+					@include irSet();
+					&.prev {
+						background-image: url(../img/mv_left.png);
+					}
+					&.next {
+						background-image: url(../img/mv_right.png);
+					}
+				}
+			} //end of .arrBtn
+		} //end of .bnr
+		> .best {
+			@include wdthMrg();
+			> h2 {
+				margin: 45px 0;
+				font-weight: 200;
+				font-size: 40px;
+
+				text-align: center;
+				text-transform: uppercase;
+			}
+			> ul {
+				@include flexSet(row,wrap );
+				justify-content: space-between;
+				> li {
+					width: 20%;
+					height: 340px;
+					margin-right: 3%;
+					&:nth-child(4n) {
+						margin-right: 0;
+					}
+
+					> a {
+						position: relative;
+						display: block;
+						> .bg {
+							position: absolute;
+							z-index: -1;
+							width: 240px;
+							height: 240px;
+							background-color: #eee;
+							opacity: 0;
+						}
+						> img {
+							display: block;
+							width: 100%;
+						}
+					} //end of a
+					> h3 {
+						> a {
+							display: block;
+							margin: 8px 0 16px;
+							color: $menu;
+							font-weight: 500;
+							text-align: center;
+						}
+					} //end of h3
+					> p {
+						color: $menu;
+						text-align: center;
+						font-size: 14px;
+					}
+					> button {
+						display: block;
+						margin: 8px auto;
+						font-size: 11px;
+						text-align: center;
+						text-decoration: underline;
+						outline: none;
+						background: none;
+						border: none;
+						opacity: 0;
+					}
+				}
+			}
+		} //end of .best
+		> .midBnr {
+			width: 100%;
+			> a {
+				display: block;
+				height: 400px;
+				margin-top: 40px;
+				@include irSet();
+				background-image: url(../img/mmca_midbnr_1.png);
+				transition: all 0.4s;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		} //end of .midBnr
+		> .newPb {
+			@extend .best;
+		} //end of .newPb
+		> .new {
+			height: 484px;
+			overflow: hidden;
+			@include wdthMrg();
+			@include flexSet(row, nowrap);
+			justify-content: space-between;
+			> .leftImg {
+				display: block;
+				width: 60%;
+				> img {
+					width: 100%;
+				}
+			} //end of .leftImg
+			> .rightTxt {
+				display: none;
+				width: 35%;
+				> h4 {
+					margin-top: 64px;
+					color: #aaa;
+					font-weight: 400;
+					font-size: 16px;
+				}
+				> h3 {
+					margin: 24px 0;
+					color: #000;
+					font-weight: 500;
+					font-size: 36px;
+				}
+				> p {
+					color: $menu;
+					font-size: 16px;
+					line-height: 1.8;
+				}
+				> button {
+					display: block;
+					width: 140px;
+					height: 40px;
+					margin-top: 32px;
+					outline: none;
+					background: none;
+					font-size: 14px;
+					font-weight: 800;
+					line-height: 40px;
+					text-align: center;
+					border: 1px solid #000;
+					transition: all 0.8s;
+					&:hover {
+						color: #fff;
+						background-color: #000;
+					}
+				}
+			}
+		} //end of .new
+		> .event {
+			@include wdthMrg();
+			margin-top: 100px;
+			@include flexSet(row,wrap );
+			justify-content: space-between;
+			> article {
+				> h3 {
+					overflow: hidden;
+					width: 587px;
+					height: 310px;
+					margin-bottom: 26px;
+					> a {
+						height: 310px;
+						display: block;
+						@include irSet();
+						@include scaleTrs();
+					}
+				}
+				&:nth-of-type(1) > h3 > a {
+					background-image: url(../img/mmca_bnft_1.jpg);
+				}
+				&:nth-of-type(2) > h3 > a {
+					background-image: url(../img/mmca_bnft_2.jpg);
+				}
+				&:nth-of-type(3) > h3 > a {
+					background-image: url(../img/mmca_bnft_3.jpg);
+				}
+				&:nth-of-type(4) > h3 > a {
+					background-image: url(../img/mmca_bnft_4.jpg);
+				}
+			}
+		} //end of .event
+		> .stories {
+			@extend .best;
+			@include flexSet(row, wrap);
+			justify-content: space-between;
+			> h2 {
+				width: 100%;
+			}
+			> article {
+				> a {
+					display: block;
+					width: 380px;
+					> .frame {
+						overflow: hidden;
+						> p {
+							@include irSet();
+							height: 380px;
+							background-size: contain;
+							@include scaleTrs();
+						}
+					}
+					> h3 {
+						margin-top: 24px;
+						font-weight: 500;
+						font-size: 20px;
+						text-align: center;
+					}
+				}
+				&:nth-of-type(1) > a > .frame > p {
+					background-image: url(../img/mmca_story_1.png);
+				}
+				&:nth-of-type(2) > a > .frame > p {
+					background-image: url(../img/mmca_story_2.png);
+				}
+				&:nth-of-type(3) > a > .frame > p {
+					background-image: url(../img/mmca_story_3.png);
+				}
+			}
+		} //end of .stories
+	} //end of section
+	> footer {
+		width: 100%;
+		min-width: 1200px;
+		margin-top: 100px;
+		padding-bottom: 12px;
+		background-color: #1d1f22;
+		> .ftCont {
+			@include wdthMrg();
+			padding-top: 20px;
+			position: relative;
+			> h2 {
+				height: 62px;
+				@include irSet();
+				background-position: left top;
+				background-image: url(../img/mmca_footer_logo.png);
+			}
+			> .snbBtm {
+				position: absolute;
+				top: 20px;
+				right: 0;
+				> ul {
+					@include flexSet(row, nowrap);
+					> li {
+						padding: 0 12px;
+						> a {
+							display: block;
+							color: #fff;
+							font-weight: 400;
+							font-size: 12px;
+							text-align: center;
+						}
+					}
+				}
+			} //end of .snbBtm
+			> address {
+				@include wdthMrg();
+				margin-top: 20px;
+				color: #ccc;
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 1.6;
+				> a {
+					color: #ccc;
+					&:hover:last-child {
+						border-bottom: 1px solid #ccc;
+					}
+				}
+				> span {
+					display: block;
+					margin-top: 12px;
+				}
+			} //end of address
+			> .snbSnsBtm {
+				position: absolute;
+				right: 12px;
+				bottom: 32px;
+				> ul {
+					@include flexSet(row, nowrap);
+					> li {
+						width: 30px;
+						&:nth-child(2) {
+							margin: 0 24px;
+						}
+						> a {
+							display: block;
+							height: 30px;
+							@include irSet();
+						}
+						&:nth-child(1) > a {
+							background-image: url(../img/mmca_footsns_yt.png);
+						}
+						&:nth-child(2) > a {
+							background-image: url(../img/mmca_footsns_fcb.png);
+						}
+						&:nth-child(3) > a {
+							background-image: url(../img/mmca_footsns_insta.png);
+						}
+					}
+				}
+			}
+		}
+	}
+} //end of #wrap

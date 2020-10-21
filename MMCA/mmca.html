@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국립현대미술관 온라인숍 미술가게</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/mmca.css">
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/mmca.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <div class="top">
+        <div class="snb">
+          <h2 class="sr-only">패밀리 사이트</h2>
+          <h2>ARTZONE</h2>
+          <ul class="family">
+            <li><a href="#">국립현대미술관</a></li>
+            <li><a href="#">국립현대미술관문화재단</a></li>
+            <li><a href="#">오프라인 아트존</a></li>
+          </ul>
+          <div class="sign">
+            <h2 class="sr-only">회원정보관리</h2>
+            <ul>
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">마이페이지</a></li>
+              <li>
+                <a href="#">고객센터<span>상세보기</span></a>
+                <ol class="sub">
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">자주묻는질문</a></li>
+                  <li><a href="#">1:1문의하기</a></li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+          <div class="lang">
+            <h2 class="sr-only">언어 선택</h2>
+            <input type="text" id="lang" value="KR | 한국어" readonly>
+            <span>선택하기</span>
+            <ol>
+              <li><a href="#">Korean</a></li>
+              <li><a href="#">English</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="bg">
+      </div>
+      <div class="btm">
+        <ul class="toggle">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <h1><a href="#">미술가게 MMCA SHOP</a></h1>
+        <div class="misc">
+          <h2 class="sr-only">기타 정보</h2>
+          <ul>
+            <li>
+              <a href="#">검색</a>
+
+            </li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">장바구니</a></li>
+          </ul>
+        </div>
+        <div class="search">
+          <div class="srch_cont">
+            <label for="search"></label>
+            <input type="text" id="search" value="검색어를 입력해주세요.">
+            <h3>최근 검색어</h3>
+            <p>최근 검색어가 없습니다.</p>
+            <button>검색 닫기</button>
+          </div>
+        </div>
+        <nav>
+          <ol class="gnb">
+            <li>
+              <a href="#">신상품</a>
+              <article>
+                <div class="left">
+                  <h3>신상품</h3>
+                  <p>
+                    국립현대미술관의 최근 전시<br /> 도록과 상품
+                  </p>
+                </div>
+                <div class="mid">
+                  <ul>
+                    <li><a href="#">도서</a></li>
+                    <li><a href="#">전시 상품</a></li>
+                    <li><a href="#">미술관 상품</a></li>
+                  </ul>
+                </div>
+                <div class="right">
+                  <ul class="album">
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_new_1.png" alt="신상품1">
+                        <div class="text">
+                          <h4>보존과학자 C의 하루</h4>
+                          <p><span class="price">32,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_new_2.png" alt="신상품2">
+                        <div class="text">
+                          <h4>당신을 위하여: 제니 홀저</h4>
+                          <p><span class="price">32,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_new_3.png" alt="신상품3">
+                        <div class="text">
+                          <h4>미술관에 書: 한국 근현대 서예전</h4>
+                          <p><span class="price">35,000원</span></p>
+                        </div>
+                      </a></li>
+                  </ul>
+                  <a href="#">더보기</a>
+                </div>
+              </article>
+            </li>
+            <li>
+              <a href="#">전시 상품</a>
+              <article>
+                <div class="left">
+                  <h3>전시 상품</h3>
+                  <p>
+                    국립현대미술관의 전시에서<br />
+                    영감을 받은 프리미엄 작가 상품
+                  </p>
+                </div>
+                <div class="mid">
+                  <ul>
+                    <li><a href="#">MMCA 소장품 하이라이트 2020+</a></li>
+                    <li><a href="#">낯선 전쟁</a></li>
+                    <li><a href="#">또 다른 가족을 찾아서</a></li>
+                    <li><a href="#">미술관에 書 한국 근현대 서예전</a></li>
+                    <li><a href="#">당신을 위하여: 제니 홀저</a></li>
+                    <li><a href="#">올해의 작가상 2019</a></li>
+                    <li><a href="#">광장: 미술과 사회 1900-2019</a></li>
+                    <li><a href="#">김순기: 게으른 구름</a></li>
+                    <li><a href="#">박서보: 지칠줄 모르는 수행자</a></li>
+                    <li><a href="#">과거전시상품</a></li>
+                  </ul>
+                </div>
+                <div class="right">
+                  <ul class="album">
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_exhi_1.png" alt="전시상품1">
+                        <div class="text">
+                          <h4>《또 다른 가족을 찾아서》 포스터</h4>
+                          <p>2020 아시아 기획전 《또 다른 가족을 찾아서》
+                            <span class="price">5,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_exhi_2.png" alt="전시상품2">
+                        <div class="text">
+                          <h4>《또 다른 가족을 찾아서》 에코백 화이트</h4>
+                          <p>2020 아시아 기획전 《또 다른 가족을 찾아서》
+                            <span class="price">18,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_exhi_3.png" alt="전시상품3">
+                        <div class="text">
+                          <h4>《또 다른 가족을 찾아서》 에코백 블랙</h4>
+                          <p>2020 아시아 기획전 《또 다른 가족을 찾아서》
+                            <span class="price">18,000원</span></p>
+                        </div>
+                      </a></li>
+
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <a href="#">도서</a>
+              <article>
+                <div class="left">
+                  <h3>도서</h3>
+                  <p>
+                    전시도록, 예술이론서, 필름&<br />비디오
+                  </p>
+                </div>
+                <div class="mid">
+                  <ul>
+                    <li><a href="#">전시 도록</a></li>
+                    <li><a href="#">국립현대미술관 연구</a></li>
+                    <li><a href="#">저널/기타</a></li>
+                  </ul>
+                </div>
+                <div class="right">
+                  <ul class="album">
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_book_1.png" alt="도서1">
+                        <div class="text">
+                          <h4>모두를 위한 미술관, 개를 위한 미술관</h4>
+                          <p><span class="price">30,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_book_2.png" alt="도서2">
+                        <div class="text">
+                          <h4>미술관에 書: 한국 근현대 서예전</h4>
+                          <p><span class="price">35,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_book_3.png" alt="도서3">
+                        <div class="text">
+                          <h4>당신을 위하여: 제니 홀저</h4>
+                          <p><span class="price">32,000원</span></p>
+                        </div>
+                      </a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <a href="#">미술관 상품</a>
+              <article>
+                <div class="left">
+                  <h3>미술관 상품</h3>
+                  <p>
+                    다양한 연령대를 커버하는<br /> 국립현대미술관의 철학과<br />아이덴티티를 반영한 상품
+                  </p>
+                </div>
+                <div class="mid">
+                  <ul>
+                    <li><a href="#">NEW</a></li>
+                    <li><a href="#">문구/사무</a></li>
+                    <li><a href="#">패브릭</a></li>
+                    <li><a href="#">액세서리</a></li>
+                    <li><a href="#">생활용품</a></li>
+                    <li><a href="#">어린이</a></li>
+                  </ul>
+                </div>
+                <div class="right">
+                  <ul class="album">
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_md_1.png" alt="미술관상품1">
+                        <div class="text">
+                          <h4>MMCA 머그 화이트</h4>
+                          <p><span class="price">10,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_md_2.png" alt="미술관상품2">
+                        <div class="text">
+                          <h4>MI 미니노트 5종 세트</h4>
+                          <p><span class="price">18,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_md_3.png" alt="미술관상품3">
+                        <div class="text">
+                          <h4>MMCA 텀블러 블랙</h4>
+                          <p><span class="price">42,000원</span></p>
+                        </div>
+                      </a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <a href="#">소장품 상품</a>
+              <article>
+                <div class="left">
+                  <h3>소장품 상품</h3>
+                  <p>
+                    국립현대미술관의 소장품을<br />아트상품으로 재현한 에디션 <br /> 상품
+                  </p>
+                </div>
+                <div class="mid">
+                  <ul>
+                    <li><a href="#">박서보</a></li>
+                    <li><a href="#">윤형근</a></li>
+                    <li><a href="#">서세옥</a></li>
+                    <li><a href="#">곽인식</a></li>
+                    <li><a href="#">장욱진</a></li>
+                    <li><a href="#">이중섭</a></li>
+                  </ul>
+                </div>
+                <div class="right">
+                  <ul class="album">
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_art_1.png" alt="소장품1">
+                        <div class="text">
+                          <h4>윤형근,&lt;청다색(1973)&gt; 아트프린트 액자</h4>
+                          <p>MMCA 소장품 하이라이트 2020+<span class="price">100,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_art_2.png" alt="소장품2">
+                        <div class="text">
+                          <h4>서세옥,&lt;사람들(1989)&gt; 아트프린트 액자</h4>
+                          <p>MMCA 소장품 하이라이트 2020+<span class="price">100,000원</span></p>
+                        </div>
+                      </a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <a href="#">기업·기관 주문</a>
+              <article>
+                <div class="left">
+                  <h3>기업·기관 주문</h3>
+                  <p>기관 기업 주문 추천 상품
+                  </p>
+                </div>
+                <div class="mid">
+                  <ul>
+                    <li><a href="#">1만원 - 3만원 미만</a></li>
+                    <li><a href="#">3만원 - 5만원 미만</a></li>
+                    <li><a href="#">5만원 이상</a></li>
+                  </ul>
+                </div>
+                <div class="right">
+                  <ul class="album">
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_ord_1.png" alt="기업주문1">
+                        <div class="text">
+                          <h4>MMCA 머그 화이트</h4>
+                          <p><span class="price">10,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_ord_2.png" alt="기업주문2">
+                        <div class="text">
+                          <h4>MI 볼펜세트</h4>
+                          <p><span class="price">3,000원</span></p>
+                        </div>
+                      </a></li>
+                    <li><a href="#">
+                        <img src="./img/mmca_gnb_ord_3.png" alt="기업주문3">
+                        <div class="text">
+                          <h4>MI 미니노트 5종 세트</h4>
+                          <p><span class="price">18,000원</span></p>
+                        </div>
+                      </a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+            <li>
+              <a href="#">이벤트</a>
+            </li>
+          </ol>
+        </nav>
+        <div id="fullGnb">
+          <h2 class="sr-only">미술가게 전체메뉴 보기</h2>
+          <ol>
+            <li>
+              <a href="#">신상품</a>
+              <ul>
+                <li><a href="#">도서</a></li>
+                <li><a href="#">전시 상품</a></li>
+                <li><a href="#">미술관 상품</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">전시 상품</a>
+              <ul>
+                <li><a href="#">MMCA 소장품 하이라이트 2020+</a></li>
+                <li><a href="#">낯선 전쟁</a></li>
+                <li><a href="#">또 다른 가족을 찾아서</a></li>
+                <li><a href="#">미술관에 書: 한국 근현대 서예전</a></li>
+                <li><a href="#">당신을 위하여: 제니 홀저</a></li>
+                <li><a href="#">올해의 작가상 2019</a></li>
+                <li><a href="#">광장: 미술과 사회 1900-2019</a></li>
+                <li><a href="#">김순기: 게으른 구름</a></li>
+                <li><a href="#">박서보: 지칠줄 모르는 수행자</a></li>
+                <li>
+                  <a href="#">과거전시상품</a>
+                  <ul class="sub">
+                    <li><a href="#">젊은모색2019: 액체 유리 바다</a></li>
+                    <li><a href="#">대안적 언어 - 아스거 욘</a></li>
+                    <li><a href="#">세상에 눈뜨다: 아시아 미술과 사회</a></li>
+                    <li><a href="#">대한제국의 미술-빛의 길을 꿈꾸다</a></li>
+                    <li><a href="#">근대미술가의 재발견1: 절필시대</a></li>
+                    <li><a href="#">내가 사랑한 미술관: 근대의 걸작展</a></li>
+                    <li><a href="#">신여성 도착하다</a></li>
+                    <li><a href="#">현대차 시리즈 2018: 최정화</a></li>
+                    <li><a href="#">김중업 다이얼로그</a></li>
+                    <li><a href="#">마르셀 뒤샹</a></li>
+                    <li><a href="#">탄생 100주년 기념-곽인식</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">도서</a>
+              <ul>
+                <li><a href="#">전시 도록</a></li>
+                <li><a href="#">국립현대미술관 연구</a></li>
+                <li><a href="#">저널/기타</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">미술관 상품</a>
+              <ul>
+                <li><a href="#">NEW</a></li>
+                <li><a href="#">문구/사무</a></li>
+                <li><a href="#">패브릭</a></li>
+                <li><a href="#">액세서리</a></li>
+                <li><a href="#">생활용품</a></li>
+                <li><a href="#">어린이</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">소장품 상품</a>
+              <ul>
+                <li><a href="#">박서보</a></li>
+                <li><a href="#">윤형근</a></li>
+                <li><a href="#">서세옥</a></li>
+                <li><a href="#">곽인식</a></li>
+                <li><a href="#">장욱진</a></li>
+                <li><a href="#">이중섭</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">기업·기관 주문</a>
+              <ul>
+                <li><a href="#">1만원 - 3만원 미만</a></li>
+                <li><a href="#">3만원 - 5만원 미만</a></li>
+                <li><a href="#">5만원 이상</a></li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+    </header>
+    <div id="scrolTop">
+      <a href="#">&lt;<span class="sr-only">맨 위로 이동</span></a>
+    </div>
+    <section>
+      <h2 class="sr-only">MMCA 미술가게 주요 상품</h2>
+      <div class="bnr">
+        <ul class='slide'>
+          <li>MMCA Shop 오픈 - 아트 상품, 미술관 상품, 전시 도록 국립현대 미술관의 차별화 된 컨텐츠를 온라인에서 만나보세요</li>
+          <li>Books - 전시 도록, 연구기획서, 예술 이론서, 필름&비디오 다양한 주제의 서적 및 출판물</li>
+          <li>MMCA Exclusive - 국립현대미술관의 상징성과 정체성을 담아낸 아트상품</li>
+          <li>MMCA Exhibition - 차별화된 기획력과 풍부한 컨텐츠의 전시에서 영감을 받은 프리미엄 상품</li>
+          <li>MMCA Edition - 한국 근 현대를 대표하는 작가의 작품을 아트상품으로 재현한 에디션 상품</li>
+        </ul>
+        <ul class="pg clear">
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+        <div class="arrBtn">
+          <a href="#" class="prev">prev</a>
+          <a href="#" class="next">next</a>
+        </div>
+      </div>
+      <div class="best">
+        <h2>best product</h2>
+        <ul>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_1.png" alt="머그 화이트">
+            </a>
+            <h3><a href="#">MMCA 머그 화이트</a></h3>
+            <p>10,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_2.png" alt="미니노트 5종">
+            </a>
+            <h3><a href="#">MI 미니노트 5종 세트</a></h3>
+            <p>18,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_3.png" alt="텀블러 블랙">
+            </a>
+            <h3><a href="#">MMCA 텀블러 블랙</a></h3>
+            <p>42,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_4.png" alt="마스킹 테이프">
+            </a>
+            <h3><a href="#">MMCA 마스킹테이프 6개 세트</a></h3>
+            <p>20,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_5.png" alt="건축물 모티브 마그넷">
+            </a>
+            <h3><a href="#">MMCA 4관 건축물 모티브 마그넷</a></h3>
+            <p>6,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_6.png" alt="원형 마그넷">
+            </a>
+            <h3><a href="#">MMCA 4관 컬러 원형 마그넷 세트</a></h3>
+            <p>6,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_7.png" alt="포켓 노트 화이트">
+            </a>
+            <h3><a href="#">MMCA 포켓 노트 화이트</a></h3>
+            <p>10,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div>
+              <img src="./img/mmca_best_8.png" alt="가죽 필통 옐로우">
+            </a>
+            <h3><a href="#">MMCA 가죽 필통 옐로우</a></h3>
+            <p>13,000원</p>
+            <button class="cart">ADD TO CART</button>
+          </li>
+        </ul>
+      </div>
+      <div class="midBnr">
+        <h2 class="sr-only">MMCA 소장품 하이라이트 2020+</h2>
+        <a href="#">
+          <p>국립현대미술관의 10,000여점의 소장품 중1950년대 이전 작품부터 1950년대 이후 앵포르멜 회화, 단색화, 실험미술의 작품이 전시되며,프리미엄 아트 프린트, 엽서와 마그넷, 북마크로
+            재현했습니다. </p>
+        </a>
+      </div>
+      <div class="newPb">
+        <h2>new publications</h2>
+        <ul>
+          <li>
+            <a href="#">
+              <div class="bg"></div><img src="./img/mmca_newpub_1.png" alt="모두를 위한 미술관, 개를 위한 미술관">
+            </a>
+            <h3><a href="#">모두를 위한 미술관, 개를 위한 미술관</a></h3>
+            <p>30,000원</p>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div><img src="./img/mmca_newpub_2.png" alt="보존과학자 C의 하루">
+            </a>
+            <h3><a href="#">보존과학자 C의 하루</a></h3>
+            <p>31,000원</p>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div><img src="./img/mmca_newpub_3.png" alt="당신을 위하여: 제니 홀저">
+            </a>
+            <h3><a href="#">당신을 위하여: 제니 홀저</a></h3>
+            <p>32,000원</p>
+          </li>
+          <li>
+            <a href="#">
+              <div class="bg"></div><img src="./img/mmca_newpub_4.png" alt="미술관에 書: 한국 근현대 서예전">
+            </a>
+            <h3><a href="#">미술관에 書: 한국 근현대 서예전</a></h3>
+            <p>35,000원</p>
+          </li>
+        </ul>
+      </div>
+      <div class="new">
+        <h2 class="sr-only">어린이 상품</h2>
+        <div class="leftImg">
+          <img src="./img/mmca_midbnr_kid.png" alt="어린이 상품">
+        </div>
+        <div class="rightTxt">
+          <h4>MMCA New Product</h4>
+          <h3>국립현대미술관<br />어린이 상품</h3>
+          <p>이번 출시된 MI를 활용한 새로운 문화상품은 국랩현대미술관의 명칭이자 성격을 대변하는 Museum, Modern, Contemporary, Art 4개의 단어를 활용한 것으로, 각 단어의 영문
+            대문자를 좌우 대칭하여 기존 미술관 아이덴티티를 확장 응용한 그래픽을 적용하였습니다. </p>
+          <button>상품보기</button>
+        </div>
+      </div>
+      <div class="event">
+        <h2 class="sr-only">진행중인 이벤트</h2>
+        <article>
+          <h3>
+            <a href="#">
+              신규회원 가입 시 = 3,000원 할인쿠폰, 무료배송 쿠폰 제공
+            </a>
+          </h3>
+        </article>
+        <article>
+          <h3>
+            <a href="#">
+              도록 구매 혜택 - 국립현대미술관 전 도록 10% 할인
+            </a>
+          </h3>
+        </article>
+        <article>
+          <h3>
+            <a href="#">
+              오픈 기념 기획전 - 최근 전시 상품 구매 혜택
+            </a>
+          </h3>
+        </article>
+        <article>
+          <h3>
+            <a href="#">
+              대량 구매 혜택 - 대량 구매 시 다양한 혜택을 제공합니다.
+            </a>
+          </h3>
+        </article>
+      </div>
+      <div class="stories">
+        <h2>more stories</h2>
+        <article>
+          <a href="#">
+            <div class="frame">
+              <p>미술관 '소확행'을 누리자! 《MMCA 소장품 하이라이트 2020+》 문화상품</p>
+
+            </div>
+            <h3>《MMCA 소장품 하이라이트 2020+》</h3>
+          </a>
+        </article>
+        <article>
+          <a href="#">
+            <div class="frame">
+
+              <p>'기대 만발!'《미술관에 書: 한국 근현대 서예전》 문화상품</p>
+            </div>
+            <h3>《미술관에 書: 한국 근현대 서예전》</h3>
+          </a>
+        </article>
+        <article>
+          <a href="#">
+            <div class="frame">
+              <p>'완판 각!' 제니 홀저 문화상품을 내손에</p>
+
+            </div>
+            <h3>《당신을 위하여: 제니 홀저》</h3>
+          </a>
+        </article>
+      </div>
+    </section>
+    <footer>
+      <div class="ftCont">
+        <h2>국립현대미술관 문화재단</h2>
+        <div class="snbBtm">
+          <ul>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">이용안내</a></li>
+            <li><a href="#">이용약관</a></li>
+          </ul>
+        </div>
+        <address>
+          회사명 : (재)국립현대미술관문화재단 | &nbsp;대표자 : 윤범모 | &nbsp;사업자등록번호 : 101-82-22996 <a href="#">사업자번호조회 &gt;</a><br />
+          주소 : 서울특별시 종로구 삼청로 30 국립현대미술관 아트존 | &nbsp;개인정보관리책임자 : 이재탁 <br />
+          통신판매신고업 : 제2020-서울종로-1177호 | &nbsp;고객센터 : 02-720-9870 | &nbsp;이메일 : <a
+            href="mailto:mmcashop@mmcafoundation.or.kr">mmcashop@mmcafoundation.or.kr</a>
+
+          <span>
+            Copyright ⓒ MMCA Foundation. All Rights Reserved.
+          </span>
+        </address>
+        <div class="snbSnsBtm">
+          <ul>
+            <li><a href="#">유투브</a></li>
+            <li><a href="#">페이스북</a></li>
+            <li><a href="#">인스타그램</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

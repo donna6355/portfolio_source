@@ -1,0 +1,151 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+$bgCol: #83a7c9;
+$pointCol: #305478;
+$fontCol: #333;
+$white: #fff;
+
+@mixin btnReset {
+	background: none;
+	outline: none;
+	border: none;
+}
+
+@mixin irSet {
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	color: $fontCol;
+}
+
+#root {
+	position: relative;
+	width: 100%;
+	min-width: 350px;
+	max-width: 600px;
+	height: 640px;
+	margin: 0 auto;
+	background-color: $bgCol;
+	font-family: roboto;
+}
+
+h1 {
+	width: 100%;
+	height: 100px;
+	color: $white;
+	font-size: 60px;
+	font-weight: 800;
+	font-family: 'Cute Font', cursive;
+	text-align: center;
+	line-height: 100px;
+	text-indent: 72px;
+	background-color: $pointCol;
+}
+
+.form {
+	width: 90%;
+	margin: 16px auto;
+}
+
+.form > * {
+	@include btnReset();
+	font-size: 14px;
+	height: 50px;
+	background-color: $white;
+	text-indent: 16px;
+}
+
+.input {
+	width: 60%;
+	vertical-align: top;
+}
+.inputVal {
+	width: 30%;
+	vertical-align: top;
+}
+
+.form > button {
+	width: 10%;
+	@include irSet;
+	background-image: url(./components/react_add.png);
+}
+.shop-list {
+	overflow: auto;
+	width: 90%;
+	height: calc(640px - 262px);
+	margin: 0 auto;
+}
+.list {
+	display: flex;
+	width: 100%;
+	height: 40px;
+	margin: 0 auto 8px;
+	background-color: $white;
+}
+.done {
+	text-decoration: line-through;
+	opacity: 0.6;
+}
+.list > button {
+	width: 10%;
+	height: 40px;
+	@include btnReset();
+	@include irSet();
+}
+.list > .cartin {
+	background-image: url(./components/react_cart.png);
+}
+.list > .full {
+	background-image: url(./components/react_cartfull.png);
+}
+.list > button:last-child {
+	background-image: url(./components/react_delete.png);
+}
+.list > p {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 80%;
+	line-height: 40px;
+}
+.list > p > span {
+	text-indent: 4px;
+	white-space: nowrap;
+}
+.list > p > .item {
+	width: 70%;
+}
+.list > p > .price {
+	width: 30%;
+	text-align: right;
+}
+
+.total {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	color: $white;
+	font-size: 32px;
+	text-align: center;
+	font-family: 'Cute Font', cursive;
+	line-height: 36px;
+	background-color: $pointCol;
+}
+
+.kermit {
+	position: absolute;
+	left: 16px;
+	top: 0;
+	width: 80px;
+	height: 130px;
+	@include irSet();
+	background-image: url(./components/react_kermit.png);
+	background-repeat: no-repeat;
+}

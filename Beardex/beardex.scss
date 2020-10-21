@@ -1,0 +1,312 @@
+@charset "UTF-8";
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;600&display=swap');
+
+$mainClr: #dedede;
+
+@mixin flexSet ($dir: row,$wrap:nowrap) {
+	display: flex;
+	flex-direction: $dir;
+	flex-wrap: $wrap;
+	justify-content: center;
+	align-content: center;
+}
+@mixin irSet () {
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+@mixin clear() {
+	*zoom: 1;
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+@mixin btnReset() {
+	border: none;
+	outline: none;
+	background: none;
+}
+body {
+	min-width: 1000px;
+}
+#wrap {
+	* {
+		font-size: 20px;
+		font-family: 'kufam';
+	}
+	width: 1000px;
+	margin: 0 auto;
+	> header {
+		height: 50px;
+		@include irSet();
+		background-color: $mainClr;
+		background-image: url(../img/beardex_logo_trans.png);
+		background-size: contain;
+	} //end of header
+	> section {
+		position: relative;
+		width: 100%;
+		height: 670px;
+		background-image: url(../img/beardex_map_white.gif);
+		background-repeat: no-repeat;
+		background-size: contain;
+		cursor: url(../img/beardex_chloe_cursors.png), auto;
+		> .mapChar {
+			> li {
+				display: none;
+				position: absolute;
+				width: 112px;
+				&:nth-child(1) {
+					left: 26px;
+					top: 238px;
+				}
+				&:nth-child(2) {
+					left: 880px;
+					top: 300px;
+				}
+				&:nth-child(3) {
+					left: 157px;
+					top: 89px;
+				}
+				&:nth-child(4) {
+					left: 776px;
+					top: 140px;
+				}
+				&:nth-child(5) {
+					left: 472px;
+					top: 540px;
+				}
+				&:nth-child(6) {
+					left: 593px;
+					top: 412px;
+				}
+				&:nth-child(7) {
+					left: 246px;
+					top: 372px;
+				}
+				> a {
+					display: block;
+					height: 130px;
+					@include irSet();
+				}
+				&:nth-child(1) > a {
+					background-image: url(../img/beardex_map_panda1.png);
+				}
+				&:nth-child(2) > a {
+					background-image: url(../img/beardex_map_ice0.png);
+				}
+				&:nth-child(3) > a {
+					background-image: url(../img/beardex_map_grizzzly.png);
+				}
+				&.anony > a {
+					background-image: url(../img/beardex_map_anony0.png);
+				}
+				&:nth-child(6) > a {
+					background-image: url(../img/beardex_map_anonym0.png);
+				}
+			}
+		} //end of .mapChar
+		> #bg {
+			display: none;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+		> article {
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -312px 0 0 -376px;
+			@include clear();
+			width: 753px;
+			height: 625px;
+			cursor: default;
+			img {
+				display: block;
+				width: 250px;
+				height: 250px;
+				float: left;
+				opacity: 0;
+			}
+			> .txt {
+				@include flexSet(column,nowrap );
+				float: left;
+				width: 400px;
+				height: 150px;
+				padding: 50px;
+				margin-bottom: 40px;
+				background-color: $mainClr;
+				border-radius: 50px;
+				border: 1px dotted #333;
+				opacity: 0;
+				> p {
+					display: none;
+				}
+			}
+			> .btn {
+				@include flexSet(row, nowrap);
+				opacity: 0;
+				> button {
+					width: 200px;
+					height: 40px;
+					@include btnReset();
+					background-color: #eee;
+					border: 1px solid $mainClr;
+					border-radius: 20px;
+					&.reset {
+						margin-right: 24px;
+					}
+				}
+				width: 100%;
+			}
+			&#scn1 {
+				> img {
+					width: 213px;
+					height: 400px;
+					margin-top: 123px;
+				}
+				> .txt {
+					margin: 175px 0 157px 37px;
+				}
+			} //end of #sc1
+			&#gotu {
+				> img {
+					width: 753px;
+					height: 625px;
+				}
+				> p.txt {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					color: #fff;
+					font-weight: 800;
+					font-size: 60px;
+					text-align: center;
+					border: none;
+					background-color: transparent;
+				}
+				> .btn {
+					position: absolute;
+					bottom: 0;
+				}
+			}
+			&#watchout,
+			&#finale,
+			&#end {
+				@extend #gotu;
+			}
+			&#watchout {
+				> p.txt {
+					margin-left: -500px;
+				}
+			}
+			&#Charlie {
+				@extend #scn1;
+				> .txt {
+					height: 200px;
+				}
+			}
+			&#finale {
+				> p.txt {
+					width: 1000px;
+					font-size: 24px;
+					left: -180px;
+					top: 85%;
+					margin: 0;
+				}
+			}
+		} //end of article
+		aside {
+			position: absolute;
+			top: 15%;
+			z-index: -1;
+			left: -130px;
+			@include flexSet(row, nowrap);
+			justify-content: space-between;
+			width: 1260px;
+			// outline: 1px solid blue;
+			> div {
+				width: 120px;
+				> h2 {
+					height: 30px;
+					text-align: center;
+					line-height: 30px;
+					background-color: $mainClr;
+					border-radius: 10px;
+				}
+				> ul {
+					width: 100%;
+					> li {
+						display: none;
+						height: 50px;
+						@include irSet();
+						margin-bottom: 8px;
+						&.on {
+							display: block;
+						}
+					}
+				}
+				&.left > ul > li {
+					&:nth-child(1) {
+						width: 100px;
+						margin-left: 12px;
+						background-image: url(../img/beardex_clue_logo2.png);
+						margin-bottom: none;
+					}
+					&:nth-child(2) {
+						background-image: url(../img/beardex_clue_cap.png);
+					}
+					&:nth-child(3) {
+						background-image: url(../img/beardex_clue_grizzly.png);
+					}
+				} //end of .left
+				&.right > ul > li {
+					&:nth-child(1) {
+						background-image: url(../img/beardex_char_chloe.png);
+					}
+					&:nth-child(2) {
+						background-image: url(../img/beardex_char_panda.png);
+					}
+					&:nth-child(3) {
+						background-image: url(../img/beardex_char_ice.png);
+					}
+					&:nth-child(4) {
+						background-image: url(../img/beardex_char_burglar.png);
+					}
+					&:nth-child(5) {
+						background-image: url(../img/beardex_char_police.png);
+					}
+					&:nth-child(6) {
+						background-image: url(../img/beardex_char_charlie.png);
+					}
+					&:nth-child(7) {
+						background-image: url(../img/beardex_char_grizzly.png);
+					}
+					&:nth-child(8) {
+						background-image: url(../img/beardex_char_anony.png);
+					}
+				}
+			}
+		}
+	} //end of section
+	> footer {
+		height: 50px;
+		background-color: #dedede;
+		> address {
+			font-size: 12px;
+			line-height: 25px;
+			text-align: center;
+			> a {
+				font-size: 13px;
+				font-weight: 800;
+			}
+		}
+	} //end of footer
+} //end of #wrap

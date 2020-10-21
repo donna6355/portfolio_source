@@ -1,0 +1,977 @@
+@charset "UTF-8";
+
+$mainCol: #ff5a00;
+$footcol: #202020;
+$gray: #ccc;
+
+$rwd1200: 'screen and (max-width:1200px)';
+$rwd1000: 'screen and (max-width:1000px)';
+$rwd800: 'screen and (max-width:800px)';
+
+@mixin flexSet ($dir: row, $wrap:nowrap) {
+	display: flex;
+	flex-direction: $dir;
+	flex-wrap: $wrap;
+}
+@mixin irSet () {
+	text-indent: -9999px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+@mixin moreView() {
+	width: 180px;
+	height: 45px;
+	background: none;
+	outline: none;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	border: 1px solid #fff;
+	border-radius: 28px;
+	transition: all .5s;
+	&:hover {
+		background-color: $mainCol;
+		border: 1px solid $mainCol;
+	}
+}
+@keyframes scroll {
+	from {
+		opacity: 0.3;
+		top: 700px;
+	}
+	to {
+		opacity: 1;
+		top: 680px;
+	}
+}
+
+#wrap {
+	margin: 0 auto;
+	max-width: 1600px;
+	// min-width: 800px;
+	overflow: hidden;
+	* {
+		font-family: 'roboto';
+	}
+	> header {
+		@include flexSet(row, nowrap);
+		overflow: hidden;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		width: 100%;
+		height: 100px; //100>280 js
+		background-color: #fff;
+		> .logo {
+			position: absolute;
+			left: 64px;
+			top: 28px;
+			width: 200px;
+			@media #{$rwd800} {
+				left: 4px;
+			}
+			> a {
+				display: block;
+				height: 44px;
+				@include irSet();
+				background-image: url(../img/spigen_h1_logo.png);
+			}
+		} //end of .logo
+		> nav {
+			width: 100%;
+			height: 100px;
+			border-bottom: 1px solid $gray;
+
+			> .gnb {
+				@include flexSet(row, nowrap);
+				justify-content: center;
+				position: absolute;
+				left: 50%;
+				top: 0;
+				margin-left: -354px;
+				@media #{$rwd1200} {
+					display: none;
+				}
+				> li {
+					> a {
+						display: block;
+						height: 100px;
+						padding: 0 64px;
+						color: #202020;
+						font-size: 21px;
+						text-align: center;
+						line-height: 100px;
+					}
+					> .bar {
+						display: block;
+						width: 0%;
+						height: 2px;
+						background-color: $mainCol;
+					}
+
+					> .lnb {
+						display: none;
+						margin-top: 20px;
+						> li {
+							@include flexSet(row,nowrap );
+							justify-content: center;
+							align-items: center;
+							height: 40px;
+							> a {
+								font-size: 16px;
+								color: #646464;
+								transition: all .2s;
+								&:hover {
+									color: $mainCol;
+									border-bottom: 1px solid $mainCol;
+								}
+							}
+						}
+					} //end of .lnb
+				}
+			} //end of .gnb
+			> .lang {
+				@include flexSet(row,nowrap );
+				position: absolute;
+				right: 10%;
+				@media #{$rwd1200} {
+					right: 12%;
+				}
+				> a {
+					height: 100px;
+					font-weight: 600;
+					font-size: 18px;
+					color: $gray;
+					line-height: 100px;
+					&.on {
+						color: $mainCol;
+					}
+				}
+				> .dot {
+					display: block;
+					height: 100px;
+					padding: 0 8px;
+					color: $gray;
+					font-weight: 600;
+					font-size: 18px;
+					line-height: 100px;
+				}
+			} //end of .lang
+		}
+	} //end of header
+	> .toggle {
+		> h2 {
+			position: fixed;
+			right: 3%;
+			top: 36px;
+			z-index: 100;
+			width: 36px;
+			height: 28px;
+			@include irSet();
+			background-image: url(../img/spigen_lnb_menu.jpg);
+			cursor: pointer;
+		}
+
+		> .fgnb {
+			display: none; //js show
+			position: fixed;
+			z-index: 100;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			// height: 100%;
+			background-color: rgba(255, 80, 0, 0.9);
+			@media #{$rwd1200} {
+				width: 100%;
+				right: initial;
+				bottom: initial;
+			}
+			> .cls {
+				position: absolute;
+				left: 50%;
+				top: 200px;
+				margin-left: -27px;
+				width: 45px;
+				height: 45px;
+				background: none;
+				border: none;
+				outline: none;
+				@include irSet();
+				background-image: url(../img/spigen_lnb_close.png);
+				@media #{$rwd1200} {
+					width: 30px;
+					height: 30px;
+					left: initial;
+					right: 16px;
+					top: 8px;
+					margin-left: 0;
+					margin-top: 8px;
+					z-index: 100;
+				}
+			}
+			> ul {
+				@include flexSet(row, nowrap);
+				position: absolute;
+				left: 50%;
+				top: 330px;
+				margin-left: -600px;
+				@media #{$rwd1200} {
+					display: initial;
+					width: 100%;
+					left: 0;
+					top: 0;
+					margin-left: 0;
+					background-color: rgba(255, 80, 0, 0.9);
+				}
+				> li {
+					width: 300px;
+					@media #{$rwd1200} {
+						width: 100%;
+						border-top: 1px solid rgba(256, 256, 256, 0.2);
+						box-sizing: border-box;
+					}
+
+					&:first-child {
+						display: none;
+						@media #{$rwd1200} {
+							display: block;
+							@include irSet();
+							background-image: url(../img/spigen_fgnb_whlogo.png);
+							border-top: none;
+						}
+					}
+					> a {
+						display: block;
+						color: #fff;
+						font-weight: 700;
+						font-size: 30px;
+						text-align: center;
+						@media #{$rwd1200} {
+							height: 80px;
+							line-height: 80px;
+						}
+					}
+					> .flnb {
+						margin-top: 48px;
+						@media #{$rwd1200} {
+							display: none;
+							margin-top: 0;
+							margin-bottom: 16px;
+						}
+						li {
+							@include flexSet(row, nowrap);
+							justify-content: center;
+							align-items: center;
+							height: 44px;
+							@media #{$rwd1200} {
+								height: 32px;
+							}
+							> a {
+								color: #dedede;
+								font-size: 22px;
+								transition: all 0.2s;
+								@media #{$rwd1200} {
+									color: #fff;
+								}
+								&:hover {
+									font-weight: 900;
+									border-bottom: 1px solid #dedede;
+									@media #{$rwd1200} {
+										font-weight: normal;
+										border: none;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	} //end of .toggle
+	> section {
+		margin-top: 100px;
+		> .bnr {
+			position: relative;
+			left: 0;
+			top: 0;
+			height: 810px;
+			@media #{$rwd1200} {
+				height: 500px;
+			}
+			> .slide {
+				display: none;
+				position: absolute;
+				overflow: hidden;
+				width: 100%;
+				height: 810px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				@media #{$rwd1200} {
+					height: 500px;
+				}
+				&:nth-child(1) {
+					background-image: url(../img/spigen_slid_1.jpg);
+				}
+				&:nth-child(2) {
+					background-image: url(../img/spigen_slid_2.jpg);
+				}
+				&:nth-child(3) {
+					background-image: url(../img/spigen_slid_3.jpg);
+				}
+				> h2 {
+					color: $mainCol;
+					font-weight: 600;
+					font-size: 28px;
+					margin: 367px 0 0 10%; //top 387px;
+					opacity: 0; //1
+					@media #{$rwd1200} {
+						margin-top: 100px;
+					}
+				}
+				> .bar {
+					height: 1px;
+					width: 10%; //80%
+					margin: 20px 10% 0;
+					background-color: rgba(256, 256, 256, 0.6);
+					opacity: 0; //1
+				}
+				> h3 {
+					color: #fff;
+					font-size: 45px;
+					font-weight: 800;
+					margin: 50px 10% 20px; //top 30px
+					opacity: 0; //1
+				}
+				> p {
+					color: #fff;
+					font-weight: 600;
+					font-size: 15px;
+					margin-left: 10%;
+					margin-top: 40px; //top 0;
+					opacity: 0; //1
+					@media #{$rwd1200} {
+						width: 80%;
+						word-break: keep-all;
+					}
+				}
+				> button {
+					margin: 59px 0 0 10%; //top 39px;
+					@include moreView();
+					opacity: 0; //1
+				}
+			} //end of .slide
+			> .page {
+				position: absolute;
+				left: 0;
+				top: 395px;
+				@media #{$rwd1200} {
+					display: none;
+				}
+				> li {
+					width: 0px; //20px
+					height: 2px;
+					margin-bottom: 22px;
+					background-color: $gray;
+					text-indent: -9999px;
+					opacity: 0;
+					&.on {
+						//100px
+						opacity: 0;
+						background-color: $mainCol;
+					}
+				}
+			}
+			> .btn {
+				position: absolute;
+				right: 10%;
+				top: 391px;
+				@media #{$rwd1200} {
+					top: 120px;
+				}
+				> button {
+					display: block;
+					width: 29px;
+					height: 16px;
+					background: none;
+					outline: none;
+					border: none;
+					@include irSet();
+					&.prev {
+						margin-bottom: 64px;
+						background-image: url(../img/spigen_slide_prev.png);
+					}
+					&.next {
+						background-image: url(../img/spigen_slide_next.png);
+					}
+				}
+			}
+		} //end of .bnr
+		> .scrol {
+			position: fixed;
+			width: 200px;
+			height: 110px;
+			left: 44%;
+			background: none;
+			outline: none;
+			border: none;
+			color: #fff;
+			font-size: 16px;
+			text-align: center;
+			text-transform: uppercase;
+			background-image: url(../img/spigen_slide_mouse.png);
+			background-position: center top;
+			background-repeat: no-repeat;
+			opacity: 0.3;
+			animation-name: scroll;
+			animation-duration: 0.7s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+			@media #{$rwd1200} {
+				display: none;
+			}
+		}
+		> .medBlog {
+			height: 480px;
+			@include flexSet(row , nowrap);
+			@media #{$rwd1200} {
+				display: initial;
+			}
+			> .left {
+				width: 35%;
+				padding: 100px 40px 0 150px;
+				box-sizing: border-box;
+				@media #{$rwd1200} {
+					width: 100%;
+					padding: 40px;
+				}
+				> .bar {
+					width: 40px;
+					height: 1px;
+					background-color: #777;
+					@media #{$rwd1200} {
+						margin: 0 auto;
+					}
+				}
+				> h2 {
+					margin: 40px 0;
+					font-size: 40px;
+					@media #{$rwd1200} {
+						text-align: center;
+					}
+				}
+				> p {
+					color: #777;
+					font-size: 18px;
+					word-break: keep-all;
+					@media #{$rwd1200} {
+						text-align: center;
+					}
+				}
+			}
+			> .right {
+				position: relative;
+				width: 65%;
+				padding: 100px 20px 40px 50px;
+				box-sizing: border-box;
+				background-color: #f1f1f1;
+				@media #{$rwd1200} {
+					width: 100%;
+					padding: 40px 3%;
+					height: 520px;
+				}
+				@media #{$rwd1000} {
+					height: 430px;
+				}
+				> .label {
+					@include flexSet(row, nowrap);
+					> li {
+						width: 160px;
+						margin: 0 12px 30px 0;
+						> a {
+							display: block;
+							height: 50px;
+							color: #a6a6a6;
+
+							font-weight: 500;
+							font-size: 16px;
+							line-height: 50px;
+							text-align: center;
+							border: 1px solid #a6a6a6;
+						}
+						&.on > a {
+							color: #fff;
+							background-color: $mainCol;
+							border: 1px solid $mainCol;
+						}
+					}
+				}
+				> .media {
+					position: absolute;
+					width: 94%;
+					left: 50px;
+					top: 180px;
+					display: none;
+					cursor: pointer;
+					@media #{$rwd1200} {
+						top: 130px;
+						left: 3%;
+					}
+
+					&.on {
+						@include flexSet(row,nowrap );
+						justify-content: space-between;
+					}
+					> .frame {
+						float: left;
+						width: 32%;
+						background-size: cover;
+						background-repeat: no-repeat;
+						@media #{$rwd1200} {
+							width: 48%;
+						}
+
+						&:nth-child(1) {
+							background-image: url(../img/spigen_media_1.jpg);
+						}
+						&:nth-child(2) {
+							background-image: url(../img/spigen_media_2.jpg);
+						}
+						&:nth-child(3) {
+							margin-right: 0;
+							background-image: url(../img/spigen_media_3.jpg);
+							@media #{$rwd1200} {
+								display: none;
+							}
+						}
+						> .shadow {
+							// position: absolute;
+							width: 100%;
+							height: 210px;
+							background-color: rgba(0, 0, 0, 0.5);
+							transition: all 0.4s;
+							@media #{$rwd1200} {
+								height: 350px;
+							}
+							@media #{$rwd1000} {
+								height: 270px;
+							}
+							&:hover {
+								background-color: rgba(0, 0, 0, 0.2);
+							}
+							> h3 {
+								overflow: hidden;
+								margin: 0 20px;
+								white-space: nowrap;
+								text-overflow: ellipsis;
+								color: #fff;
+								font-size: 18px;
+								font-weight: 600;
+								&:before {
+									display: block;
+									margin: 30px 0 70px 0;
+									content: "MEDIA";
+									@media #{$rwd1200} {
+										margin: 30px 0 220px 0;
+									}
+									@media #{$rwd1000} {
+										margin: 30px 0 140px 0;
+									}
+								}
+							}
+							> p {
+								margin: 20px;
+								color: $gray;
+								font-size: 16px;
+							}
+						}
+					}
+				}
+				> .blog {
+					@extend .media;
+					z-index: 0; //js
+					> .frame {
+						&:nth-child(1) {
+							background-image: url(../img/spigen_blog_1.jpg);
+						}
+						&:nth-child(2) {
+							background-image: url(../img/spigen_blog_2.jpg);
+						}
+						&:nth-child(3) {
+							background-image: url(../img/spigen_blog_3.jpg);
+						}
+						> .shadow > h3:before {
+							content: "BLOG";
+						}
+					}
+				}
+			}
+		} //end of .medBlog
+		> .aboutCar {
+			height: 400px;
+			@include flexSet(row,nowrap);
+			@media #{$rwd800} {
+				flex-wrap: wrap;
+			}
+			> article {
+				width: 50%;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				@media #{$rwd800} {
+					width: 100%;
+				}
+				&:nth-child(1) {
+					background-image: url(../img/spigen_mid_about.jpg);
+				}
+				&:nth-child(2) {
+					background-image: url(../img/spigen_mid_careers.jpg);
+				}
+				> h2 {
+					margin-top: 100px;
+					color: $mainCol;
+					font-size: 24px;
+					text-align: center;
+					@media #{$rwd800} {
+						margin-top: 20px;
+					}
+				}
+				> p {
+					margin: 20px 0;
+					color: #fff;
+					font-size: 17px;
+					line-height: 1.6;
+					text-align: center;
+				}
+				> button {
+					@include moreView();
+					margin-left: calc(50% - 90px);
+					@media #{$rwd800} {
+						margin-bottom: 20px;
+					}
+				}
+			}
+		} //end of .aboutCar
+		> .ir {
+			padding: 80px 0 60px;
+			background-image: url(../img/spigen_ir_bg.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			@media #{$rwd1200} {
+				padding: 80px 0 40px;
+			}
+			> h2 {
+				color: #fff;
+				font-size: 40px;
+				text-align: center;
+			}
+			> p {
+				margin-top: 20px;
+				color: #fff;
+				font-size: 17px;
+				text-align: center;
+			}
+			> .case {
+				@include flexSet(row,nowrap );
+				justify-content: space-evenly;
+				margin-top: 60px;
+				@media #{$rwd800} {
+					flex-wrap: wrap;
+				}
+				> article {
+					position: relative;
+					overflow: hidden;
+					width: 30%;
+					height: 40%;
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					cursor: pointer;
+					@media #{$rwd1000} {
+						height: 255px;
+					}
+					@media #{$rwd800} {
+						width: 51%;
+						height: 330px;
+						margin-bottom: 40px;
+					}
+
+					&:nth-child(1) {
+						background-image: url(../img/spigen_ir_1.jpg);
+					}
+					&:nth-child(2) {
+						background-image: url(../img/spigen_ir_2.jpg);
+					}
+					&:nth-child(3) {
+						background-image: url(../img/spigen_ir_3.jpg);
+					}
+					> h3 {
+						height: 70px;
+						margin-top: 350px;
+						color: #fff;
+						font-weight: 600;
+						font-size: 20px;
+						line-height: 70px;
+						text-align: center;
+						background-color: rgba(0, 0, 0, 0.5);
+						@media #{$rwd1200} {
+							margin-top: 230px;
+						}
+						@media #{$rwd1000} {
+							height: 40px;
+							font-size: 18px;
+							line-height: 40px;
+							margin-top: 215px;
+						}
+						@media #{$rwd800} {
+							height: 70px;
+							margin-top: 260px;
+							font-size: 20px;
+							line-height: 70px;
+						}
+					}
+					> .txt {
+						display: none; //js
+						position: absolute;
+						left: 0;
+						top: 350px;
+						width: 100%;
+						height: 340px;
+						padding-top: 80px;
+						background-color: rgba(0, 0, 0, 0.7);
+						@media #{$rwd1200} {
+							padding-top: 40px;
+						}
+						@media #{$rwd1000} {
+							padding-top: 80px;
+						}
+						> h4 {
+							height: 70px;
+							color: $mainCol;
+							font-weight: 600;
+							font-size: 24px;
+							line-height: 70px;
+							text-align: center;
+							@media #{$rwd1000} {
+								font-size: 18px;
+							}
+							@media #{$rwd1000} {
+								font-size: 24px;
+							}
+						}
+						> p {
+							padding: 60px 20px;
+							color: #fff;
+							font-size: 18px;
+							font-weight: 600;
+							line-height: 1.8;
+							text-align: center;
+							word-break: keep-all;
+							@media #{$rwd1200} {
+								padding: 20px 20px;
+							}
+							@media #{$rwd1000} {
+								font-size: 15px;
+							}
+						}
+					}
+				} //end of article
+			}
+		} //end of .ir
+		> .contact {
+			padding-top: 135px;
+			background-image: url(../img/spigen_contact_bg.jpg);
+			background-position: -160px 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+			> h2 {
+				margin-bottom: 40px;
+				color: $gray;
+				font-size: 41px;
+				text-align: center;
+			}
+			> button {
+				margin-left: calc(50% - 110px);
+				@include moreView;
+				width: 220px;
+				height: 60px;
+				font-size: 22px;
+				border-radius: 30px;
+			}
+			> ol {
+				@include flexSet(row, nowrap);
+				justify-content: space-between;
+				margin: 0 10%;
+				@media #{$rwd1200} {
+					flex-wrap: wrap;
+				}
+				> li {
+					width: 20%;
+					margin-top: 40px;
+					transition: all .2s;
+					@media #{$rwd1200} {
+						width: 50%;
+					}
+					&:hover {
+						margin-top: 20px;
+					}
+					&:nth-child(1) > a {
+						background-image: url(../img/spigen_contact_rfp.png);
+					}
+					&:nth-child(2) > a {
+						background-image: url(../img/spigen_contact_mkt.png);
+					}
+					&:nth-child(3) > a {
+						background-image: url(../img/spigen_contact_cs.png);
+					}
+					&:nth-child(4) > a {
+						background-image: url(../img/spigen_contact_opening.png);
+					}
+					> a {
+						display: block;
+						padding-top: 170px;
+						height: 130px;
+						color: #fff;
+						font-weight: 700;
+						font-size: 24px;
+						text-align: center;
+						background-position: center 40px;
+						background-repeat: no-repeat;
+						> span {
+							display: block;
+							margin-top: 20px;
+							color: #777;
+							font-weight: normal;
+							font-size: 18px;
+							color: $gray;
+							opacity: 0.7;
+						}
+					}
+				}
+			}
+		}
+	} //end of section
+	> footer {
+		position: relative;
+		padding-bottom: 40px;
+		background-color: $footcol;
+
+		> button {
+			position: absolute;
+			right: 30px;
+			top: -35px;
+			z-index: 2;
+			width: 70px;
+			height: 70px;
+			@include irSet();
+			background-image: url(../img/spigen_footer_gotop.jpg);
+			border: none;
+			outline: none;
+		}
+		> .fam {
+			position: absolute;
+			overflow: hidden;
+			right: 30px;
+			top: -250px;
+			width: 250px;
+			height: 367px;
+			@media screen and (max-width: 1000px) {
+				right: 50%;
+				margin-right: -125px;
+			}
+			> li {
+				position: relative;
+				left: 0;
+				top: 305px;
+				width: 250px;
+				height: 62px;
+				> a {
+					position: relative;
+					left: 0;
+					bottom: 0;
+					z-index: 90;
+					display: block;
+					border: 1px solid #555;
+					height: 60px;
+					color: #777;
+					font-size: 16px;
+					line-height: 60px;
+					text-align: center;
+					background-color: $footcol;
+					> span {
+						display: inline-block;
+						width: 12px;
+						height: 60px;
+						margin-left: 80px;
+						@include irSet();
+						background-image: url(../img/spigen_fam_arr.png);
+						background-position: center center;
+						background-size: 100%;
+					}
+				}
+				> ol {
+					position: absolute;
+					left: 0;
+					top: 0;
+					z-index: 10;
+					> li {
+						width: 250px;
+						> a {
+							display: block;
+							height: 60px;
+							color: #777;
+							font-size: 16px;
+							line-height: 60px;
+							text-indent: 35px;
+							border: 1px solid #555;
+							border-bottom: none;
+							background-color: $footcol;
+						}
+					}
+				}
+			}
+		}
+		> h2.logo {
+			width: 200px;
+			margin-left: 60px;
+			padding: 60px 0;
+			@media screen and (max-width: 1000px) {
+				padding: 140px 0 20px;
+				margin: 0 auto;
+			}
+			> a {
+				display: block;
+				height: 44px;
+				@include irSet();
+				background-image: url(../img/spigen_footer_logo.png);
+			}
+		}
+		> address {
+			margin-left: 60px;
+			color: #777;
+			font-size: 15px;
+			@media screen and (max-width: 1000px) {
+				margin: 0 auto;
+				text-align: center;
+			}
+			> a {
+				color: #fff;
+				font-weight: 500;
+				line-height: 2;
+				& + span {
+					display: inline-block;
+					padding: 0 16px;
+					color: #fff;
+				}
+			}
+			> pre {
+				> a {
+					color: #777;
+					font-size: 15px;
+				}
+			}
+		}
+	} //end of footer
+} //end of #wrap

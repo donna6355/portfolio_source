@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia</title>
+    <link rel="stylesheet" href="./css/wiki.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/wiki.js"></script>
+</head>
+
+<body class="main">
+    <div id="wrapMain">
+        <header>
+            <h1 class="logo">Wikipedia</h1>
+            <h2 class="sr-only">우리 모두의 백과사전</h2>
+            <nav>
+                <ul class="gnb">
+                    <li>
+                        <a href="#">메인화면</a>
+                        <ol class="lnb">
+                            <li><a href="#">화제의 문서</a></li>
+                            <li><a href="#">수정된 문서</a></li>
+                            <li><a href="#">무작위 문서</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#">사용자 모임</a>
+                        <ol class="lnb">
+                            <li><a href="#">사랑방</a></li>
+                            <li><a href="#">질문방</a></li>
+                            <li><a href="#">사용자 모임</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#">참여하기</a>
+                        <ol class="lnb">
+                            <li><a href="#">새문서 올리기</a></li>
+                            <li><a href="#">편집 도움말</a></li>
+                            <li><a href="#">정책과 지침</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#">인쇄/다운로드</a>
+                        <ol class="lnb">
+                            <li><a href="#">책 만들기</a></li>
+                            <li><a href="#">문서 다운로드</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cont">
+                <div class="user">
+                    <span class="status"><a href="#">로그인상태</a></span>
+                    <span><a href="#">회원가입</a></span>
+                    <span><a href="#">로그인</a></span>
+                </div>
+                <div class="search">
+                    <input type="text" name="search" placeholder="독도">
+                    <button>검색</button>
+                </div>
+                <div class="lang">
+                    <h2 class="sr-only">언어 선택</h2>
+                    <select name="language" id="language">
+                        <option value="" selected="selected">Other Languages</option>
+                        <option value="ar" lang="ar">العربية</option><!-- Al-ʿArabīyah -->
+                        <option value="ast" lang="ast">Asturianu</option>
+                        <option value="az" lang="az">Azərbaycanca</option>
+                        <option value="bg" lang="bg">Български</option><!-- Bǎlgarski -->
+                        <option value="nan" lang="nan">Bân-lâm-gú / Hō-ló-oē</option>
+                        <option value="be" lang="be">Беларуская</option><!-- Belaruskaya -->
+                        <option value="ca" lang="ca">Català</option>
+                        <option value="cs" lang="cs">Čeština</option><!-- čeština -->
+                        <option value="cy" lang="cy">Cymraeg</option><!-- Cymraeg -->
+                        <option value="da" lang="da">Dansk</option>
+                        <option value="de" lang="de">Deutsch</option>
+                        <option value="et" lang="et">Eesti</option>
+                        <option value="el" lang="el">Ελληνικά</option><!-- Ellīniká -->
+                        <option value="en" lang="en">English</option><!-- English -->
+                        <option value="es" lang="es">Español</option>
+                        <option value="eo" lang="eo">Esperanto</option>
+                        <option value="eu" lang="eu">Euskara</option>
+                        <option value="fa" lang="fa">فارسی</option><!-- Fārsi -->
+                        <option value="fr" lang="fr">Français</option>
+                        <option value="gl" lang="gl">Galego</option>
+                        <option value="hy" lang="hy">Հայերեն</option><!-- Hayeren -->
+                        <option value="hi" lang="hi">हिन्दी</option><!-- Hindī -->
+                        <option value="hr" lang="hr">Hrvatski</option>
+                        <option value="id" lang="id">Bahasa Indonesia</option>
+                        <option value="it" lang="it">Italiano</option>
+                        <option value="he" lang="he">עברית</option><!-- Ivrit -->
+                        <option value="ka" lang="ka">ქართული</option><!-- Kartuli -->
+                        <option value="la" lang="la">Latina</option>
+                        <option value="lv" lang="lv">Latviešu</option>
+                        <option value="lt" lang="lt">Lietuvių</option>
+                        <option value="hu" lang="hu">Magyar</option>
+                        <option value="mk" lang="mk">Македонски</option><!-- Makedonski -->
+                        <option value="arz" lang="arz">مصرى</option><!-- Maṣrī -->
+                        <option value="ms" lang="ms">Bahasa Melayu</option>
+                        <option value="min" lang="min">Bahaso Minangkabau</option>
+                        <option value="nl" lang="nl">Nederlands</option>
+                        <option value="ja" lang="ja">日本語</option><!-- Nihongo -->
+                        <option value="no" lang="nb">Norsk (bokmål)</option>
+                        <option value="nn" lang="nn">Norsk (nynorsk)</option>
+                        <option value="ce" lang="ce">Нохчийн</option><!-- Noxçiyn -->
+                        <option value="uz" lang="uz">Oʻzbekcha / Ўзбекча</option>
+                        <option value="pl" lang="pl">Polski</option>
+                        <option value="pt" lang="pt">Português</option>
+                        <option value="kk" lang="kk">Қазақша / Qazaqşa / قازاقشا</option>
+                        <option value="ro" lang="ro">Română</option>
+                        <option value="ru" lang="ru">Русский</option><!-- Russkiy -->
+                        <option value="simple" lang="en">Simple English</option>
+                        <option value="ceb" lang="ceb">Sinugboanong Binisaya</option>
+                        <option value="sk" lang="sk">Slovenčina</option>
+                        <option value="sl" lang="sl">Slovenščina</option>
+                        <option value="sr" lang="sr">Српски / Srpski</option>
+                        <option value="sh" lang="sh">Srpskohrvatski / Српскохрватски</option>
+                        <option value="fi" lang="fi">Suomi</option><!-- suomi -->
+                        <option value="sv" lang="sv">Svenska</option>
+                        <option value="ta" lang="ta">தமிழ்</option><!-- Tamiḻ -->
+                        <option value="tt" lang="tt">Татарча / Tatarça</option>
+                        <option value="th" lang="th">ภาษาไทย</option><!-- Phasa Thai -->
+                        <option value="tg" lang="tg">Тоҷикӣ</option><!-- Tojikī -->
+                        <option value="azb" lang="azb">تۆرکجه</option><!-- Türkce -->
+                        <option value="tr" lang="tr">Türkçe</option><!-- Türkçe -->
+                        <option value="uk" lang="uk">Українська</option><!-- Ukrayins’ka -->
+                        <option value="ur" lang="ur">اردو</option><!-- Urdu -->
+                        <option value="vi" lang="vi">Tiếng Việt</option>
+                        <option value="vo" lang="vo">Volapük</option>
+                        <option value="war" lang="war">Winaray</option>
+                        <option value="zh-yue" lang="yue">粵語</option><!-- Yuht Yúh / Jyut6 jyu5 -->
+                        <option value="zh" lang="zh">中文</option><!-- Zhōngwén -->
+                        <option value="ko" lang="ko">한국어</option><!-- Hangugeo -->
+                    </select>
+                </div>
+                <div class="foundation clear">
+                    <img src="./images/footer_foundation.png" alt="wikimedia">
+                    <p>
+                        위키백과는 다른 여러 프로젝트들도 운영하는 비영리 단체 <strong>위키미디어 재단</strong>이 운영합니다.
+                    </p>
+                    <button>기부하기</button>
+                    <button>위키백과 앱 다운로드</button>
+                </div>
+            </div>
+        </header>
+        <section>
+            <h2 class="sr-only">위키피디아 주요 소식</h2>
+            <article class="intro">
+                <h2>위키백과</h2>
+                <h3>우리 모두가 만들어가는 자유 백과사전</h3>
+                <p class="update"></p>
+                <p>
+                    위키백과는 위키를 이용하여 전 세계 사람들이 함께 만들어가는 웹 기반의 다언어 백과사전입니다. <br />위키백과는 중립적이고 검증 가능한 자유 콘텐츠 백과사전의 제공을 목적으로
+                    하는 프로젝트로, 누구나 참여하여 문서를 수정하고 발전시킬 수 있습니다.
+                </p>
+            </article>
+            <div class="left">
+                <article class="hot">
+                    <h2>화제의 문서</h2>
+                    <ul>
+                        <li><a href="#">■ 코로나19 범유행</a></li>
+                        <li><a href="#">■ 2020년 미국 대통령 선거</a></li>
+                        <li><a href="#">■ 미국 서부에서 계속되고 있는 산불로 인한 사망자가 36명으로 늘었다. 오리건주, 워싱턴주, 캘리포니아주 세 개 주에서는 지금까지 2만
+                                Km2(제곱킬로미터)가 넘는 면적이 불탔고, 화재는 계속되고 있다.</a></li>
+                        <li><a href="#">■ 대한민국 문화재청은 팔미도 등대를 사적(제557호)으로 지정한다고 밝혔다. 문화재청은 현존하는 등대 중 가장 오래된 등대인 점과 인천 상륙
+                                작전
+                                당시
+                                연합군을 인도, 전세를 바꿔놓은 역사적·상징적인 가치가 있다고 밝혔다.</a></li>
+                        <li><a href="#">■ 대한민국 정부가 4차 추가경정예산(추경)을 편성하였다. 한 해동안 추경이 4번 이루어지는 것은 1961년 이후 59년 만이다.</a>
+                        </li>
+                        <li><a href="#">■ 금성의 대기에서 미량의 포스핀이 발견되었다. 지구에서는 세균이나 미생물에 의해 생성되기 때문에, 생명체 존재의 간접 증거로도 볼 수
+                                있다.</a>
+                        </li>
+                    </ul>
+                </article>
+                <article class="contribute">
+                    <h2>참여하기</h2>
+                    <ul class="clear">
+                        <li><a href="#" title="첫 방문자를 위한 안내서"><span>위키백과<br />이용안내</span></a></li>
+                        <li><a href="#" title="새문서를 만드는 방법"><span>새문서<br />올리기</span></a></li>
+                        <li><a href="#" title="기존 문서를 편집하는 방법"><span>편집<br />도움말</span></a></li>
+                        <li><a href="#" title="위키 백과사전 관리 정책 및 지침"><span>정책과<br />지침</span></a></li>
+                    </ul>
+                </article>
+            </div>
+            <div class="right">
+                <article class="history">
+                    <h2>오늘의 역사</h2>
+                    <span class="date">2020년 9월 21일 월요일</span>
+                    <ul>
+                        <li><a href="#">■ 454년 - 로마 황제인 발렌티니아누스 3세가 라벤나에서 플라비우스 아에티우스를 죽이다.</a></li>
+                        <li><a href="#">■ 1898년 - 청나라의 서태후가 광서제를 유폐하고 섭정을 실시하면서 무술변법이 좌절되다.</a></li>
+                        <li><a href="#">■ 1937년 - 《반지의 제왕》의 전신인 존 로널드 루엘 톨킨의 《호빗》이 처음으로 출판되다.</a></li>
+                        <li><a href="#">■ 1953년 - 조선민주주의인민공화국의 공군 군인인 노금석(사진)이 미그 15를 타고 대한민국으로 망명하다.</a></li>
+                        <li><a href="#">■ 1985년 - 서울과 평양에서 분단 이후 처음으로 남북 이산가족 상봉이 이루어지다.</a></li>
+                    </ul>
+                </article>
+                <article class="new">
+                    <h2>신규 문서</h2>
+                    <ul>
+                        <li><a href="#">■ 9월 18일, 미국 연방 대법원의 대법관 루스 베이더 긴즈버그(사진)가 87세를 일기로 숨졌다.</a></li>
+                        <li><a href="#">■ 9월 16일, 일본의 자유민주당 총재이자 내각관방장관인 스가 요시히데가 총리로 취임하였다.</a></li>
+                        <li><a href="#">■ 9월 14일, 금성의 대기에서 생명체의 존재의 간접적 증거라고 할 수 있는 포스핀이 발견되었다.</a></li>
+                        <li><a href="#">■ 8월 28일, 일본의 총리 아베 신조가 건강 문제로 사의를 표명하였다.</a></li>
+                        <li><a href="#">■ 8월 18일, 말리에서 쿠데타가 일어나 대통령 이브라임 부바카르 케이타가 사임하고 정부가 해산되었다.</a></li>
+                    </ul>
+                </article>
+                <article class="userGather">
+                    <h2>사용자 모임</h2>
+                    <ul class="clear">
+                        <li><a href="#" title="다른 사용자와 의견을 교환해요">사랑방</a></li>
+                        <li><a href="#" title="궁금한 점을 풀어봐요">질문방</a></li>
+                        <li><a href="#" title="커뮤니티 포털에 방문해요">사용자 모임</a></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <footer>
+            <div class="sister">
+                <ul class="sister_cont clear">
+                    <li class="bnr1"><a href="#"><span class="img"></span><span class="title">위키미디어 공용</span><span>자유
+                                미디어
+                                저장소</span></a></li>
+                    <li class="bnr2"><a href="#"><span class="img"></span><span class="title">위키여행</span><span>자유 여행
+                                가이드</span></a>
+                    </li>
+                    <li class="bnr3"><a href="#"><span class="img"></span><span class="title">위키낱말사전</span><span>말과 글의
+                                누리</span></a>
+                    </li>
+                    <li class="bnr4"><a href="#"><span class="img"></span><span class="title">위키책</span><span>자유로운 생각과
+                                배움</span></a>
+                    </li>
+                    <li class="bnr5"><a href="#"><span class="img"></span><span class="title">위키뉴스</span><span>자유로운 뉴스
+                                컨텐츠</span></a>
+                    </li>
+                    <li class="bnr6"><a href="#"><span class="img"></span><span class="title">위키데이터</span><span>자유 지식
+                                베이스</span></a>
+                    </li>
+                    <li class="bnr7"><a href="#"><span class="img"></span><span class="title">위키배움터</span><span>자유 코스
+                                자료</span></a>
+                    </li>
+                    <li class="bnr8"><a href="#"><span class="img"></span><span class="title">위키인용집</span><span>자유 인용
+                                모음집</span></a>
+                    </li>
+                    <li class="bnr9"><a href="#"><span class="img"></span><span class="title">미디어위키</span><span>자유 & 오픈
+                                위키
+                                앱</span></a></li>
+                    <li class="bnr10"><a href="#"><span class="img"></span><span class="title">위키문헌</span><span>자유 컨텐츠
+                                도서관</span></a>
+                    </li>
+                    <li class="bnr11"><a href="#"><span class="img"></span><span class="title">위키생물종</span><span>열린 생물종
+                                사전</span></a>
+                    </li>
+                    <li class="bnr12"><a href="#"><span class="img"></span><span class="title">메타위키</span><span>공동체 협업 및
+                                문서화</span></a></li>
+                </ul>
+            </div>
+            <address>
+                이 화면은 <a href="#">크리에이티브 커먼즈 작자표시-동일조건변경허락 라이선스</a> 하에서 이용 가능합니다.
+                <a href="#">이용 약관</a>
+                <a href="#">개인정보보호정책</a>
+            </address>
+        </footer>
+    </div>
+</body>
+
+</html>
